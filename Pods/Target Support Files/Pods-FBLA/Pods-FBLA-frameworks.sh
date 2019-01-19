@@ -143,20 +143,48 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/BATabBarController/BATabBarController.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/BulletinBoard/BLTNBoard.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Cluster/Cluster.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/CollectionKit/CollectionKit.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/FaveButton/FaveButton.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/FoldingCell/FoldingCell.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SPPermission/SPPermission.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SparrowKit/SparrowKit.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/TransitionButton/TransitionButton.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/VegaScrollFlowLayout/VegaScrollFlowLayout.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/fluid-slider/fluid_slider.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/pop/pop.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/BATabBarController/BATabBarController.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/BulletinBoard/BLTNBoard.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Cluster/Cluster.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/CollectionKit/CollectionKit.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/FaveButton/FaveButton.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/FoldingCell/FoldingCell.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SPPermission/SPPermission.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SparrowKit/SparrowKit.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/TransitionButton/TransitionButton.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/VegaScrollFlowLayout/VegaScrollFlowLayout.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/fluid-slider/fluid_slider.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/pop/pop.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

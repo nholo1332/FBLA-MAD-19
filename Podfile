@@ -1,6 +1,6 @@
 # Uncomment the next line to define a global platform for your project
 
-platform :ios, '8.0'
+platform :ios, '10.0'
 source 'https://github.com/CocoaPods/Specs.git'
 
 target 'FBLA' do
@@ -9,9 +9,23 @@ target 'FBLA' do
 # Firebase pods
 pod 'Firebase/Core'
 pod 'Firebase/Database'
-pod 'Firebase/Crash'
+pod 'Crashlytics'
 pod 'Firebase/Auth'
 pod 'Firebase/Storage'
 pod 'Firebase/Performance'
+
+# Design pods
+pod 'TransitionButton'
+pod "CollectionKit"
+pod "Cluster"
+pod 'NVActivityIndicatorView'
+pod 'FoldingCell'
+pod 'fluid-slider'
+pod 'VegaScrollFlowLayout'
+pod 'SPPermission', '~> 2.9'
+pod 'SparrowKit'
+pod 'FaveButton'
+pod 'BulletinBoard'
+pod "BATabBarController"
 
 end
