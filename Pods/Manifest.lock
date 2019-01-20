@@ -9,7 +9,6 @@ PODS:
   - Crashlytics (3.12.0):
     - Fabric (~> 1.9.0)
   - Fabric (1.9.0)
-  - FaveButton (3.0.0)
   - Firebase/Auth (5.15.0):
     - Firebase/CoreOnly
     - FirebaseAuth (= 5.2.0)
@@ -134,7 +133,6 @@ DEPENDENCIES:
   - Cluster
   - CollectionKit
   - Crashlytics
-  - FaveButton
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
@@ -156,7 +154,6 @@ SPEC REPOS:
     - CollectionKit
     - Crashlytics
     - Fabric
-    - FaveButton
     - Firebase
     - FirebaseABTesting
     - FirebaseAnalytics
@@ -192,7 +189,6 @@ SPEC CHECKSUMS:
   CollectionKit: 6910479bf865bfe49040e73322ce4b8fe8991231
   Crashlytics: 07fb167b1694128c1c9a5a5cc319b0e9c3ca0933
   Fabric: f988e33c97f08930a413e08123064d2e5f68d655
-  FaveButton: 1fa9cd7b037d7164e229765401931271adbe3a23
   Firebase: 8bb9268bff82374f2cbaaabb143e725743c316ae
   FirebaseABTesting: 1f50b8d50f5e3469eea54e7463a7b7fe221d1f5e
   FirebaseAnalytics: c06f9d70577d79074214700a71fd5d39de5550fb
@@ -221,6 +217,6 @@ SPEC CHECKSUMS:
   TransitionButton: fb271583d9c9e4bb116b97103047e5157653f233
   VegaScrollFlowLayout: 9158061f29179147755f937c2b21693fc5dbbac3
 
-PODFILE CHECKSUM: 568718f79eea554c7798e0fb9a83337261b3f954
+PODFILE CHECKSUM: 7b4e8165d9f93c81e2dbddc921fca9aeafc4f3d1
 
 COCOAPODS: 1.5.2

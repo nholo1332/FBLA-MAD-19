@@ -24,7 +24,6 @@ pod 'fluid-slider'
 pod 'VegaScrollFlowLayout'
 pod 'SPPermission', '~> 2.9'
 pod 'SparrowKit'
-pod 'FaveButton'
 pod 'BulletinBoard'
 pod "BATabBarController"
 
