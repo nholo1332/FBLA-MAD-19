@@ -93,15 +93,17 @@ class BooksTableViewController: UITableViewController {
         }
         
         cell.number = indexPath.row
-        cell.data = [
-            snapshot.childSnapshot(forPath: "/\(indexPath.row)/title").value as! String/*,
+        /*cell.data = [
+            snapshot.childSnapshot(forPath: "/\(indexPath.row)/title").value as! String,
             snapshot.childSnapshot(forPath: "/\(indexPath.row)/subject").value as! String,
             snapshot.childSnapshot(forPath: "/\(indexPath.row)/type").value as! String,
-            snapshot.childSnapshot(forPath: "/\(indexPath.row)/target").value as! String*/]
-        /*cell.intData = [
+            snapshot.childSnapshot(forPath: "/\(indexPath.row)/target").value as! String]
+        cell.intData = [
             snapshot.childSnapshot(forPath: "/\(indexPath.row)/amount").value as! Int,
             snapshot.childSnapshot(forPath: "/\(indexPath.row)/available").value as! Int,
-            snapshot.childSnapshot(forPath: "/\(indexPath.row)/maxDays").value as! Int]*/
+            snapshot.childSnapshot(forPath: "/\(indexPath.row)/maxDays").value as! Int]
+        cell.usersReserved = snapshot.childSnapshot(forPath: "/\(indexPath.row)/users").value as! [String]*/
+        cell.snapshot = snapshot.childSnapshot(forPath: "/\(indexPath.row)")
         
         //Title (string)
         //Subject (string)
@@ -110,7 +112,6 @@ class BooksTableViewController: UITableViewController {
         //Total amount (Int)
         //Current available (Int)
         //Max days for reserve
-        
         //Soonest reserve ending date (Date)
         //If you already reserved the book (Bool)
         //When your reservation ends (Date)
