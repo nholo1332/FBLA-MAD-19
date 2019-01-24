@@ -110,6 +110,7 @@ PODS:
   - GoogleUtilities/UserDefaults (5.3.7):
     - GoogleUtilities/Logger
   - GTMSessionFetcher/Core (1.2.1)
+  - Kingfisher (5.1.0)
   - leveldb-library (1.20)
   - Masonry (1.1.0)
   - nanopb (0.3.901):
@@ -140,6 +141,7 @@ DEPENDENCIES:
   - Firebase/Storage
   - fluid-slider
   - FoldingCell
+  - Kingfisher
   - NVActivityIndicatorView
   - SparrowKit
   - SPPermission (~> 2.9)
@@ -171,6 +173,7 @@ SPEC REPOS:
     - GoogleToolboxForMac
     - GoogleUtilities
     - GTMSessionFetcher
+    - Kingfisher
     - leveldb-library
     - Masonry
     - nanopb
@@ -206,6 +209,7 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: ff31605b7d66400dcec09bed5861689aebadda4d
   GoogleUtilities: 111a012f4c3a29c9e7c954c082fafd6ee3c999c0
   GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
+  Kingfisher: fcec238063d17404fca89bf0a850583211c4cbf6
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
@@ -217,6 +221,6 @@ SPEC CHECKSUMS:
   TransitionButton: fb271583d9c9e4bb116b97103047e5157653f233
   VegaScrollFlowLayout: 9158061f29179147755f937c2b21693fc5dbbac3
 
-PODFILE CHECKSUM: 7b4e8165d9f93c81e2dbddc921fca9aeafc4f3d1
+PODFILE CHECKSUM: c9f869dbecb02af4f869de990620f991875e18fa
 
 COCOAPODS: 1.5.2

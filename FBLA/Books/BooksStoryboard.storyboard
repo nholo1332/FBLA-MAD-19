@@ -602,6 +602,7 @@
                                     <outlet property="maxReserve" destination="OdW-7S-d7P" id="REL-Bv-0SI"/>
                                     <outlet property="message" destination="fYY-ia-ZHM" id="XGL-A4-yaj"/>
                                     <outlet property="openBookCount" destination="kZ8-a1-yAT" id="Ipy-HE-5Th"/>
+                                    <outlet property="openImage" destination="HXU-u9-Zub" id="uSb-BR-wmo"/>
                                     <outlet property="openInfoBottom" destination="Cib-45-7nz" id="9Qb-Xo-z3w"/>
                                     <outlet property="openInfoBottom1" destination="jt9-pS-sgZ" id="zDY-0t-stt"/>
                                     <outlet property="openInfoSubject" destination="le6-xC-oOl" id="e4T-Si-ZYO"/>

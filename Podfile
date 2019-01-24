@@ -27,4 +27,7 @@ pod 'SparrowKit'
 pod 'BulletinBoard'
 pod "BATabBarController"
 
+# Other pods
+pod 'Kingfisher'
+
 end

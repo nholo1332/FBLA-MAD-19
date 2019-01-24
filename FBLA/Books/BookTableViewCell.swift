@@ -34,6 +34,7 @@ class BookTableViewCell: FoldingCell {
     @IBOutlet weak var openPeopleReserve: UILabel!
     @IBOutlet weak var openInfoBottom: UILabel!
     @IBOutlet weak var openInfoBottom1: UILabel!
+    @IBOutlet weak var openImage: UIImageView!
     
     
     var number: Int = 0 {
@@ -89,7 +90,7 @@ class BookTableViewCell: FoldingCell {
             let formatter = DateFormatter()
             formatter.dateFormat = "yyyy-MM-dd"
             
-            message.text = "RETURN BY: \(formatter.string(from: snapshot.childSnapshot(forPath: "/reservations/\((Auth.auth().currentUser?.uid)!)").value as! Date))"
+            message.text = "RETURN BY: \(formatter.string(from: snapshot.childSnapshot(forPath: "/reservations/\((Auth.auth().currentUser?.uid)!)/end").value as! Date))"
         }else if ((snapshot.childSnapshot(forPath: "/amount").value as! Int) - (snapshot.childSnapshot(forPath: "/requestedAmount").value as! Int)) == 0{
             message.text = "BOOK NOT AVAILABLE"
         }else{
@@ -102,13 +103,26 @@ class BookTableViewCell: FoldingCell {
             formatter.dateFormat = "yyyy-MM-dd"
             
             openInfoBottom.text = "RETURN BY"
-            openInfoBottom1.text = "RETURN BY: \(formatter.string(from: snapshot.childSnapshot(forPath: "/reservations/\((Auth.auth().currentUser?.uid)!)").value as! Date))"
+            openInfoBottom1.text = "\(formatter.string(from: snapshot.childSnapshot(forPath: "/reservations/\((Auth.auth().currentUser?.uid)!)/end").value as! Date))"
         }else{
             let formatter = DateFormatter()
             formatter.dateFormat = "yyyy-MM-dd"
             openInfoBottom.text = "SOONEST AVAILABLE"
-            openInfoBottom1.text = "RETURN BY: \(formatter.string(from: snapshot.childSnapshot(forPath: "/soonestAvailable").value as! Date))"
+            openInfoBottom1.text = "\(formatter.string(from: snapshot.childSnapshot(forPath: "/soonestAvailable").value as! Date))"
         }
+        
+        if snapshot.childSnapshot(forPath: "/images").value != nil{
+            downloadImage(into: self.openImage,
+                          from: snapshot.childSnapshot(forPath: "/image").value as! String, completion: { error in
+                            
+                        if error != nil {
+                            print(error.debugDescription)
+                            self.openImage.image = UIImage(named: "image")
+                        }
+                            
+            })
+        }
+        
     }
     
     override func animationDuration(_ itemIndex: NSInteger, type _: FoldingCell.AnimationType) -> TimeInterval {
@@ -122,6 +136,9 @@ class BookTableViewCell: FoldingCell {
 extension BookTableViewCell {
     
     @IBAction func buttonHandler(_: AnyObject) {
-        print("tap")
+        let monthsToAdd = 2
+        
+        let newDate = Calendar.current.date(byAdding: .day, value: monthsToAdd, to: Date())
+        print("Date: \(String(describing: newDate))")
     }
 }
