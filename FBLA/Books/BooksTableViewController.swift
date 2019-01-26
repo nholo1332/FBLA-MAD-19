@@ -33,14 +33,24 @@ class BooksTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         ref = Database.database().reference()
-        ref.child("Books").observeSingleEvent(of: .value, with: { (dataSnap) in
+        /*ref.child("Books").observeSingleEvent(of: .value, with: { (dataSnap) in
             self.snapshot = dataSnap
             self.totalCount = Int(dataSnap.childrenCount)
-            //print("Data: \(snapshot.childSnapshot(forPath: "title").value)")
+            print("Data: \(dataSnap.childSnapshot(forPath: "title").value)")
             //print("Data: \(value?["title"])")
         }) { (error) in
             print(error)
-        }
+        }*/
+        
+        ref.observe(DataEventType.value, with: { (dataSnap) in
+            //print("New Data: \(dataSnap.value as? [String : AnyObject])")
+            self.snapshot = dataSnap
+            self.totalCount = Int(dataSnap.childSnapshot(forPath: "Books").childrenCount)
+            //print("Book 0 title: \(dataSnap.childSnapshot(forPath: "Books/0/title").value as? [String : AnyObject])")
+            //let dict = dataSnap.childSnapshot(forPath: "title").value as! [String: Any]
+            //print("Dictionary: \(dict)")
+            print("Book 0 title: \(dataSnap.childSnapshot(forPath: "Books/0/title").value)")
+        })
         
         delayWithSeconds(2) {
             self.tableView.reloadData()
@@ -103,7 +113,7 @@ class BooksTableViewController: UITableViewController {
             snapshot.childSnapshot(forPath: "/\(indexPath.row)/available").value as! Int,
             snapshot.childSnapshot(forPath: "/\(indexPath.row)/maxDays").value as! Int]
         cell.usersReserved = snapshot.childSnapshot(forPath: "/\(indexPath.row)/users").value as! [String]*/
-        cell.snapshot = snapshot.childSnapshot(forPath: "/\(indexPath.row)")
+        cell.snapshot = snapshot.childSnapshot(forPath: "Books/\(indexPath.row)")
         
         //Title (string)
         //Subject (string)
