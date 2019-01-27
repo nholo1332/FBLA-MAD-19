@@ -16,8 +16,8 @@ pod 'Firebase/Performance'
 
 # Design pods
 pod 'TransitionButton'
-pod "CollectionKit"
-pod "Cluster"
+pod 'CollectionKit'
+pod 'Cluster'
 pod 'NVActivityIndicatorView'
 pod 'FoldingCell'
 pod 'fluid-slider'
@@ -25,7 +25,9 @@ pod 'VegaScrollFlowLayout'
 pod 'SPPermission', '~> 2.9'
 pod 'SparrowKit'
 pod 'BulletinBoard'
-pod "BATabBarController"
+pod 'BATabBarController'
+pod 'TextFieldEffects'
+pod 'PMAlertController'
 
 # Other pods
 pod 'Kingfisher'

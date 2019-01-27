@@ -21,6 +21,12 @@
 		4F7F664821F3C6F4008004AC /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7F664721F3C6F4008004AC /* BookTableViewCell.swift */; };
 		4F7F664C21F3C841008004AC /* BooksStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F7F664B21F3C841008004AC /* BooksStoryboard.storyboard */; };
 		4F7F665521F9630B008004AC /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7F665421F9630B008004AC /* Functions.swift */; };
+		4F7F665B21FD2414008004AC /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7F665921FD2414008004AC /* SignupViewController.swift */; };
+		4F7F665C21FD2414008004AC /* SignupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F7F665A21FD2414008004AC /* SignupViewController.xib */; };
+		4F7F665F21FD2423008004AC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7F665D21FD2423008004AC /* LoginViewController.swift */; };
+		4F7F666021FD2423008004AC /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F7F665E21FD2423008004AC /* LoginViewController.xib */; };
+		4F7F666421FD2488008004AC /* ResetPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7F666221FD2488008004AC /* ResetPassViewController.swift */; };
+		4F7F666521FD2488008004AC /* ResetPassViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F7F666321FD2488008004AC /* ResetPassViewController.xib */; };
 		C238CE9D43BCCF7197A06BB0 /* Pods_FBLA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BBA982F4E26C3DB472A4326 /* Pods_FBLA.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +70,12 @@
 		4F7F664721F3C6F4008004AC /* BookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTableViewCell.swift; sourceTree = "<group>"; };
 		4F7F664B21F3C841008004AC /* BooksStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BooksStoryboard.storyboard; sourceTree = "<group>"; };
 		4F7F665421F9630B008004AC /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		4F7F665921FD2414008004AC /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		4F7F665A21FD2414008004AC /* SignupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignupViewController.xib; sourceTree = "<group>"; };
+		4F7F665D21FD2423008004AC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		4F7F665E21FD2423008004AC /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		4F7F666221FD2488008004AC /* ResetPassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPassViewController.swift; sourceTree = "<group>"; };
+		4F7F666321FD2488008004AC /* ResetPassViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResetPassViewController.xib; sourceTree = "<group>"; };
 		B7CF05EF691401FBFA3A8123 /* Pods-FBLA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBLA.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FBLA/Pods-FBLA.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,6 +134,7 @@
 				4F50B7B621F3976A003DB8F0 /* AppDelegate.swift */,
 				4F7F663521F3B835008004AC /* Main */,
 				4F7F664221F3C4C3008004AC /* Books */,
+				4F7F665621FD23C2008004AC /* Account */,
 				4F7F665421F9630B008004AC /* Functions.swift */,
 				4F50B7B821F3976A003DB8F0 /* ViewController.swift */,
 				4F50B7BA21F3976A003DB8F0 /* Main.storyboard */,
@@ -176,6 +189,43 @@
 				4F7F664721F3C6F4008004AC /* BookTableViewCell.swift */,
 			);
 			path = Books;
+			sourceTree = "<group>";
+		};
+		4F7F665621FD23C2008004AC /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				4F7F665721FD23D0008004AC /* Login */,
+				4F7F665821FD23D9008004AC /* Signup */,
+				4F7F666121FD242F008004AC /* Reset Password */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		4F7F665721FD23D0008004AC /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				4F7F665D21FD2423008004AC /* LoginViewController.swift */,
+				4F7F665E21FD2423008004AC /* LoginViewController.xib */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		4F7F665821FD23D9008004AC /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				4F7F665921FD2414008004AC /* SignupViewController.swift */,
+				4F7F665A21FD2414008004AC /* SignupViewController.xib */,
+			);
+			path = Signup;
+			sourceTree = "<group>";
+		};
+		4F7F666121FD242F008004AC /* Reset Password */ = {
+			isa = PBXGroup;
+			children = (
+				4F7F666221FD2488008004AC /* ResetPassViewController.swift */,
+				4F7F666321FD2488008004AC /* ResetPassViewController.xib */,
+			);
+			path = "Reset Password";
 			sourceTree = "<group>";
 		};
 		D3BCACAFA9660AECE8D325BA /* Pods */ = {
@@ -298,10 +348,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F7F665C21FD2414008004AC /* SignupViewController.xib in Resources */,
 				4F50B7C121F3976B003DB8F0 /* LaunchScreen.storyboard in Resources */,
 				4F7B882521F3994100F42C4B /* GoogleService-Info.plist in Resources */,
 				4F50B7BE21F3976B003DB8F0 /* Assets.xcassets in Resources */,
 				4F7F664C21F3C841008004AC /* BooksStoryboard.storyboard in Resources */,
+				4F7F666521FD2488008004AC /* ResetPassViewController.xib in Resources */,
+				4F7F666021FD2423008004AC /* LoginViewController.xib in Resources */,
 				4F50B7BC21F3976A003DB8F0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,9 +394,11 @@
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
+				"${BUILT_PRODUCTS_DIR}/PMAlertController/PMAlertController.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SPPermission/SPPermission.framework",
 				"${BUILT_PRODUCTS_DIR}/SparrowKit/SparrowKit.framework",
+				"${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework",
 				"${BUILT_PRODUCTS_DIR}/TransitionButton/TransitionButton.framework",
 				"${BUILT_PRODUCTS_DIR}/VegaScrollFlowLayout/VegaScrollFlowLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/fluid-slider/fluid_slider.framework",
@@ -364,9 +419,11 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PMAlertController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SPPermission.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SparrowKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TextFieldEffects.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TransitionButton.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VegaScrollFlowLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/fluid_slider.framework",
@@ -405,8 +462,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F7F663721F3B84D008004AC /* MainViewController.swift in Sources */,
+				4F7F665B21FD2414008004AC /* SignupViewController.swift in Sources */,
 				4F50B7B921F3976A003DB8F0 /* ViewController.swift in Sources */,
+				4F7F666421FD2488008004AC /* ResetPassViewController.swift in Sources */,
 				4F7F664521F3C6DF008004AC /* BooksTableViewController.swift in Sources */,
+				4F7F665F21FD2423008004AC /* LoginViewController.swift in Sources */,
 				4F7F664821F3C6F4008004AC /* BookTableViewCell.swift in Sources */,
 				4F50B7B721F3976A003DB8F0 /* AppDelegate.swift in Sources */,
 				4F7F665521F9630B008004AC /* Functions.swift in Sources */,

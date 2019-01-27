@@ -121,10 +121,12 @@ PODS:
   - NVActivityIndicatorView (4.5.1):
     - NVActivityIndicatorView/Presenter (= 4.5.1)
   - NVActivityIndicatorView/Presenter (4.5.1)
+  - PMAlertController (3.5.0)
   - pop (1.0.12)
   - Protobuf (3.6.1)
   - SparrowKit (1.4)
   - SPPermission (2.9)
+  - TextFieldEffects (1.5.1)
   - TransitionButton (0.5.2)
   - VegaScrollFlowLayout (1.1)
 
@@ -143,8 +145,10 @@ DEPENDENCIES:
   - FoldingCell
   - Kingfisher
   - NVActivityIndicatorView
+  - PMAlertController
   - SparrowKit
   - SPPermission (~> 2.9)
+  - TextFieldEffects
   - TransitionButton
   - VegaScrollFlowLayout
 
@@ -178,10 +182,12 @@ SPEC REPOS:
     - Masonry
     - nanopb
     - NVActivityIndicatorView
+    - PMAlertController
     - pop
     - Protobuf
     - SparrowKit
     - SPPermission
+    - TextFieldEffects
     - TransitionButton
     - VegaScrollFlowLayout
 
@@ -214,13 +220,15 @@ SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   NVActivityIndicatorView: ec34a7b88c51fab270004a1a1f32116e711010cd
+  PMAlertController: 06dab8160066fc4ce991c880e3722cd403e2926a
   pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
   SparrowKit: f870970d54344688012e147a6816d99ccdc2f280
   SPPermission: 82d2071b4a6fd91e1f29ba68ef1d9e0485c26eeb
+  TextFieldEffects: 7d372f58aeaf9acd9626bbf962680aef926b085d
   TransitionButton: fb271583d9c9e4bb116b97103047e5157653f233
   VegaScrollFlowLayout: 9158061f29179147755f937c2b21693fc5dbbac3
 
-PODFILE CHECKSUM: c9f869dbecb02af4f869de990620f991875e18fa
+PODFILE CHECKSUM: 4ab475c51ae3881946d6655316a280201f70558f
 
 COCOAPODS: 1.5.2

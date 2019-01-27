@@ -51,19 +51,19 @@ class BookTableViewCell: FoldingCell {
         didSet {
             //closed info
             closeMaxReserve.text = "\(snapshot.childSnapshot(forPath: "maxDays").value as! Int) days"
-            requestCount.text = "\(snapshot.childSnapshot(forPath: "/requestedAmount").value as! Int)"
-            closedReference.text = (snapshot.childSnapshot(forPath: "/reference").value as! String).uppercased()
+            requestCount.text = "\(snapshot.childSnapshot(forPath: "requestedAmount").value as! Int)"
+            closedReference.text = (snapshot.childSnapshot(forPath: "reference").value as! String).uppercased()
             
             //open info
-            maxReserve.text = "\(snapshot.childSnapshot(forPath: "/maxDays").value as! Int) days"
-            openNumberLabel.text = (snapshot.childSnapshot(forPath: "/title").value as! String)
-            openRequests.text = "\(snapshot.childSnapshot(forPath: "/requestedAmount").value as! Int)"
-            openReference.text = (snapshot.childSnapshot(forPath: "/reference").value as! String)
-            openBookCount.text = "\(snapshot.childSnapshot(forPath: "/amount").value as! Int)"
-            openInfoSubject.text = "Subject: \(snapshot.childSnapshot(forPath: "/subject").value as! String)"
-            openInfoType.text = "Type: \(snapshot.childSnapshot(forPath: "/type").value as! String)"
-            openRemaingBooks.text = "\((snapshot.childSnapshot(forPath: "/amount").value as! Int) - (snapshot.childSnapshot(forPath: "/requestedAmount").value as! Int))"
-            openPeopleReserve.text = "\((snapshot.childSnapshot(forPath: "/requestedAmount").value as! Int)) people have reserved a book"
+            maxReserve.text = "\(snapshot.childSnapshot(forPath: "maxDays").value as! Int) days"
+            openNumberLabel.text = (snapshot.childSnapshot(forPath: "title").value as! String)
+            openRequests.text = "\(snapshot.childSnapshot(forPath: "requestedAmount").value as! Int)"
+            openReference.text = (snapshot.childSnapshot(forPath: "reference").value as! String)
+            openBookCount.text = "\(snapshot.childSnapshot(forPath: "amount").value as! Int)"
+            openInfoSubject.text = "Subject: \(snapshot.childSnapshot(forPath: "subject").value as! String)"
+            openInfoType.text = "Type: \(snapshot.childSnapshot(forPath: "type").value as! String)"
+            openRemaingBooks.text = "\((snapshot.childSnapshot(forPath: "amount").value as! Int) - (snapshot.childSnapshot(forPath: "requestedAmount").value as! Int))"
+            openPeopleReserve.text = "\((snapshot.childSnapshot(forPath: "requestedAmount").value as! Int)) people have reserved a book"
             
             
             //Other setup
@@ -72,11 +72,11 @@ class BookTableViewCell: FoldingCell {
                 let formatter = NumberFormatter()
                 formatter.maximumIntegerDigits = 3
                 formatter.maximumFractionDigits = 0
-                let string = formatter.string(from: (fraction * CGFloat(self.snapshot.childSnapshot(forPath: "/maxDays").value as! Int) as NSNumber)) ?? ""
+                let string = formatter.string(from: (fraction * CGFloat(self.snapshot.childSnapshot(forPath: "maxDays").value as! Int) as NSNumber)) ?? ""
                 return NSAttributedString(string: string, attributes: [.font: UIFont.systemFont(ofSize: 12, weight: .bold), .foregroundColor: UIColor.black])
             }
             slider.setMinimumLabelAttributedText(NSAttributedString(string: "1", attributes: labelTextAttributes))
-            slider.setMaximumLabelAttributedText(NSAttributedString(string: String(self.snapshot.childSnapshot(forPath: "/maxDays").value as! Int), attributes: labelTextAttributes))
+            slider.setMaximumLabelAttributedText(NSAttributedString(string: String(self.snapshot.childSnapshot(forPath: "maxDays").value as! Int), attributes: labelTextAttributes))
             slider.fraction = 0.5
             slider.shadowOffset = CGSize(width: 0, height: 7)
             slider.shadowBlur = 5
@@ -84,44 +84,44 @@ class BookTableViewCell: FoldingCell {
             slider.contentViewColor = UIColor.init(named: "PrimaryBlue")
             slider.valueViewColor = .white
             
-            /*if (snapshot.childSnapshot(forPath: "/users").value as! [String]).contains((Auth.auth().currentUser?.uid)!){
+            if (snapshot.childSnapshot(forPath: "users").value as! [String]).contains((Auth.auth().currentUser?.uid)!){
                 
                 let formatter = DateFormatter()
                 formatter.dateFormat = "yyyy-MM-dd"
                 
-                message.text = "RETURN BY: \(formatter.string(from: snapshot.childSnapshot(forPath: "/reservations/\((Auth.auth().currentUser?.uid)!)/end").value as! Date))"
-            }else if ((snapshot.childSnapshot(forPath: "/amount").value as! Int) == (snapshot.childSnapshot(forPath: "/requestedAmount").value as! Int)){
+                message.text = "RETURN BY: \(formatter.string(from: snapshot.childSnapshot(forPath: "reservations/\((Auth.auth().currentUser?.uid)!)/end").value as! Date))"
+            }else if ((snapshot.childSnapshot(forPath: "amount").value as! Int) == (snapshot.childSnapshot(forPath: "requestedAmount").value as! Int)){
                 message.text = "BOOK NOT AVAILABLE"
             }else{
                 message.text = "RESERVE THIS BOOK NOW"
             }
             
-            if (snapshot.childSnapshot(forPath: "/users").value as! [String]).contains((Auth.auth().currentUser?.uid)!) {
+            if (snapshot.childSnapshot(forPath: "users").value as! [String]).contains((Auth.auth().currentUser?.uid)!) {
                 
                 let formatter = DateFormatter()
                 formatter.dateFormat = "yyyy-MM-dd"
                 
                 openInfoBottom.text = "RETURN BY"
-                openInfoBottom1.text = "\(formatter.string(from: snapshot.childSnapshot(forPath: "/reservations/\((Auth.auth().currentUser?.uid)!)/end").value as! Date))"
+                openInfoBottom1.text = "\(formatter.string(from: snapshot.childSnapshot(forPath: "reservations/\((Auth.auth().currentUser?.uid)!)/end").value as! Date))"
                 
                 closedDateInfo.text = "RESERVE START"
-                closedDate.text = "\(formatter.string(from: snapshot.childSnapshot(forPath: "/reservations/\((Auth.auth().currentUser?.uid)!)/start").value as! Date))"
+                closedDate.text = "\(formatter.string(from: snapshot.childSnapshot(forPath: "reservations/\((Auth.auth().currentUser?.uid)!)/start").value as! Date))"
                 closedDateInfo2.text = "RESERVE END"
-                closedDate2.text = "\(formatter.string(from: snapshot.childSnapshot(forPath: "/reservations/\((Auth.auth().currentUser?.uid)!)/end").value as! Date))"
+                closedDate2.text = "\(formatter.string(from: snapshot.childSnapshot(forPath: "reservations/\((Auth.auth().currentUser?.uid)!)/end").value as! Date))"
                 
             }else{
                 let formatter = DateFormatter()
                 formatter.dateFormat = "yyyy-MM-dd"
                 openInfoBottom.text = "SOONEST AVAILABLE"
-                openInfoBottom1.text = "\(formatter.string(from: snapshot.childSnapshot(forPath: "/soonestAvailable").value as! Date))"
+                openInfoBottom1.text = "\(formatter.string(from: snapshot.childSnapshot(forPath: "soonestAvailable").value as! Date))"
                 
                 closedDateInfo.text = "SOONEST AVAILABLE"
-                closedDate.text = "\(formatter.string(from: snapshot.childSnapshot(forPath: "/soonest").value as! Date))"
+                closedDate.text = "\(formatter.string(from: snapshot.childSnapshot(forPath: "soonest").value as! Date))"
                 closedDateInfo2.text = "RESERVE UNTIL"
-                closedDate2.text = String(describing: Calendar.current.date(byAdding: .day, value: (snapshot.childSnapshot(forPath: "/maxDays").value as! Int), to: snapshot.childSnapshot(forPath: "/soonest").value as! Date))
-            }*/
+                closedDate2.text = String(describing: Calendar.current.date(byAdding: .day, value: (snapshot.childSnapshot(forPath: "maxDays").value as! Int), to: snapshot.childSnapshot(forPath: "/soonest").value as! Date))
+            }
             
-            if snapshot.childSnapshot(forPath: "image").exists() {
+            /*if snapshot.childSnapshot(forPath: "image").exists() {
                 downloadImage(into: self.openImage,
                               from: "Books/Images/\(snapshot.childSnapshot(forPath: "image").value as! String)", completion: { error in
                                 
@@ -131,7 +131,7 @@ class BookTableViewCell: FoldingCell {
                                 }
                                 
                 })
-            }
+            }*/
         }
     }
     
