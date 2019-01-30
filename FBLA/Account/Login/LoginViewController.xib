@@ -104,7 +104,7 @@
                                         <action selector="loginAction:" destination="-1" eventType="touchUpInside" id="rfH-ma-Ych"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KUS-0L-UCw" customClass="TransitionButton" customModule="TransitionButton">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KUS-0L-UCw" customClass="TransitionButton" customModule="TransitionButton">
                                     <rect key="frame" x="93" y="227" width="173" height="50"/>
                                     <color key="backgroundColor" name="PrimaryRed"/>
                                     <constraints>
@@ -125,12 +125,15 @@
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
+                                <constraint firstItem="KUS-0L-UCw" firstAttribute="top" secondItem="NBf-5V-DOn" secondAttribute="bottom" constant="24" id="2hu-4V-Zyf"/>
                                 <constraint firstItem="zUn-zh-LRo" firstAttribute="leading" secondItem="I2R-GB-cMI" secondAttribute="leading" id="4yl-es-X4O"/>
+                                <constraint firstItem="KUS-0L-UCw" firstAttribute="centerX" secondItem="NBf-5V-DOn" secondAttribute="centerX" id="8Xq-tj-668"/>
                                 <constraint firstItem="zUn-zh-LRo" firstAttribute="centerX" secondItem="miM-bb-1WB" secondAttribute="centerX" id="Eml-Oi-diz"/>
                                 <constraint firstItem="zUn-zh-LRo" firstAttribute="leading" secondItem="miM-bb-1WB" secondAttribute="leading" constant="24" id="Exd-Yx-gEs"/>
                                 <constraint firstItem="NBf-5V-DOn" firstAttribute="leading" secondItem="miM-bb-1WB" secondAttribute="leading" constant="12" id="GN9-6t-Srf"/>
                                 <constraint firstItem="zUn-zh-LRo" firstAttribute="top" secondItem="miM-bb-1WB" secondAttribute="top" constant="19" id="IED-pK-2TA"/>
                                 <constraint firstItem="NBf-5V-DOn" firstAttribute="centerX" secondItem="I2R-GB-cMI" secondAttribute="centerX" id="QPj-96-xJp"/>
+                                <constraint firstItem="KUS-0L-UCw" firstAttribute="leading" secondItem="miM-bb-1WB" secondAttribute="leading" constant="93" id="Sxo-Vl-Lfx"/>
                                 <constraint firstItem="I2R-GB-cMI" firstAttribute="top" secondItem="zUn-zh-LRo" secondAttribute="bottom" constant="-3" id="VcY-5K-iGy"/>
                                 <constraint firstAttribute="height" constant="303" id="aQl-Vn-xUd"/>
                                 <constraint firstAttribute="width" constant="359" id="bVC-D9-SfD"/>
@@ -143,9 +146,11 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </view>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="09q-xq-Zp3">
+                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="09q-xq-Zp3">
                             <rect key="frame" x="101" y="636" width="173" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="173" id="GWR-jD-QSJ"/>
+                            </constraints>
                             <state key="normal" title="Reset password">
                                 <color key="titleColor" red="0.20000000000000001" green="0.23921568627450979" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
@@ -160,6 +165,8 @@
                         <constraint firstItem="miM-bb-1WB" firstAttribute="top" secondItem="fZE-Om-XMd" secondAttribute="bottom" constant="107" id="HpO-BG-UPH"/>
                         <constraint firstAttribute="bottom" secondItem="miM-bb-1WB" secondAttribute="bottom" constant="148" id="MMF-gW-Ily"/>
                         <constraint firstItem="miM-bb-1WB" firstAttribute="leading" secondItem="iJI-Fc-S3k" secondAttribute="leadingMargin" id="Mas-ab-nhi"/>
+                        <constraint firstItem="09q-xq-Zp3" firstAttribute="bottom" secondItem="miM-bb-1WB" secondAttribute="bottom" id="S2R-CV-a67"/>
+                        <constraint firstItem="09q-xq-Zp3" firstAttribute="centerX" secondItem="miM-bb-1WB" secondAttribute="centerX" id="kd1-AZ-5iu"/>
                         <constraint firstItem="fZE-Om-XMd" firstAttribute="centerX" secondItem="miM-bb-1WB" secondAttribute="centerX" id="rAO-Jm-zZ8"/>
                     </constraints>
                 </view>

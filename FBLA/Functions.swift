@@ -41,3 +41,9 @@ public func downloadImage(into destination: UIImageView, from location: String, 
         })
     }
 }
+
+protocol bulletinb: class{
+    
+    func showBulletin(days: Int, returnDate: Date, bookID: Int)
+    
+}

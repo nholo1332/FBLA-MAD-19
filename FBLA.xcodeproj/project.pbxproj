@@ -27,6 +27,8 @@
 		4F7F666021FD2423008004AC /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F7F665E21FD2423008004AC /* LoginViewController.xib */; };
 		4F7F666421FD2488008004AC /* ResetPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7F666221FD2488008004AC /* ResetPassViewController.swift */; };
 		4F7F666521FD2488008004AC /* ResetPassViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F7F666321FD2488008004AC /* ResetPassViewController.xib */; };
+		4F7F666E22022832008004AC /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7F666C22022832008004AC /* LoadingViewController.swift */; };
+		4F7F666F22022832008004AC /* LoadingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F7F666D22022832008004AC /* LoadingViewController.xib */; };
 		C238CE9D43BCCF7197A06BB0 /* Pods_FBLA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BBA982F4E26C3DB472A4326 /* Pods_FBLA.framework */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +78,8 @@
 		4F7F665E21FD2423008004AC /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		4F7F666221FD2488008004AC /* ResetPassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPassViewController.swift; sourceTree = "<group>"; };
 		4F7F666321FD2488008004AC /* ResetPassViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResetPassViewController.xib; sourceTree = "<group>"; };
+		4F7F666C22022832008004AC /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		4F7F666D22022832008004AC /* LoadingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingViewController.xib; sourceTree = "<group>"; };
 		B7CF05EF691401FBFA3A8123 /* Pods-FBLA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBLA.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FBLA/Pods-FBLA.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -132,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				4F50B7B621F3976A003DB8F0 /* AppDelegate.swift */,
+				4F7F6669220225E3008004AC /* Loading */,
 				4F7F663521F3B835008004AC /* Main */,
 				4F7F664221F3C4C3008004AC /* Books */,
 				4F7F665621FD23C2008004AC /* Account */,
@@ -226,6 +231,15 @@
 				4F7F666321FD2488008004AC /* ResetPassViewController.xib */,
 			);
 			path = "Reset Password";
+			sourceTree = "<group>";
+		};
+		4F7F6669220225E3008004AC /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				4F7F666C22022832008004AC /* LoadingViewController.swift */,
+				4F7F666D22022832008004AC /* LoadingViewController.xib */,
+			);
+			path = Loading;
 			sourceTree = "<group>";
 		};
 		D3BCACAFA9660AECE8D325BA /* Pods */ = {
@@ -348,6 +362,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F7F666F22022832008004AC /* LoadingViewController.xib in Resources */,
 				4F7F665C21FD2414008004AC /* SignupViewController.xib in Resources */,
 				4F50B7C121F3976B003DB8F0 /* LaunchScreen.storyboard in Resources */,
 				4F7B882521F3994100F42C4B /* GoogleService-Info.plist in Resources */,
@@ -468,6 +483,7 @@
 				4F7F664521F3C6DF008004AC /* BooksTableViewController.swift in Sources */,
 				4F7F665F21FD2423008004AC /* LoginViewController.swift in Sources */,
 				4F7F664821F3C6F4008004AC /* BookTableViewCell.swift in Sources */,
+				4F7F666E22022832008004AC /* LoadingViewController.swift in Sources */,
 				4F50B7B721F3976A003DB8F0 /* AppDelegate.swift in Sources */,
 				4F7F665521F9630B008004AC /* Functions.swift in Sources */,
 			);

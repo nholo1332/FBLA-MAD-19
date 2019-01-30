@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         
-        let vcController = LoginViewController(nibName: "LoginViewController", bundle: nil)
+        let vcController = LoadingViewController(nibName: "LoadingViewController", bundle: nil)
         
         window!.rootViewController = vcController
         window!.makeKeyAndVisible()

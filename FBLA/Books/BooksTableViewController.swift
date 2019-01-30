@@ -10,8 +10,9 @@ import FoldingCell
 import UIKit
 import Firebase
 import fluid_slider
+import BLTNBoard
 
-class BooksTableViewController: UITableViewController {
+class BooksTableViewController: UITableViewController, bulletinb {
     
     var ref: DatabaseReference!
     var snapshot: DataSnapshot!
@@ -25,6 +26,14 @@ class BooksTableViewController: UITableViewController {
     }
     
     var cellHeights: [CGFloat] = []
+    
+    var reservePage = BLTNPageItem()
+    var reserveDonePage = BLTNPageItem()
+    
+    lazy var bulletinManager: BLTNItemManager = {
+        let rootItem: BLTNItem = reservePage
+        return BLTNItemManager(rootItem: rootItem)
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +58,6 @@ class BooksTableViewController: UITableViewController {
             //print("Book 0 title: \(dataSnap.childSnapshot(forPath: "Books/0/title").value as? [String : AnyObject])")
             //let dict = dataSnap.childSnapshot(forPath: "title").value as! [String: Any]
             //print("Dictionary: \(dict)")
-            print("Book 0 title: \(dataSnap.childSnapshot(forPath: "Books/0/title").value)")
         })
         
         delayWithSeconds(2) {
@@ -73,6 +81,70 @@ class BooksTableViewController: UITableViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
             completion()
         }
+    }
+    
+    func showBulletin(days: Int, returnDate: Date, bookID: Int) {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM-dd-yyyy"
+        
+        reserveDonePage = BLTNPageItem(title: "Reserve Completed")
+        reserveDonePage.image = UIImage(named: "completed")
+        reserveDonePage.descriptionText = "Your reservation was successfully completed!  You can now pick up your reserved book.  Make sure to return it by \(formatter.string(from: returnDate))."
+        reserveDonePage.actionButtonTitle = "Done"
+        reservePage.requiresCloseButton = false
+        reservePage.isDismissable = true
+        
+        reserveDonePage.actionHandler = { (item: BLTNActionItem) in
+            self.bulletinManager.dismissBulletin()
+        }
+        
+        reservePage = BLTNPageItem(title: "Confirm Reservation")
+        reservePage.image = UIImage(named: "book")
+        reservePage.descriptionText = "Confirm you would like to reserve this book for \(days) days.  You will need to return it on \(formatter.string(from: returnDate))."
+        reservePage.actionButtonTitle = "Reserve"
+        reservePage.alternativeButtonTitle = "Cancel"
+        reservePage.requiresCloseButton = false
+        reservePage.isDismissable = false
+        reservePage.next = reserveDonePage
+        
+        reservePage.actionHandler = { (item: BLTNActionItem) in
+            item.manager?.displayActivityIndicator()
+            
+            if self.snapshot.childSnapshot(forPath: "Books").childSnapshot(forPath: "\(bookID)").childSnapshot(forPath: "users").exists() {
+                
+                var currentUsers = (self.snapshot.childSnapshot(forPath: "Books/\(bookID)/users").value as! [String])
+                
+                self.ref.child("Books").child("\(bookID)").child("users").setValue(currentUsers.append("\(Auth.auth().currentUser!.uid)"))
+            }else{
+                let users = ["\(Auth.auth().currentUser!.uid)"]
+                self.ref.child("Books/\(bookID)/users").setValue(users)
+            }
+            
+            if self.snapshot.childSnapshot(forPath: "Books/\(bookID)/soonestAvailable").exists() {
+                if (self.snapshot.childSnapshot(forPath: "Books/\(bookID)/soonestAvailable").value as! Date) < returnDate {
+                    self.ref.child("Books/\(bookID)/soonestAvailable").setValue(returnDate)
+                }
+            }else{
+                self.ref.child("Books/\(bookID)/soonestAvailable").setValue(returnDate)
+            }
+            
+            self.ref.child("Books/\(bookID)/reservations/\(Auth.auth().currentUser!.uid)/end").setValue(returnDate)
+            self.ref.child("Books/\(bookID)/reservations/\(Auth.auth().currentUser!.uid)/start").setValue(Date())
+            
+            if self.snapshot.childSnapshot(forPath: "Books/\(bookID)/requestedAmount").exists() {
+                self.ref.child("Books/\(bookID)/requestedAmount").setValue((self.snapshot.childSnapshot(forPath: "Books/\(bookID)/requestedAmount").value as! Int) + 1)
+            }else{
+                self.ref.child("Books/\(bookID)/requestedAmount").setValue(1)
+            }
+            
+            item.manager?.displayNextItem()
+        }
+        
+        reservePage.alternativeHandler = { (item: BLTNActionItem) in
+            self.bulletinManager.dismissBulletin()
+        }
+        
+        bulletinManager.showBulletin(above: self)
     }
     
     @objc func refreshHandler() {
@@ -114,6 +186,7 @@ class BooksTableViewController: UITableViewController {
             snapshot.childSnapshot(forPath: "/\(indexPath.row)/maxDays").value as! Int]
         cell.usersReserved = snapshot.childSnapshot(forPath: "/\(indexPath.row)/users").value as! [String]*/
         cell.snapshot = snapshot.childSnapshot(forPath: "Books/\(indexPath.row)")
+        cell.bulletinDelegate = self
         
         //Title (string)
         //Subject (string)
