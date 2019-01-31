@@ -43,6 +43,9 @@ class BookTableViewCell: FoldingCell {
     
     var bulletinDelegate : bulletinb?
     
+    let formatter = DateFormatter()
+    let stringFormatter = DateFormatter()
+    
     var number: Int = 0 {
         didSet {
             closeNumberLabel.text = String(number)
@@ -51,6 +54,9 @@ class BookTableViewCell: FoldingCell {
     
     var snapshot = DataSnapshot() {
         didSet {
+            formatter.dateFormat = "MM-dd-yyyy"
+            stringFormatter.dateFormat = "yyyy-MM-dd hh:mm:ssZZZ"
+            
             //closed info
             closeMaxReserve.text = "\(snapshot.childSnapshot(forPath: "maxDays").value as! Int) days"
             requestCount.text = "\(snapshot.childSnapshot(forPath: "requestedAmount").value as! Int)"
@@ -89,47 +95,42 @@ class BookTableViewCell: FoldingCell {
             if snapshot.childSnapshot(forPath: "users").exists() {
                 if (snapshot.childSnapshot(forPath: "users").value as! [String]).contains((Auth.auth().currentUser?.uid)!){
                     
-                    let formatter = DateFormatter()
-                    formatter.dateFormat = "MM-dd-yyyy"
-                    
-                    message.text = "RETURN BY: \(formatter.string(from: snapshot.childSnapshot(forPath: "reservations/\((Auth.auth().currentUser?.uid)!)/end").value as! Date))"
+                    //message.text = "RETURN BY: \(formatter.date(from: snapshot.childSnapshot(forPath: "reservations/\((Auth.auth().currentUser?.uid)!)/end").value as! String)!)"
+                    message.text = "RETURN BY: \(formatter.string(from: stringFormatter.date(from: snapshot.childSnapshot(forPath: "reservations/\((Auth.auth().currentUser?.uid)!)/end").value as! String)!))"
                     
                     openRequestButton.isEnabled = false
+                    openRequestButton.alpha = 0.3
                 }else if ((snapshot.childSnapshot(forPath: "amount").value as! Int) == (snapshot.childSnapshot(forPath: "requestedAmount").value as! Int)){
                     message.text = "BOOK NOT AVAILABLE"
                     openRequestButton.isEnabled = false
+                    openRequestButton.alpha = 0.3
                 }else{
                     message.text = "RESERVE THIS BOOK NOW"
                 }
                 
                 if (snapshot.childSnapshot(forPath: "users").value as! [String]).contains((Auth.auth().currentUser?.uid)!) {
                     
-                    let formatter = DateFormatter()
-                    formatter.dateFormat = "MM-dd-yyyy"
-                    
                     openInfoBottom.text = "RETURN BY"
-                    openInfoBottom1.text = "\(formatter.string(from: snapshot.childSnapshot(forPath: "reservations/\((Auth.auth().currentUser?.uid)!)/end").value as! Date))"
+                    openInfoBottom1.text = "\(formatter.string(from: stringFormatter.date(from: snapshot.childSnapshot(forPath: "reservations/\((Auth.auth().currentUser?.uid)!)/end").value as! String)!))"
+                    
+                    //message.text = "RETURN BY: \(formatter.string(from: stringFormatter.date(from: snapshot.childSnapshot(forPath: "reservations/\((Auth.auth().currentUser?.uid)!)/end").value as! String)!))"
                     
                     closedDateInfo.text = "RESERVE START"
-                    closedDate.text = "\(formatter.string(from: snapshot.childSnapshot(forPath: "reservations/\((Auth.auth().currentUser?.uid)!)/start").value as! Date))"
+                    closedDate.text = "\(formatter.string(from: stringFormatter.date(from: snapshot.childSnapshot(forPath: "reservations/\((Auth.auth().currentUser?.uid)!)/start").value as! String)!))"
                     closedDateInfo2.text = "RESERVE END"
-                    closedDate2.text = "\(formatter.string(from: snapshot.childSnapshot(forPath: "reservations/\((Auth.auth().currentUser?.uid)!)/end").value as! Date))"
+                    closedDate2.text = "\(formatter.string(from: stringFormatter.date(from: snapshot.childSnapshot(forPath: "reservations/\((Auth.auth().currentUser?.uid)!)/end").value as! String)!))"
                 }else{
-                    let formatter = DateFormatter()
-                    formatter.dateFormat = "MM-dd-yyyy"
                     openInfoBottom.text = "SOONEST AVAILABLE"
-                    openInfoBottom1.text = "\(formatter.string(from: snapshot.childSnapshot(forPath: "soonestAvailable").value as! Date))"
+                    openInfoBottom1.text = "\(formatter.string(from: stringFormatter.date(from: snapshot.childSnapshot(forPath: "soonestAvailable").value as! String)!))"
                     
                     closedDateInfo.text = "SOONEST AVAILABLE"
-                    closedDate.text = "\(formatter.string(from: snapshot.childSnapshot(forPath: "soonestAvailable").value as! Date))"
+                    closedDate.text = "\(formatter.string(from: stringFormatter.date(from: snapshot.childSnapshot(forPath: "soonestAvailable").value as! String)!))"
                     closedDateInfo2.text = "RESERVE UNTIL"
-                    closedDate2.text = String(describing: Calendar.current.date(byAdding: .day, value: (snapshot.childSnapshot(forPath: "maxDays").value as! Int), to: snapshot.childSnapshot(forPath: "/soonestAvailable").value as! Date))
+                    closedDate2.text = String(describing: Calendar.current.date(byAdding: .day, value: (snapshot.childSnapshot(forPath: "maxDays").value as! Int), to: formatter.date(from: snapshot.childSnapshot(forPath: "/soonestAvailable").value as! String)!))
                 }
             }else{
                 message.text = "RESERVE THIS BOOK NOW"
                 
-                let formatter = DateFormatter()
-                formatter.dateFormat = "MM-dd-yyyy"
                 openInfoBottom.text = "AVAILABLE NOW"
                 openInfoBottom1.text = "\(formatter.string(from: Date()))"
                 

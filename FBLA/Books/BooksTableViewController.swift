@@ -11,6 +11,7 @@ import UIKit
 import Firebase
 import fluid_slider
 import BLTNBoard
+import NVActivityIndicatorView
 
 class BooksTableViewController: UITableViewController, bulletinb {
     
@@ -41,29 +42,21 @@ class BooksTableViewController: UITableViewController, bulletinb {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        ref = Database.database().reference()
-        /*ref.child("Books").observeSingleEvent(of: .value, with: { (dataSnap) in
-            self.snapshot = dataSnap
-            self.totalCount = Int(dataSnap.childrenCount)
-            print("Data: \(dataSnap.childSnapshot(forPath: "title").value)")
-            //print("Data: \(value?["title"])")
-        }) { (error) in
-            print(error)
-        }*/
+        let controller = UIAlertController(title: "Loading", message: "", preferredStyle: .alert)
+        let loading = NVActivityIndicatorView(frame: CGRect(x: 10,y: 5,width: 50, height: 50), type: NVActivityIndicatorType.ballScaleRippleMultiple, color: UIColor.init(named: "PrimaryBlue"), padding: 10)
+        loading.startAnimating()
+        controller.view.addSubview(loading)
         
-        ref.observe(DataEventType.value, with: { (dataSnap) in
-            //print("New Data: \(dataSnap.value as? [String : AnyObject])")
-            self.snapshot = dataSnap
-            self.totalCount = Int(dataSnap.childSnapshot(forPath: "Books").childrenCount)
-            //print("Book 0 title: \(dataSnap.childSnapshot(forPath: "Books/0/title").value as? [String : AnyObject])")
-            //let dict = dataSnap.childSnapshot(forPath: "title").value as! [String: Any]
-            //print("Dictionary: \(dict)")
+        self.present(controller, animated: true, completion: nil)
+        DispatchQueue.main.async(execute: { () -> Void in
+            self.ref = Database.database().reference()
+            self.ref.observe(DataEventType.value, with: { (dataSnap) in
+                self.snapshot = dataSnap
+                self.totalCount = Int(dataSnap.childSnapshot(forPath: "Books").childrenCount)
+                self.tableView.reloadData()
+                controller.dismiss(animated: false, completion: nil)
+            })
         })
-        
-        delayWithSeconds(2) {
-            self.tableView.reloadData()
-        }
-        
     }
     
     private func setup() {
@@ -95,12 +88,20 @@ class BooksTableViewController: UITableViewController, bulletinb {
         reservePage.isDismissable = true
         
         reserveDonePage.actionHandler = { (item: BLTNActionItem) in
+            /*DispatchQueue.main.async(execute: { () -> Void in
+                self.ref = Database.database().reference()
+                self.ref.observe(DataEventType.value, with: { (dataSnap) in
+                    self.snapshot = dataSnap
+                    self.totalCount = Int(dataSnap.childSnapshot(forPath: "Books").childrenCount)
+                    self.tableView.reloadData()
+                })
+            })*/
             self.bulletinManager.dismissBulletin()
         }
         
         reservePage = BLTNPageItem(title: "Confirm Reservation")
         reservePage.image = UIImage(named: "book")
-        reservePage.descriptionText = "Confirm you would like to reserve this book for \(days) days.  You will need to return it on \(formatter.string(from: returnDate))."
+        reservePage.descriptionText = "Confirm you would like to reserve this book for \(days) days.  You will need to return it by \(formatter.string(from: returnDate))."
         reservePage.actionButtonTitle = "Reserve"
         reservePage.alternativeButtonTitle = "Cancel"
         reservePage.requiresCloseButton = false
@@ -122,14 +123,14 @@ class BooksTableViewController: UITableViewController, bulletinb {
             
             if self.snapshot.childSnapshot(forPath: "Books/\(bookID)/soonestAvailable").exists() {
                 if (self.snapshot.childSnapshot(forPath: "Books/\(bookID)/soonestAvailable").value as! Date) < returnDate {
-                    self.ref.child("Books/\(bookID)/soonestAvailable").setValue(returnDate)
+                    self.ref.child("Books/\(bookID)/soonestAvailable").setValue("\(returnDate)")
                 }
             }else{
-                self.ref.child("Books/\(bookID)/soonestAvailable").setValue(returnDate)
+                self.ref.child("Books/\(bookID)/soonestAvailable").setValue("\(returnDate)")
             }
             
-            self.ref.child("Books/\(bookID)/reservations/\(Auth.auth().currentUser!.uid)/end").setValue(returnDate)
-            self.ref.child("Books/\(bookID)/reservations/\(Auth.auth().currentUser!.uid)/start").setValue(Date())
+            self.ref.child("Books/\(bookID)/reservations/\(Auth.auth().currentUser!.uid)/end").setValue("\(returnDate)")
+            self.ref.child("Books/\(bookID)/reservations/\(Auth.auth().currentUser!.uid)/start").setValue("\(Date())")
             
             if self.snapshot.childSnapshot(forPath: "Books/\(bookID)/requestedAmount").exists() {
                 self.ref.child("Books/\(bookID)/requestedAmount").setValue((self.snapshot.childSnapshot(forPath: "Books/\(bookID)/requestedAmount").value as! Int) + 1)
@@ -148,12 +149,17 @@ class BooksTableViewController: UITableViewController, bulletinb {
     }
     
     @objc func refreshHandler() {
-        let deadlineTime = DispatchTime.now() + .seconds(1)
-        DispatchQueue.main.asyncAfter(deadline: deadlineTime, execute: { [weak self] in
-            if #available(iOS 10.0, *) {
-                self?.tableView.refreshControl?.endRefreshing()
-            }
-            self?.tableView.reloadData()
+        let deadlineTime = DispatchTime.now() + .seconds(3)
+        DispatchQueue.main.async(execute: { () -> Void in
+            self.ref = Database.database().reference()
+            self.ref.observe(DataEventType.value, with: { (dataSnap) in
+                self.snapshot = dataSnap
+                self.totalCount = Int(dataSnap.childSnapshot(forPath: "Books").childrenCount)
+                self.tableView.reloadData()
+                DispatchQueue.main.asyncAfter(deadline: deadlineTime, execute: { [weak self] in
+                    self!.tableView.refreshControl?.endRefreshing()
+                })
+            })
         })
     }
     
