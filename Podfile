@@ -16,7 +16,6 @@ pod 'Firebase/Performance'
 
 # Design pods
 pod 'TransitionButton'
-pod 'CollectionKit'
 pod 'Cluster'
 pod 'NVActivityIndicatorView'
 pod 'FoldingCell'

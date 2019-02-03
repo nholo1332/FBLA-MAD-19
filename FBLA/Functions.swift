@@ -47,3 +47,11 @@ protocol bulletinb: class{
     func showBulletin(days: Int, returnDate: Date, bookID: Int)
     
 }
+
+extension Array {
+    mutating func shuffle(){
+        for _ in 0..<10 {
+            sort { (_,_) in arc4random() < arc4random() }
+        }
+    }
+}
