@@ -305,6 +305,7 @@
 				4F50B7B021F3976A003DB8F0 /* Frameworks */,
 				4F50B7B121F3976A003DB8F0 /* Resources */,
 				4F23B6E35684D1F61112E6E4 /* [CP] Embed Pods Frameworks */,
+				4F74B0E22206973D00D056E1 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -494,6 +495,23 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FBLA/Pods-FBLA-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		4F74B0E22206973D00D056E1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "TAGS=\"TODO:|FIXME:\"\necho \"searching ${SRCROOT} for ${TAGS}\"\nfind \"${SRCROOT}\" \\( -name \"*.swift\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($TAGS).*\\$\" | perl -p -e \"s/($TAGS)/ warning: \\$1/\"\n\n";
 		};
 		7757AC82E2F7538116A3A8E3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

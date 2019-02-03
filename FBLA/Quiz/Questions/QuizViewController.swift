@@ -8,11 +8,15 @@
 
 import UIKit
 import BLTNBoard
+import PMAlertController
+import NVActivityIndicatorView
 import Firebase
 
 class QuizViewController: UIViewController {
     
     @IBOutlet weak var question: UITextView!
+    @IBOutlet weak var currentQuestionLabel: UILabel!
+    @IBOutlet weak var quizProgressView: UIProgressView!
     
     @IBOutlet weak var answer1: UIButton!
     @IBOutlet weak var answer2: UIButton!
@@ -21,51 +25,71 @@ class QuizViewController: UIViewController {
     
     var questionsToUse : [Question]!
     var currentQuestion = 0
-    var grade = 0.0
+    var grade = 0
     var quizEnded = false
     
     var beginPage = BLTNPageItem()
+    var endPage = BLTNPageItem()
 
     lazy var bulletinManager: BLTNItemManager = {
         let rootItem: BLTNItem = beginPage
         return BLTNItemManager(rootItem: rootItem)
     }()
+    lazy var doneManager: BLTNItemManager = {
+        let rootItem: BLTNItem = endPage
+        return BLTNItemManager(rootItem: rootItem)
+    }()
+    
+    var category: String = "" {
+        didSet {
+            if category == "competitiveEvents"{
+                
+            }else if category == "businessSkills"{
+                
+            }else if category == "sponsors"{
+                
+            }else if category == "parlipro"{
+                
+            }else if category == "history"{
+                self.questionsToUse = [
+                    questions.history.question1
+                ]
+            }
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        beginPage = BLTNPageItem(title: "Ready?")
-        beginPage.image = UIImage(named: "book")
-        beginPage.descriptionText = "Are you ready to start the quiz?  You will not be able to stop the quiz once started.  Don't worry the quizzes are very short, only 5 questions."
-        beginPage.actionButtonTitle = "Go!"
-        beginPage.alternativeButtonTitle = "Cancel"
-        beginPage.requiresCloseButton = false
-        beginPage.isDismissable = false
-        
-        beginPage.actionHandler = { (item: BLTNActionItem) in
-            self.startQuiz()
-        }
-        
-        beginPage.alternativeHandler = { (item: BLTNActionItem) in
-            //move to main view
-        }
-        
-        bulletinManager.showBulletin(above: self)
-    }
-    
-    func setQuizCategory(category: String) {
-        if category == "competitiveEvents"{
-            self.questionsToUse = [
-                questions.business.question1
-            ]
-        }else if category == "businessSkills"{
+        DispatchQueue.main.async(execute: { () -> Void in
+            self.beginPage = BLTNPageItem(title: "Ready?")
+            self.beginPage.image = UIImage(named: "book")
+            self.beginPage.descriptionText = "Are you ready to start the quiz?  You will not be able to stop the quiz once started.  Don't worry the quizzes are very short, only 5 questions."
+            self.beginPage.actionButtonTitle = "Go!"
+            self.beginPage.alternativeButtonTitle = "Cancel"
+            self.beginPage.requiresCloseButton = false
+            self.beginPage.isDismissable = false
             
-        }else if category == "sponsors"{
+            self.beginPage.actionHandler = { (item: BLTNActionItem) in
+                self.startQuiz()
+                self.bulletinManager.dismissBulletin()
+            }
             
-        }else if category == "parlipro"{
-            
-        }else if category == "history"{
-            
-        }
+            self.beginPage.alternativeHandler = { (item: BLTNActionItem) in
+                self.bulletinManager.dismissBulletin()
+                self.navigationController?.popToRootViewController(animated: true)
+            }
+            self.bulletinManager.showBulletin(above: self)
+        })
     }
     
     @IBAction func chooseAnswer1(_ sender: AnyObject) {
@@ -92,9 +116,11 @@ class QuizViewController: UIViewController {
         }
         
         quizEnded = false
-        grade = 0.0
+        grade = 0
         currentQuestion = 0
-        viewFeddback.isHidden = true
+        
+        currentQuestionLabel.text = "1/5"
+        quizProgressView.setProgress(1.0/5.0, animated: true)
         
         showQuestion(0)
     }
@@ -104,6 +130,9 @@ class QuizViewController: UIViewController {
         
         let selectedQuestion : Question = questionsToUse[questionId]
         question.text = selectedQuestion.question
+        
+        /*var questionNums = [0, 1, 2, 3]
+        questionNums.shuffle()*/
         
         answer1.setTitle(selectedQuestion.answers[0].response, for: UIControl.State())
         answer2.setTitle(selectedQuestion.answers[1].response, for: UIControl.State())
@@ -133,37 +162,35 @@ class QuizViewController: UIViewController {
         let answer : Answer = questionsToUse[currentQuestion].answers[answerId]
         
         if (true == answer.isRight) {
-            grade += 1.0
-            feedbackText.text = answer.response + "\n\nResposta correta!"
-            viewFeddback.backgroundColor = UIColor.green
-            feedbackText.textColor = UIColor.black
+            grade += 1
+            
+            let feedbackAlert = PMAlertController(title: "Correct!", description: "", image: UIImage(named: "correct"), style: .alert)
+            feedbackAlert.addAction(PMAlertAction(title: "Yay", style: .default, action: { () in
+                if (true == self.quizEnded) {
+                    self.startQuiz()
+                } else {
+                    self.nextQuestion()
+                }
+            }))
+            self.present(feedbackAlert, animated: true, completion: nil)
         } else {
-            viewFeddback.backgroundColor = UIColor.red
-            feedbackText.text = answer.response + "\n\nResposta incorreta!"
-            feedbackText.textColor = UIColor.white
-        }
-        
-        if (currentQuestion < questionsToUse.count-1) {
-            feedbackButton.setTitle("Próxima", for: UIControlState())
-        } else {
-            feedbackButton.setTitle("Ver pontuação", for: UIControlState())
-        }
-        
-        viewFeddback.isHidden = false
-    }
-    
-    @IBAction func sendFeedback(_ sender: AnyObject) {
-        viewFeddback.isHidden = true
-        
-        if (true == quizEnded) {
-            startQuiz()
-        } else {
-            nextQuestion()
+            let feedbackAlert = PMAlertController(title: "Incorrect", description: "", image: UIImage(named: "incorrect"), style: .alert)
+            feedbackAlert.addAction(PMAlertAction(title: "Ok", style: .default, action: { () in
+                if (true == self.quizEnded) {
+                    self.startQuiz()
+                } else {
+                    self.nextQuestion()
+                }
+            }))
+            self.present(feedbackAlert, animated: true, completion: nil)
         }
     }
     
     func nextQuestion() {
         currentQuestion += 1
+        currentQuestionLabel.text = "\(currentQuestion + 1)/5"
+        let progress: Float = (Float(currentQuestion) + 1.0)/5.0
+        quizProgressView.setProgress(progress, animated: true)
         
         if (currentQuestion < questionsToUse.count) {
             showQuestion(currentQuestion)
@@ -173,16 +200,30 @@ class QuizViewController: UIViewController {
     }
     
     func endQuiz() {
-        grade = grade / Double(questionsToUse.count) * 100.0
         quizEnded = true
-        viewFeddback.isHidden = false
         
-        viewFeddback.backgroundColor = UIColor.white
-        feedbackText.textColor = UIColor.black
+        endPage = BLTNPageItem(title: "\(grade)/5")
+        endPage.image = UIImage(named: "completed")
+        endPage.descriptionText = "Congratulations, you finished the quiz!  Your quiz score will be added to your total score and appended to the leaderboard."
+        endPage.actionButtonTitle = "Done"
+        endPage.requiresCloseButton = false
+        endPage.isDismissable = false
         
-        
-        feedbackText.text = "Sua pontuação \(round(grade))"
-        feedbackButton.setTitle("Refazer", for: UIControlState())
+        endPage.actionHandler = { (item: BLTNActionItem) in
+            
+            let controller = UIAlertController(title: "Loading", message: "", preferredStyle: .alert)
+            let loading = NVActivityIndicatorView(frame: CGRect(x: 10,y: 5,width: 50, height: 50), type: NVActivityIndicatorType.ballScaleRippleMultiple, color: UIColor.init(named: "PrimaryBlue"), padding: 10)
+            loading.startAnimating()
+            DispatchQueue.main.async(execute: { () -> Void in
+                controller.view.addSubview(loading)
+                
+                //TODO: Save score to Firebase leaderboards
+                
+                self.doneManager.dismissBulletin()
+                self.navigationController?.popToRootViewController(animated: true)
+            })
+        }
+        doneManager.showBulletin(above: self)
     }
     
 }
