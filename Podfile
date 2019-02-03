@@ -9,14 +9,12 @@ target 'FBLA' do
 # Firebase pods
 pod 'Firebase/Core'
 pod 'Firebase/Database'
-pod 'Crashlytics'
 pod 'Firebase/Auth'
 pod 'Firebase/Storage'
 pod 'Firebase/Performance'
 
 # Design pods
 pod 'TransitionButton'
-pod 'Cluster'
 pod 'NVActivityIndicatorView'
 pod 'FoldingCell'
 pod 'fluid-slider'

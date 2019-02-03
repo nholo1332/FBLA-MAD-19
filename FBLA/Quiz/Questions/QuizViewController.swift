@@ -28,6 +28,8 @@ class QuizViewController: UIViewController {
     var grade = 0
     var quizEnded = false
     
+    var ref: DatabaseReference!
+    
     var beginPage = BLTNPageItem()
     var endPage = BLTNPageItem()
 
@@ -40,6 +42,7 @@ class QuizViewController: UIViewController {
         return BLTNItemManager(rootItem: rootItem)
     }()
     
+    //TODO: Add more questions
     var category: String = "" {
         didSet {
             if category == "competitiveEvents"{
@@ -210,18 +213,19 @@ class QuizViewController: UIViewController {
         endPage.isDismissable = false
         
         endPage.actionHandler = { (item: BLTNActionItem) in
-            
-            let controller = UIAlertController(title: "Loading", message: "", preferredStyle: .alert)
-            let loading = NVActivityIndicatorView(frame: CGRect(x: 10,y: 5,width: 50, height: 50), type: NVActivityIndicatorType.ballScaleRippleMultiple, color: UIColor.init(named: "PrimaryBlue"), padding: 10)
-            loading.startAnimating()
-            DispatchQueue.main.async(execute: { () -> Void in
-                controller.view.addSubview(loading)
+            self.ref = Database.database().reference()
+            self.ref.child("leaderboard").observeSingleEvent(of: .value, with: { (snapshot) in
                 
-                //TODO: Save score to Firebase leaderboards
-                
-                self.doneManager.dismissBulletin()
-                self.navigationController?.popToRootViewController(animated: true)
+                if snapshot.childSnapshot(forPath: "\(Auth.auth().currentUser!.uid)").exists() {
+                    let leaderboardGrade = (snapshot.childSnapshot(forPath: "\(Auth.auth().currentUser!.uid)").value as! Int) + self.grade
+                    self.ref.child("leaderboard/\(Auth.auth().currentUser!.uid)").setValue(leaderboardGrade)
+                }else{
+                    self.ref.child("leaderboard/\(Auth.auth().currentUser!.uid)").setValue(self.grade)
+                }
             })
+                
+            self.doneManager.dismissBulletin()
+            self.navigationController?.popToRootViewController(animated: true)
         }
         doneManager.showBulletin(above: self)
     }

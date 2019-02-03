@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import CollectionKit
 
 class QuizSelectorViewController: UIViewController {
     

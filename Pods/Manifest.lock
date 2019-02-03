@@ -2,13 +2,6 @@ PODS:
   - BATabBarController (0.1.5):
     - Masonry
   - BulletinBoard (3.0.0)
-  - Cluster (2.4.1)
-  - CollectionKit (2.3.0):
-    - CollectionKit/Core (= 2.3.0)
-  - CollectionKit/Core (2.3.0)
-  - Crashlytics (3.12.0):
-    - Fabric (~> 1.9.0)
-  - Fabric (1.9.0)
   - Firebase/Auth (5.15.0):
     - Firebase/CoreOnly
     - FirebaseAuth (= 5.2.0)
@@ -133,9 +126,6 @@ PODS:
 DEPENDENCIES:
   - BATabBarController
   - BulletinBoard
-  - Cluster
-  - CollectionKit
-  - Crashlytics
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
@@ -156,10 +146,6 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - BATabBarController
     - BulletinBoard
-    - Cluster
-    - CollectionKit
-    - Crashlytics
-    - Fabric
     - Firebase
     - FirebaseABTesting
     - FirebaseAnalytics
@@ -194,10 +180,6 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   BATabBarController: 5613abe7e9e840e4d47deecef6f5082187b24ecf
   BulletinBoard: 927f4f9fd22503ceecd71bfc830fd65d5996593a
-  Cluster: a42c1717ffbd537b75775ec581b892e7c309a094
-  CollectionKit: 6910479bf865bfe49040e73322ce4b8fe8991231
-  Crashlytics: 07fb167b1694128c1c9a5a5cc319b0e9c3ca0933
-  Fabric: f988e33c97f08930a413e08123064d2e5f68d655
   Firebase: 8bb9268bff82374f2cbaaabb143e725743c316ae
   FirebaseABTesting: 1f50b8d50f5e3469eea54e7463a7b7fe221d1f5e
   FirebaseAnalytics: c06f9d70577d79074214700a71fd5d39de5550fb
@@ -229,6 +211,6 @@ SPEC CHECKSUMS:
   TransitionButton: fb271583d9c9e4bb116b97103047e5157653f233
   VegaScrollFlowLayout: 9158061f29179147755f937c2b21693fc5dbbac3
 
-PODFILE CHECKSUM: 4ab475c51ae3881946d6655316a280201f70558f
+PODFILE CHECKSUM: 789d61ee6b48f7a8fa54be1d05cd67ed07011016
 
 COCOAPODS: 1.5.2
