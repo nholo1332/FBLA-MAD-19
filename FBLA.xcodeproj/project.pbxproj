@@ -19,6 +19,10 @@
 		4F74B0DD2206672600D056E1 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F74B0DC2206672600D056E1 /* Model.swift */; };
 		4F74B0E02206679E00D056E1 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F74B0DE2206679E00D056E1 /* QuizViewController.swift */; };
 		4F74B0E12206679E00D056E1 /* QuizViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F74B0DF2206679E00D056E1 /* QuizViewController.xib */; };
+		4F74B0E62207C85F00D056E1 /* LeaderboardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F74B0E42207C85F00D056E1 /* LeaderboardTableViewController.swift */; };
+		4F74B0E72207C85F00D056E1 /* LeaderboardTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F74B0E52207C85F00D056E1 /* LeaderboardTableViewController.xib */; };
+		4F74B0EA2207C98400D056E1 /* LeaderboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F74B0E82207C98400D056E1 /* LeaderboardTableViewCell.swift */; };
+		4F74B0EB2207C98400D056E1 /* LeaderboardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F74B0E92207C98400D056E1 /* LeaderboardTableViewCell.xib */; };
 		4F7B882521F3994100F42C4B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4F7B882421F3994100F42C4B /* GoogleService-Info.plist */; };
 		4F7F663721F3B84D008004AC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7F663621F3B84D008004AC /* MainViewController.swift */; };
 		4F7F664521F3C6DF008004AC /* BooksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7F664321F3C6DF008004AC /* BooksTableViewController.swift */; };
@@ -76,6 +80,10 @@
 		4F74B0DC2206672600D056E1 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		4F74B0DE2206679E00D056E1 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		4F74B0DF2206679E00D056E1 /* QuizViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuizViewController.xib; sourceTree = "<group>"; };
+		4F74B0E42207C85F00D056E1 /* LeaderboardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardTableViewController.swift; sourceTree = "<group>"; };
+		4F74B0E52207C85F00D056E1 /* LeaderboardTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeaderboardTableViewController.xib; sourceTree = "<group>"; };
+		4F74B0E82207C98400D056E1 /* LeaderboardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardTableViewCell.swift; sourceTree = "<group>"; };
+		4F74B0E92207C98400D056E1 /* LeaderboardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeaderboardTableViewCell.xib; sourceTree = "<group>"; };
 		4F7B882421F3994100F42C4B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4F7F663621F3B84D008004AC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		4F7F664321F3C6DF008004AC /* BooksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksTableViewController.swift; sourceTree = "<group>"; };
@@ -152,6 +160,7 @@
 				4F7F663521F3B835008004AC /* Main */,
 				4F7F667022062C45008004AC /* Quiz */,
 				4F7F664221F3C4C3008004AC /* Books */,
+				4F74B0E32207C83E00D056E1 /* Leaderboard */,
 				4F7F665621FD23C2008004AC /* Account */,
 				4F7F665421F9630B008004AC /* Functions.swift */,
 				4F50B7B821F3976A003DB8F0 /* ViewController.swift */,
@@ -208,6 +217,17 @@
 				4F74B0DC2206672600D056E1 /* Model.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		4F74B0E32207C83E00D056E1 /* Leaderboard */ = {
+			isa = PBXGroup;
+			children = (
+				4F74B0E42207C85F00D056E1 /* LeaderboardTableViewController.swift */,
+				4F74B0E52207C85F00D056E1 /* LeaderboardTableViewController.xib */,
+				4F74B0E82207C98400D056E1 /* LeaderboardTableViewCell.swift */,
+				4F74B0E92207C98400D056E1 /* LeaderboardTableViewCell.xib */,
+			);
+			path = Leaderboard;
 			sourceTree = "<group>";
 		};
 		4F7F663521F3B835008004AC /* Main */ = {
@@ -407,11 +427,13 @@
 			files = (
 				4F7F666F22022832008004AC /* LoadingViewController.xib in Resources */,
 				4F7F665C21FD2414008004AC /* SignupViewController.xib in Resources */,
+				4F74B0EB2207C98400D056E1 /* LeaderboardTableViewCell.xib in Resources */,
 				4F7F6674220633CC008004AC /* QuizSelectorViewController.xib in Resources */,
 				4F50B7C121F3976B003DB8F0 /* LaunchScreen.storyboard in Resources */,
 				4F74B0E12206679E00D056E1 /* QuizViewController.xib in Resources */,
 				4F7B882521F3994100F42C4B /* GoogleService-Info.plist in Resources */,
 				4F50B7BE21F3976B003DB8F0 /* Assets.xcassets in Resources */,
+				4F74B0E72207C85F00D056E1 /* LeaderboardTableViewController.xib in Resources */,
 				4F7F664C21F3C841008004AC /* BooksStoryboard.storyboard in Resources */,
 				4F7F666521FD2488008004AC /* ResetPassViewController.xib in Resources */,
 				4F7F666021FD2423008004AC /* LoginViewController.xib in Resources */,
@@ -531,10 +553,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F7F663721F3B84D008004AC /* MainViewController.swift in Sources */,
+				4F74B0EA2207C98400D056E1 /* LeaderboardTableViewCell.swift in Sources */,
 				4F74B0E02206679E00D056E1 /* QuizViewController.swift in Sources */,
 				4F7F665B21FD2414008004AC /* SignupViewController.swift in Sources */,
 				4F50B7B921F3976A003DB8F0 /* ViewController.swift in Sources */,
 				4F7F6673220633CC008004AC /* QuizSelectorViewController.swift in Sources */,
+				4F74B0E62207C85F00D056E1 /* LeaderboardTableViewController.swift in Sources */,
 				4F7F666421FD2488008004AC /* ResetPassViewController.swift in Sources */,
 				4F7F664521F3C6DF008004AC /* BooksTableViewController.swift in Sources */,
 				4F74B0DD2206672600D056E1 /* Model.swift in Sources */,
