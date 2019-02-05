@@ -24,6 +24,15 @@ class QuizSelectorViewController: UIViewController {
             mainvc.navigationController?.navigationBar.prefersLargeTitles = false
         }
     }
+    
+    @IBAction func showLeaderboards(_ sender: Any) {
+        let tableViewController = LeaderboardTableViewController()
+        let alertController = UIAlertController(title: "Leaderboards", message: "Message", preferredStyle: .alert)
+        alertController.setValue(tableViewController, forKey: "contentViewController")
+        let cancelAction = UIAlertAction(title: "Done", style: .cancel, handler:nil)
+        alertController.addAction(cancelAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
 
     @IBAction func competitiveEvents(_ sender: Any) {
         let vc = QuizViewController(nibName: "QuizViewController", bundle: nil)

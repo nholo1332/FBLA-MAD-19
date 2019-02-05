@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "icons8-leaderboard-filled-18.png",
+      "filename" : "icons8-settings-filled-18.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "icons8-leaderboard-filled-36.png",
+      "filename" : "icons8-settings-filled-36.png",
       "scale" : "2x"
     },
     {

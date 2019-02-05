@@ -22,6 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //TODO: Custom app icon
     //TODO: README with instructions
     //TODO: Finish the onboarding view
+    //TODO: Remove image from the Book cell
+    //TODO: Add credits for image in account and books view
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

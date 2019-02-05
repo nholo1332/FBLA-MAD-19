@@ -59,15 +59,7 @@ struct questions {
     }
     
     struct businessSkills {
-        static let question1 = Question(
-            question: "Quantos anos em média vive um elefante africano?",
-            answers: [
-                Answer(answer: "120 anos", isRight: true),
-                Answer(answer: "80 anos", isRight: false),
-                Answer(answer: "140 anos", isRight: false),
-                Answer(answer: "54 km/h", isRight: false)
-            ]
-        )
+        
     }
     
     struct sponsors {

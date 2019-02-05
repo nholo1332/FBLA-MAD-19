@@ -17,8 +17,6 @@
 		4F74B0DD2206672600D056E1 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F74B0DC2206672600D056E1 /* Model.swift */; };
 		4F74B0E02206679E00D056E1 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F74B0DE2206679E00D056E1 /* QuizViewController.swift */; };
 		4F74B0E12206679E00D056E1 /* QuizViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F74B0DF2206679E00D056E1 /* QuizViewController.xib */; };
-		4F74B0E62207C85F00D056E1 /* LeaderboardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F74B0E42207C85F00D056E1 /* LeaderboardTableViewController.swift */; };
-		4F74B0E72207C85F00D056E1 /* LeaderboardTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F74B0E52207C85F00D056E1 /* LeaderboardTableViewController.xib */; };
 		4F74B0EA2207C98400D056E1 /* LeaderboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F74B0E82207C98400D056E1 /* LeaderboardTableViewCell.swift */; };
 		4F74B0EB2207C98400D056E1 /* LeaderboardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F74B0E92207C98400D056E1 /* LeaderboardTableViewCell.xib */; };
 		4F74B0F2220916F700D056E1 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F74B0F0220916F700D056E1 /* IntroViewController.swift */; };
@@ -29,6 +27,9 @@
 		4F74B1022209396000D056E1 /* LibraryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F74B1002209396000D056E1 /* LibraryCell.swift */; };
 		4F74B1032209396000D056E1 /* LibraryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F74B1012209396000D056E1 /* LibraryCell.xib */; };
 		4F74B105220944FB00D056E1 /* VegaScrollFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F74B104220944FB00D056E1 /* VegaScrollFlowLayout.swift */; };
+		4F74B107220A3F8100D056E1 /* LeaderboardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F74B106220A3F8100D056E1 /* LeaderboardTableViewController.swift */; };
+		4F74B10A220A4E2700D056E1 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F74B108220A4E2700D056E1 /* SettingsViewController.swift */; };
+		4F74B10B220A4E2700D056E1 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F74B109220A4E2700D056E1 /* SettingsViewController.xib */; };
 		4F7B882521F3994100F42C4B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4F7B882421F3994100F42C4B /* GoogleService-Info.plist */; };
 		4F7F663721F3B84D008004AC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7F663621F3B84D008004AC /* MainViewController.swift */; };
 		4F7F664521F3C6DF008004AC /* BooksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7F664321F3C6DF008004AC /* BooksTableViewController.swift */; };
@@ -82,8 +83,6 @@
 		4F74B0DC2206672600D056E1 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		4F74B0DE2206679E00D056E1 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		4F74B0DF2206679E00D056E1 /* QuizViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuizViewController.xib; sourceTree = "<group>"; };
-		4F74B0E42207C85F00D056E1 /* LeaderboardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardTableViewController.swift; sourceTree = "<group>"; };
-		4F74B0E52207C85F00D056E1 /* LeaderboardTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeaderboardTableViewController.xib; sourceTree = "<group>"; };
 		4F74B0E82207C98400D056E1 /* LeaderboardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardTableViewCell.swift; sourceTree = "<group>"; };
 		4F74B0E92207C98400D056E1 /* LeaderboardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeaderboardTableViewCell.xib; sourceTree = "<group>"; };
 		4F74B0F0220916F700D056E1 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +97,9 @@
 		4F74B1002209396000D056E1 /* LibraryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryCell.swift; sourceTree = "<group>"; };
 		4F74B1012209396000D056E1 /* LibraryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LibraryCell.xib; sourceTree = "<group>"; };
 		4F74B104220944FB00D056E1 /* VegaScrollFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VegaScrollFlowLayout.swift; sourceTree = "<group>"; };
+		4F74B106220A3F8100D056E1 /* LeaderboardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardTableViewController.swift; sourceTree = "<group>"; };
+		4F74B108220A4E2700D056E1 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		4F74B109220A4E2700D056E1 /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		4F7B882421F3994100F42C4B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4F7F663621F3B84D008004AC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		4F7F664321F3C6DF008004AC /* BooksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksTableViewController.swift; sourceTree = "<group>"; };
@@ -173,8 +175,8 @@
 				4F7F663521F3B835008004AC /* Main */,
 				4F74B0EC2209169800D056E1 /* Intro */,
 				4F7F667022062C45008004AC /* Quiz */,
-				4F7F664221F3C4C3008004AC /* Books */,
 				4F74B0E32207C83E00D056E1 /* Leaderboard */,
+				4F7F664221F3C4C3008004AC /* Books */,
 				4F7F665621FD23C2008004AC /* Account */,
 				4F7F665421F9630B008004AC /* Functions.swift */,
 				4F74B0F42209181800D056E1 /* Fonts */,
@@ -235,8 +237,7 @@
 		4F74B0E32207C83E00D056E1 /* Leaderboard */ = {
 			isa = PBXGroup;
 			children = (
-				4F74B0E42207C85F00D056E1 /* LeaderboardTableViewController.swift */,
-				4F74B0E52207C85F00D056E1 /* LeaderboardTableViewController.xib */,
+				4F74B106220A3F8100D056E1 /* LeaderboardTableViewController.swift */,
 				4F74B0E82207C98400D056E1 /* LeaderboardTableViewCell.swift */,
 				4F74B0E92207C98400D056E1 /* LeaderboardTableViewCell.xib */,
 			);
@@ -255,6 +256,8 @@
 		4F74B0ED220916A000D056E1 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				4F74B108220A4E2700D056E1 /* SettingsViewController.swift */,
+				4F74B109220A4E2700D056E1 /* SettingsViewController.xib */,
 				4F74B0EF220916BD00D056E1 /* Terms */,
 				4F74B0EE220916B300D056E1 /* Libraries */,
 			);
@@ -490,10 +493,10 @@
 				4F74B0EB2207C98400D056E1 /* LeaderboardTableViewCell.xib in Resources */,
 				4F7F6674220633CC008004AC /* QuizSelectorViewController.xib in Resources */,
 				4F50B7C121F3976B003DB8F0 /* LaunchScreen.storyboard in Resources */,
+				4F74B10B220A4E2700D056E1 /* SettingsViewController.xib in Resources */,
 				4F74B0E12206679E00D056E1 /* QuizViewController.xib in Resources */,
 				4F7B882521F3994100F42C4B /* GoogleService-Info.plist in Resources */,
 				4F50B7BE21F3976B003DB8F0 /* Assets.xcassets in Resources */,
-				4F74B0E72207C85F00D056E1 /* LeaderboardTableViewController.xib in Resources */,
 				4F7F664C21F3C841008004AC /* BooksStoryboard.storyboard in Resources */,
 				4F74B0FC2209376300D056E1 /* LibrariesViewController.xib in Resources */,
 				4F74B1032209396000D056E1 /* LibraryCell.xib in Resources */,
@@ -608,17 +611,18 @@
 				4F7F663721F3B84D008004AC /* MainViewController.swift in Sources */,
 				4F74B0EA2207C98400D056E1 /* LeaderboardTableViewCell.swift in Sources */,
 				4F74B0E02206679E00D056E1 /* QuizViewController.swift in Sources */,
+				4F74B10A220A4E2700D056E1 /* SettingsViewController.swift in Sources */,
 				4F7F665B21FD2414008004AC /* SignupViewController.swift in Sources */,
 				4F74B0FF220937F400D056E1 /* LibraryModel.swift in Sources */,
 				4F74B0FB2209376300D056E1 /* LibrariesViewController.swift in Sources */,
 				4F7F6673220633CC008004AC /* QuizSelectorViewController.swift in Sources */,
-				4F74B0E62207C85F00D056E1 /* LeaderboardTableViewController.swift in Sources */,
 				4F74B0F2220916F700D056E1 /* IntroViewController.swift in Sources */,
 				4F74B1022209396000D056E1 /* LibraryCell.swift in Sources */,
 				4F7F664521F3C6DF008004AC /* BooksTableViewController.swift in Sources */,
 				4F74B0DD2206672600D056E1 /* Model.swift in Sources */,
 				4F7F665F21FD2423008004AC /* LoginViewController.swift in Sources */,
 				4F7F664821F3C6F4008004AC /* BookTableViewCell.swift in Sources */,
+				4F74B107220A3F8100D056E1 /* LeaderboardTableViewController.swift in Sources */,
 				4F7F666E22022832008004AC /* LoadingViewController.swift in Sources */,
 				4F74B0DA220666EE00D056E1 /* Questions.swift in Sources */,
 				4F50B7B721F3976A003DB8F0 /* AppDelegate.swift in Sources */,

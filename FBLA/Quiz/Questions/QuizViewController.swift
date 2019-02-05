@@ -46,7 +46,13 @@ class QuizViewController: UIViewController {
     var category: String = "" {
         didSet {
             if category == "competitiveEvents"{
-                
+                self.questionsToUse = [
+                    questions.competitiveEvents.question1,
+                    questions.competitiveEvents.question2,
+                    questions.competitiveEvents.question3,
+                    questions.competitiveEvents.question4,
+                    questions.competitiveEvents.question5
+                ]
             }else if category == "businessSkills"{
                 
             }else if category == "sponsors"{

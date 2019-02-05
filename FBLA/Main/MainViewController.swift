@@ -18,17 +18,16 @@ class MainViewController: UITabBarController {
         let booksSTB = UIStoryboard(name: "BooksStoryboard", bundle: nil)
         let booksVC = booksSTB.instantiateViewController(withIdentifier: "MainTableViewController") as! BooksTableViewController
         booksVC.title = "Books"
-        let leaderboardVC = LeaderboardTableViewController(nibName: "LeaderboardTableViewController", bundle: nil)
-        leaderboardVC.title = "Leaderboard"
         let librariesVC = LibrariesViewController(nibName: "LibrariesViewController", bundle: nil)
         librariesVC.title = "Libraries"
+        let settingsVC = SettingsViewController(nibName: "SettingsViewController", bundle: nil)
+        settingsVC.title = "Settings"
         
         quizVC.tabBarItem = UITabBarItem(title: "Quizzes", image: UIImage(named: "quiz"), tag: 0)
-        leaderboardVC.tabBarItem = UITabBarItem(title: "Leaderboard", image: UIImage(named: "leaderboard"), tag: 1)
-        booksVC.tabBarItem = UITabBarItem(title: "Books", image: UIImage(named: "book-icon"), tag: 2)
-        librariesVC.tabBarItem = UITabBarItem(title: "Libraries", image: UIImage(named: "book-icon"), tag: 3)
+        booksVC.tabBarItem = UITabBarItem(title: "Books", image: UIImage(named: "book-icon"), tag: 1)
+        librariesVC.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(named: "settings"), tag: 2)
         
-        let controllers = [quizVC, leaderboardVC, booksVC, librariesVC]
+        let controllers = [quizVC, booksVC, settingsVC]
         self.viewControllers = controllers
     }
     

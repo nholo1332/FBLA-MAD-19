@@ -37,7 +37,6 @@
                 </label>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TdH-3X-Hyv">
                     <rect key="frame" x="45" y="98" width="286" height="111.5"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <string key="text">Quiz your knowledge over different aspects of FBLA.  This app can help you learn more about FBLA, with that extra knowledge you can get the most out of FBLA.</string>
                     <color key="textColor" name="SecondaryGrey"/>
                     <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
@@ -138,12 +137,32 @@
                         <action selector="history:" destination="-1" eventType="touchUpInside" id="RvI-pp-LpG"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="WZd-XJ-yUB">
+                    <rect key="frame" x="225" y="40" width="134" height="60"/>
+                    <color key="backgroundColor" name="PrimaryBlue"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="jNR-JX-ANh"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="17"/>
+                    <state key="normal" title="Leaderboards">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="25"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="showLeaderboards:" destination="-1" eventType="touchUpInside" id="PAI-pc-773"/>
+                    </connections>
+                </button>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" name="PrimaryBackground"/>
             <constraints>
                 <constraint firstItem="eL6-su-K97" firstAttribute="trailing" secondItem="g9s-7o-WNG" secondAttribute="trailing" id="1do-5j-hRG"/>
                 <constraint firstItem="eL6-su-K97" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="42" id="1wj-nf-j8Y"/>
                 <constraint firstItem="1m6-zC-rYO" firstAttribute="leading" secondItem="QO3-Fu-Xix" secondAttribute="leading" id="21O-hh-ban"/>
+                <constraint firstItem="WZd-XJ-yUB" firstAttribute="bottom" secondItem="cHl-jO-skS" secondAttribute="bottom" id="2PS-Oa-IND"/>
                 <constraint firstItem="cHl-jO-skS" firstAttribute="leading" secondItem="TdH-3X-Hyv" secondAttribute="leading" id="3wZ-r3-BmN"/>
                 <constraint firstItem="1gC-Jw-ka4" firstAttribute="leading" secondItem="1m6-zC-rYO" secondAttribute="leading" id="53M-qb-fLg"/>
                 <constraint firstItem="1gC-Jw-ka4" firstAttribute="centerX" secondItem="TdH-3X-Hyv" secondAttribute="centerX" id="5H5-FN-Jk7"/>
@@ -158,11 +177,13 @@
                 <constraint firstItem="cHl-jO-skS" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="17" id="IhC-cc-4m8"/>
                 <constraint firstItem="1m6-zC-rYO" firstAttribute="trailing" secondItem="QO3-Fu-Xix" secondAttribute="trailing" id="JNP-Ok-KkU"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="cHl-jO-skS" secondAttribute="bottom" constant="567" id="P65-mq-zpu"/>
+                <constraint firstItem="WZd-XJ-yUB" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailingMargin" id="RcM-Uu-9ZE"/>
                 <constraint firstItem="eL6-su-K97" firstAttribute="top" secondItem="TdH-3X-Hyv" secondAttribute="bottom" constant="56" id="U4I-s2-UBS"/>
                 <constraint firstItem="1gC-Jw-ka4" firstAttribute="trailing" secondItem="1m6-zC-rYO" secondAttribute="trailing" id="aLx-Mo-LK8"/>
                 <constraint firstItem="cHl-jO-skS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="45" id="azy-b3-wkb"/>
                 <constraint firstItem="eL6-su-K97" firstAttribute="centerX" secondItem="TdH-3X-Hyv" secondAttribute="centerX" id="cxI-Um-NT3"/>
                 <constraint firstItem="g9s-7o-WNG" firstAttribute="top" secondItem="QO3-Fu-Xix" secondAttribute="bottom" constant="8" symbolic="YES" id="f2M-p2-XMX"/>
+                <constraint firstItem="WZd-XJ-yUB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="225" id="fD3-g6-pFn"/>
                 <constraint firstItem="1gC-Jw-ka4" firstAttribute="top" secondItem="eL6-su-K97" secondAttribute="bottom" constant="8" symbolic="YES" id="peC-2N-m00"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
@@ -170,6 +191,12 @@
         </view>
     </objects>
     <resources>
+        <namedColor name="PrimaryBackground">
+            <color red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="PrimaryBlue">
+            <color red="0.0" green="0.32156862745098042" blue="0.60784313725490191" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="PrimaryRed">
             <color red="0.74901960784313726" green="0.18431372549019609" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
