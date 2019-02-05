@@ -19,7 +19,7 @@ struct questions {
                 Answer(answer: "4 (individual, quads, duos, chapter)", isRight: false),
                 Answer(answer: "3 (individual, quads, duos)", isRight: false)
             ]
-        ),
+        )
        static let question2 = Question(
             question: "There are also certain events specifically for high school students of what grades?",
             answers: [
@@ -28,7 +28,7 @@ struct questions {
                 Answer(answer: "11th", isRight: false),
                 Answer(answer: "12th", isRight: false)
             ]
-        ),
+        )
         static let question3 = Question(
             question: "Individual and team events focus on what skills? (Best answer that fits all events)",
             answers: [
@@ -37,7 +37,7 @@ struct questions {
                 Answer(answer: "Monetary development", isRight: false),
                 Answer(answer: "Collaboration development", isRight: false)
             ]
-        ),
+        )
         static let question4 = Question(
             question: "Chapter events recognize what achievements?",
             answers: [
@@ -46,7 +46,7 @@ struct questions {
                 Answer(answer: "Business management", isRight: false),
                 Answer(answer: "Career exploration and growth", isRight: false)
             ]
-        ),
+        )
         static let question5 = Question(
             question: "How many total competitive events are there? ",
             answers: [
