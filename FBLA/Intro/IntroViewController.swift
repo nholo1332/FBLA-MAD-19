@@ -16,29 +16,26 @@ class IntroViewController: UIViewController, PaperOnboardingDelegate, PaperOnboa
     static let titleFont = UIFont(name: "Nunito-Bold", size: 36.0) ?? UIFont.boldSystemFont(ofSize: 36.0)
     static let descriptionFont = UIFont(name: "OpenSans-Regular", size: 14.0) ?? UIFont.systemFont(ofSize: 14.0)
     
-    let items = [
-        OnboardingItemInfo(informationImage: nil,
+        let onBoardItem: OnboardingItemInfo = OnboardingItemInfo(informationImage: UIImage(named: "completed")!,
                            title: "Hotels",
                            description: "All hotels and hostels are sorted by hospitality rating",
-                           pageIcon: nil,
-                           color: UIColor(red: 0.40, green: 0.56, blue: 0.71, alpha: 1.00),
-                           titleColor: UIColor.white, descriptionColor: UIColor.white, titleFont: titleFont, descriptionFont: descriptionFont),
+                           pageIcon: UIImage(named: "completed")!,
+                           color: UIColor(red: CGFloat(0.40), green: CGFloat(0.56), blue: CGFloat(0.71), alpha: CGFloat(1.00)),
+                           titleColor: UIColor.white, descriptionColor: UIColor.white, titleFont: titleFont, descriptionFont: descriptionFont)
         
-        OnboardingItemInfo(informationImage: nil,
+        let onBoardItem2: OnboardingItemInfo = OnboardingItemInfo(informationImage: UIImage(named: "completed")!,
                            title: "Banks",
                            description: "We carefully verify all banks before add them into the app",
-                           pageIcon: nil,
-                           color: UIColor(red: 0.40, green: 0.69, blue: 0.71, alpha: 1.00),
-                           titleColor: UIColor.white, descriptionColor: UIColor.white, titleFont: titleFont, descriptionFont: descriptionFont),
+                           pageIcon: UIImage(named: "completed")!,
+                           color: UIColor(red: CGFloat(0.40), green: CGFloat(0.69), blue: CGFloat(0.71), alpha: CGFloat(1.00)),
+                           titleColor: UIColor.white, descriptionColor: UIColor.white, titleFont: titleFont, descriptionFont: descriptionFont)
         
-        OnboardingItemInfo(informationImage: nil,
+    let onBoardItem3: OnboardingItemInfo = OnboardingItemInfo(informationImage: UIImage(named: "completed")!,
                            title: "Stores",
                            description: "All local stores are categorized for your convenience",
-                           pageIcon: nil,
-                           color: UIColor(red: 0.61, green: 0.56, blue: 0.74, alpha: 1.00),
-                           titleColor: UIColor.white, descriptionColor: UIColor.white, titleFont: titleFont, descriptionFont: descriptionFont),
-        
-        ]
+                           pageIcon: UIImage(named: "completed")!,
+                           color: UIColor(red: CGFloat(0.61), green: CGFloat(0.56), blue: CGFloat(0.74), alpha: CGFloat(1.00)),
+                           titleColor: UIColor.white, descriptionColor: UIColor.white, titleFont: titleFont, descriptionFont: descriptionFont)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,7 +67,11 @@ class IntroViewController: UIViewController, PaperOnboardingDelegate, PaperOnboa
     }
     
     @IBAction func skipButtonTapped(_: UIButton) {
-        print(#function)
+        let version = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
+        UserDefaults.standard.set(true, forKey: "oboarding-shown-\(version)")
+        let mainVC = MainViewController()
+        let navigationVC = UINavigationController(rootViewController: mainVC)
+        self.present(navigationVC, animated: true, completion: nil)
     }
     
     
@@ -79,7 +80,7 @@ class IntroViewController: UIViewController, PaperOnboardingDelegate, PaperOnboa
     }
     
     func onboardingItem(at index: Int) -> OnboardingItemInfo {
-        return items[index]
+        return [onBoardItem, onBoardItem2, onBoardItem3][index]
     }
     
     func onboardingItemsCount() -> Int {
