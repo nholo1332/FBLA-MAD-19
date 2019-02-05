@@ -33,8 +33,6 @@
 		4F7F665C21FD2414008004AC /* SignupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F7F665A21FD2414008004AC /* SignupViewController.xib */; };
 		4F7F665F21FD2423008004AC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7F665D21FD2423008004AC /* LoginViewController.swift */; };
 		4F7F666021FD2423008004AC /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F7F665E21FD2423008004AC /* LoginViewController.xib */; };
-		4F7F666421FD2488008004AC /* ResetPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7F666221FD2488008004AC /* ResetPassViewController.swift */; };
-		4F7F666521FD2488008004AC /* ResetPassViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F7F666321FD2488008004AC /* ResetPassViewController.xib */; };
 		4F7F666E22022832008004AC /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7F666C22022832008004AC /* LoadingViewController.swift */; };
 		4F7F666F22022832008004AC /* LoadingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F7F666D22022832008004AC /* LoadingViewController.xib */; };
 		4F7F6673220633CC008004AC /* QuizSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7F6671220633CB008004AC /* QuizSelectorViewController.swift */; };
@@ -98,8 +96,6 @@
 		4F7F665A21FD2414008004AC /* SignupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignupViewController.xib; sourceTree = "<group>"; };
 		4F7F665D21FD2423008004AC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4F7F665E21FD2423008004AC /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
-		4F7F666221FD2488008004AC /* ResetPassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPassViewController.swift; sourceTree = "<group>"; };
-		4F7F666321FD2488008004AC /* ResetPassViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResetPassViewController.xib; sourceTree = "<group>"; };
 		4F7F666C22022832008004AC /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		4F7F666D22022832008004AC /* LoadingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingViewController.xib; sourceTree = "<group>"; };
 		4F7F6671220633CB008004AC /* QuizSelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizSelectorViewController.swift; sourceTree = "<group>"; };
@@ -301,7 +297,6 @@
 			children = (
 				4F7F665721FD23D0008004AC /* Login */,
 				4F7F665821FD23D9008004AC /* Signup */,
-				4F7F666121FD242F008004AC /* Reset Password */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -322,15 +317,6 @@
 				4F7F665A21FD2414008004AC /* SignupViewController.xib */,
 			);
 			path = Signup;
-			sourceTree = "<group>";
-		};
-		4F7F666121FD242F008004AC /* Reset Password */ = {
-			isa = PBXGroup;
-			children = (
-				4F7F666221FD2488008004AC /* ResetPassViewController.swift */,
-				4F7F666321FD2488008004AC /* ResetPassViewController.xib */,
-			);
-			path = "Reset Password";
 			sourceTree = "<group>";
 		};
 		4F7F6669220225E3008004AC /* Loading */ = {
@@ -483,7 +469,6 @@
 				4F50B7BE21F3976B003DB8F0 /* Assets.xcassets in Resources */,
 				4F74B0E72207C85F00D056E1 /* LeaderboardTableViewController.xib in Resources */,
 				4F7F664C21F3C841008004AC /* BooksStoryboard.storyboard in Resources */,
-				4F7F666521FD2488008004AC /* ResetPassViewController.xib in Resources */,
 				4F74B0F3220916F700D056E1 /* IntroViewController.xib in Resources */,
 				4F7F666021FD2423008004AC /* LoginViewController.xib in Resources */,
 			);
@@ -609,7 +594,6 @@
 				4F7F6673220633CC008004AC /* QuizSelectorViewController.swift in Sources */,
 				4F74B0E62207C85F00D056E1 /* LeaderboardTableViewController.swift in Sources */,
 				4F74B0F2220916F700D056E1 /* IntroViewController.swift in Sources */,
-				4F7F666421FD2488008004AC /* ResetPassViewController.swift in Sources */,
 				4F7F664521F3C6DF008004AC /* BooksTableViewController.swift in Sources */,
 				4F74B0DD2206672600D056E1 /* Model.swift in Sources */,
 				4F7F665F21FD2423008004AC /* LoginViewController.swift in Sources */,

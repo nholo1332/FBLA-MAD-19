@@ -18,11 +18,6 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordField: MadokaTextField!
     @IBOutlet weak var loginButton: TransitionButton!
     
-    /*lazy var bulletinManager: BLTNItemManager = {
-        let rootItem: BLTNItem = BulletinDataSource.makeIntroPage()
-        return BLTNItemManager(rootItem: rootItem)
-    }()*/
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,6 +27,34 @@ class LoginViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
+    @IBAction func signupAction(_ sender: Any) {
+        let vcController = SignupViewController(nibName: "SignupViewController", bundle: nil)
+        self.present(vcController, animated: false, completion: nil)
+    }
+    
+    @IBAction func forgotPassword(_ sender: Any) {
+        let alertVC = PMAlertController(title: "Reset Password", description: "Enter the email below you wish to reset the password for.", image: nil, style: .alert)
+        alertVC.addTextField { (textField) in
+            textField?.placeholder = "Email"
+            textField?.keyboardType = .emailAddress
+        }
+        alertVC.addAction(PMAlertAction(title: "Ok", style: .cancel, action: { () in
+            //alertVC.textFields[0].text
+            Auth.auth().sendPasswordReset(withEmail: alertVC.textFields[0].text ?? "", completion: { (error) in
+                if error == nil {
+                    let errorVC = PMAlertController(title: "Sent", description: "Check your inbox for a reset email.", image: nil, style: .alert)
+                    errorVC.addAction(PMAlertAction(title: "Ok", style: .cancel, action: nil))
+                    self.present(errorVC, animated: true, completion: nil)
+                }else{
+                    let errorVC = PMAlertController(title: "Error", description: "There was an error: \(error.localizedDescription)", image: nil, style: .alert)
+                    errorVC.addAction(PMAlertAction(title: "Ok", style: .cancel, action: nil))
+                    self.present(errorVC, animated: true, completion: nil)
+                }
+            })
+        }))
+        self.present(alertVC, animated: true, completion: nil)
+    }
+    
     @IBAction func loginAction(_ button: TransitionButton) {
         button.startAnimation() // 2: Then start the animation when the user tap the button
         let qualityOfServiceClass = DispatchQoS.QoSClass.background
@@ -39,7 +62,6 @@ class LoginViewController: UIViewController {
         backgroundQueue.async(execute: {
             
             if (!self.fieldsAreFilled()) {
-                //presentSimpleAlert(title: "Missing Fields", message: Constants.Errors.missingFields, completion: nil)
                 DispatchQueue.main.async(execute: { () -> Void in
                     button.stopAnimation(animationStyle: .shake, completion: {
                         

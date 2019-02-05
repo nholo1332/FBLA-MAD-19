@@ -124,6 +124,9 @@
                                             <real key="value" value="25"/>
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="signupAction:" destination="-1" eventType="touchUpInside" id="A8k-X4-7lX"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -158,6 +161,9 @@
                             <state key="normal" title="Reset password">
                                 <color key="titleColor" red="0.20000000000000001" green="0.23921568627450979" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
+                            <connections>
+                                <action selector="forgotPassword:" destination="-1" eventType="touchUpInside" id="gZA-Ci-43Q"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="0.19846960616438356" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

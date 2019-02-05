@@ -38,8 +38,9 @@ class SignupViewController: UIViewController {
     }
     
     @IBAction func loginAction(_ sender: Any) {
+        let vcController = LoginViewController(nibName: "LoginViewController", bundle: nil)
+        self.present(vcController, animated: false, completion: nil)
     }
-    
     
     @IBAction func signupAction(_ sender: Any) {
         present(controller, animated: true, completion: nil)
