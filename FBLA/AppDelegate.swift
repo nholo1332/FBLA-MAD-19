@@ -16,10 +16,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     //TODO: Add comments for code
     //TODO: Clean up code and remove prints and commented code
-    //TODO: Add signup
     //TODO: Add social media share for quiz 100% result (for Facebook + Twitter)
-    //TODO: License, Terms, and libraries
+    //TODO: Settings view (licensing/terms and libraries)
     //TODO: Add bug reporting
+    //TODO: Custom app icon
+    //TODO: README with instructions
+    //TODO: Finish the onboarding view
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

@@ -1,0 +1,81 @@
+//
+//  LibrariesViewController.swift
+//  FBLA
+//
+//  Created by Noah Holoubek on 2/4/19.
+//  Copyright © 2019 Noah H. All rights reserved.
+//
+
+import UIKit
+
+private let itemHeight: CGFloat = 84
+private let lineSpacing: CGFloat = 20
+private let xInset: CGFloat = 20
+private let topInset: CGFloat = 10
+
+class LibrariesViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    @IBOutlet private weak var collectionView: UICollectionView!
+    
+    var libraries: [Library] = []
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        libraries = [
+            Library(name: "Firebase", creator: "Google", openSource: "GitHub", viewUsed: "Account/Database"),
+            Library(name: "TransitionButton", creator: "AladinWay", openSource: "GitHub", viewUsed: "Account"),
+            Library(name: "NVActivityIndicatorView", creator: "ninjaprox", openSource: "GitHub", viewUsed: "Loading alerts"),
+            Library(name: "FoldingCell", creator: "Ramotion", openSource: "GitHub", viewUsed: "Books"),
+            Library(name: "fluid-slider", creator: "Ramotion", openSource: "GitHub", viewUsed: "Books"),
+            Library(name: "VegaScrollFlowLayout", creator: "ApplikeySolutions", openSource: "GitHub", viewUsed: "Libraries"),
+            Library(name: "BulletinBoard", creator: "alexaubry", openSource: "GitHub", viewUsed: "Bottom alert"),
+            Library(name: "TextFieldEffects", creator: "raulriera", openSource: "GitHub", viewUsed: "Account"),
+            Library(name: "PMAlertController", creator: "pmusolino", openSource: "GitHub", viewUsed: "Alert"),
+            Library(name: "paper-onboarding", creator: "Ramotion", openSource: "GitHub", viewUsed: "Onboarding View")
+        ]
+        
+        collectionView.register(UINib(nibName: "LibraryCell", bundle: nil), forCellWithReuseIdentifier: "LibraryCell")
+        collectionView.contentInset.bottom = itemHeight
+        configureCollectionViewLayout()
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        setUpNavBar()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        setUpNavBar()
+    }
+    
+    func setUpNavBar() {
+        let mainvc = self.parent as! MainViewController
+        mainvc.navigationItem.title = "Libraries"
+        mainvc.navigationController?.view.backgroundColor = UIColor.white
+        if #available(iOS 11.0, *) {
+            mainvc.navigationController?.navigationBar.prefersLargeTitles = true
+        }
+    }
+    
+    func configureCollectionViewLayout() {
+        guard let layout = collectionView.collectionViewLayout as? VegaScrollFlowLayout else { return }
+        layout.minimumLineSpacing = lineSpacing
+        layout.sectionInset = UIEdgeInsets(top: topInset, left: 0, bottom: 0, right: 0)
+        let itemWidth = UIScreen.main.bounds.width - 2 * xInset
+        layout.itemSize = CGSize(width: itemWidth, height: itemHeight)
+        collectionView.collectionViewLayout.invalidateLayout()
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LibraryCell", for: indexPath) as! LibraryCell
+        let library = libraries[indexPath.row]
+        cell.setData(library: library)
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return libraries.count
+    }
+
+}

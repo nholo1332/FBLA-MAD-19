@@ -23,6 +23,12 @@
 		4F74B0EB2207C98400D056E1 /* LeaderboardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F74B0E92207C98400D056E1 /* LeaderboardTableViewCell.xib */; };
 		4F74B0F2220916F700D056E1 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F74B0F0220916F700D056E1 /* IntroViewController.swift */; };
 		4F74B0F3220916F700D056E1 /* IntroViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F74B0F1220916F700D056E1 /* IntroViewController.xib */; };
+		4F74B0FB2209376300D056E1 /* LibrariesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F74B0F92209376300D056E1 /* LibrariesViewController.swift */; };
+		4F74B0FC2209376300D056E1 /* LibrariesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F74B0FA2209376300D056E1 /* LibrariesViewController.xib */; };
+		4F74B0FF220937F400D056E1 /* LibraryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F74B0FE220937F400D056E1 /* LibraryModel.swift */; };
+		4F74B1022209396000D056E1 /* LibraryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F74B1002209396000D056E1 /* LibraryCell.swift */; };
+		4F74B1032209396000D056E1 /* LibraryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F74B1012209396000D056E1 /* LibraryCell.xib */; };
+		4F74B105220944FB00D056E1 /* VegaScrollFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F74B104220944FB00D056E1 /* VegaScrollFlowLayout.swift */; };
 		4F7B882521F3994100F42C4B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4F7B882421F3994100F42C4B /* GoogleService-Info.plist */; };
 		4F7F663721F3B84D008004AC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7F663621F3B84D008004AC /* MainViewController.swift */; };
 		4F7F664521F3C6DF008004AC /* BooksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7F664321F3C6DF008004AC /* BooksTableViewController.swift */; };
@@ -86,6 +92,12 @@
 		4F74B0F62209184F00D056E1 /* Nunito-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Light.ttf"; sourceTree = "<group>"; };
 		4F74B0F72209185000D056E1 /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
 		4F74B0F82209185000D056E1 /* Nunito-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Regular.ttf"; sourceTree = "<group>"; };
+		4F74B0F92209376300D056E1 /* LibrariesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibrariesViewController.swift; sourceTree = "<group>"; };
+		4F74B0FA2209376300D056E1 /* LibrariesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LibrariesViewController.xib; sourceTree = "<group>"; };
+		4F74B0FE220937F400D056E1 /* LibraryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryModel.swift; sourceTree = "<group>"; };
+		4F74B1002209396000D056E1 /* LibraryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryCell.swift; sourceTree = "<group>"; };
+		4F74B1012209396000D056E1 /* LibraryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LibraryCell.xib; sourceTree = "<group>"; };
+		4F74B104220944FB00D056E1 /* VegaScrollFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VegaScrollFlowLayout.swift; sourceTree = "<group>"; };
 		4F7B882421F3994100F42C4B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4F7F663621F3B84D008004AC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		4F7F664321F3C6DF008004AC /* BooksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksTableViewController.swift; sourceTree = "<group>"; };
@@ -155,8 +167,8 @@
 		4F50B7B521F3976A003DB8F0 /* FBLA */ = {
 			isa = PBXGroup;
 			children = (
-				4F74B0ED220916A000D056E1 /* Settings */,
 				4F50B7B621F3976A003DB8F0 /* AppDelegate.swift */,
+				4F74B0ED220916A000D056E1 /* Settings */,
 				4F7F6669220225E3008004AC /* Loading */,
 				4F7F663521F3B835008004AC /* Main */,
 				4F74B0EC2209169800D056E1 /* Intro */,
@@ -252,6 +264,11 @@
 		4F74B0EE220916B300D056E1 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				4F74B0F92209376300D056E1 /* LibrariesViewController.swift */,
+				4F74B0FA2209376300D056E1 /* LibrariesViewController.xib */,
+				4F74B1002209396000D056E1 /* LibraryCell.swift */,
+				4F74B1012209396000D056E1 /* LibraryCell.xib */,
+				4F74B0FD220937E000D056E1 /* Model */,
 			);
 			path = Libraries;
 			sourceTree = "<group>";
@@ -272,6 +289,15 @@
 				4F74B0F52209184E00D056E1 /* OpenSans-Regular.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		4F74B0FD220937E000D056E1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4F74B0FE220937F400D056E1 /* LibraryModel.swift */,
+				4F74B104220944FB00D056E1 /* VegaScrollFlowLayout.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		4F7F663521F3B835008004AC /* Main */ = {
@@ -469,6 +495,8 @@
 				4F50B7BE21F3976B003DB8F0 /* Assets.xcassets in Resources */,
 				4F74B0E72207C85F00D056E1 /* LeaderboardTableViewController.xib in Resources */,
 				4F7F664C21F3C841008004AC /* BooksStoryboard.storyboard in Resources */,
+				4F74B0FC2209376300D056E1 /* LibrariesViewController.xib in Resources */,
+				4F74B1032209396000D056E1 /* LibraryCell.xib in Resources */,
 				4F74B0F3220916F700D056E1 /* IntroViewController.xib in Resources */,
 				4F7F666021FD2423008004AC /* LoginViewController.xib in Resources */,
 			);
@@ -498,22 +526,17 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-FBLA/Pods-FBLA-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/BATabBarController/BATabBarController.framework",
 				"${BUILT_PRODUCTS_DIR}/BulletinBoard/BLTNBoard.framework",
 				"${BUILT_PRODUCTS_DIR}/FoldingCell/FoldingCell.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
-				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/PMAlertController/PMAlertController.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
-				"${BUILT_PRODUCTS_DIR}/SPPermission/SPPermission.framework",
-				"${BUILT_PRODUCTS_DIR}/SparrowKit/SparrowKit.framework",
 				"${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework",
 				"${BUILT_PRODUCTS_DIR}/TransitionButton/TransitionButton.framework",
-				"${BUILT_PRODUCTS_DIR}/VegaScrollFlowLayout/VegaScrollFlowLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/fluid-slider/fluid_slider.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -522,22 +545,17 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BATabBarController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BLTNBoard.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FoldingCell.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PMAlertController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SPPermission.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SparrowKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TextFieldEffects.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TransitionButton.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VegaScrollFlowLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/fluid_slider.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -591,9 +609,12 @@
 				4F74B0EA2207C98400D056E1 /* LeaderboardTableViewCell.swift in Sources */,
 				4F74B0E02206679E00D056E1 /* QuizViewController.swift in Sources */,
 				4F7F665B21FD2414008004AC /* SignupViewController.swift in Sources */,
+				4F74B0FF220937F400D056E1 /* LibraryModel.swift in Sources */,
+				4F74B0FB2209376300D056E1 /* LibrariesViewController.swift in Sources */,
 				4F7F6673220633CC008004AC /* QuizSelectorViewController.swift in Sources */,
 				4F74B0E62207C85F00D056E1 /* LeaderboardTableViewController.swift in Sources */,
 				4F74B0F2220916F700D056E1 /* IntroViewController.swift in Sources */,
+				4F74B1022209396000D056E1 /* LibraryCell.swift in Sources */,
 				4F7F664521F3C6DF008004AC /* BooksTableViewController.swift in Sources */,
 				4F74B0DD2206672600D056E1 /* Model.swift in Sources */,
 				4F7F665F21FD2423008004AC /* LoginViewController.swift in Sources */,
@@ -602,6 +623,7 @@
 				4F74B0DA220666EE00D056E1 /* Questions.swift in Sources */,
 				4F50B7B721F3976A003DB8F0 /* AppDelegate.swift in Sources */,
 				4F7F665521F9630B008004AC /* Functions.swift in Sources */,
+				4F74B105220944FB00D056E1 /* VegaScrollFlowLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

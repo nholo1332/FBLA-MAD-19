@@ -9,8 +9,8 @@
 import UIKit
 
 class Question {
-    var question : String?
-    var answers : [Answer]!
+    var question: String?
+    var answers: [Answer]!
     
     init (question: String, answers: [Answer]) {
         self.question = question

@@ -42,6 +42,13 @@ class BooksTableViewController: UITableViewController, bulletinb {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        let mainvc = self.parent as! MainViewController
+        mainvc.navigationItem.title = "Books"
+        mainvc.navigationController?.view.backgroundColor = UIColor.white
+        if #available(iOS 11.0, *) {
+            mainvc.navigationController?.navigationBar.prefersLargeTitles = false
+        }
+        
         let controller = UIAlertController(title: "Loading", message: "", preferredStyle: .alert)
         let loading = NVActivityIndicatorView(frame: CGRect(x: 10,y: 5,width: 50, height: 50), type: NVActivityIndicatorType.ballScaleRippleMultiple, color: UIColor.init(named: "PrimaryBlue"), padding: 10)
         loading.startAnimating()

@@ -1,6 +1,4 @@
 PODS:
-  - BATabBarController (0.1.5):
-    - Masonry
   - BulletinBoard (3.0.0)
   - Firebase/Auth (5.15.0):
     - Firebase/CoreOnly
@@ -105,7 +103,6 @@ PODS:
   - GTMSessionFetcher/Core (1.2.1)
   - Kingfisher (5.1.0)
   - leveldb-library (1.20)
-  - Masonry (1.1.0)
   - nanopb (0.3.901):
     - nanopb/decode (= 0.3.901)
     - nanopb/encode (= 0.3.901)
@@ -118,14 +115,10 @@ PODS:
   - PMAlertController (3.5.0)
   - pop (1.0.12)
   - Protobuf (3.6.1)
-  - SparrowKit (1.4)
-  - SPPermission (2.9)
   - TextFieldEffects (1.5.1)
   - TransitionButton (0.5.2)
-  - VegaScrollFlowLayout (1.1)
 
 DEPENDENCIES:
-  - BATabBarController
   - BulletinBoard
   - Firebase/Auth
   - Firebase/Core
@@ -138,15 +131,11 @@ DEPENDENCIES:
   - NVActivityIndicatorView
   - paper-onboarding
   - PMAlertController
-  - SparrowKit
-  - SPPermission (~> 2.9)
   - TextFieldEffects
   - TransitionButton
-  - VegaScrollFlowLayout
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - BATabBarController
     - BulletinBoard
     - Firebase
     - FirebaseABTesting
@@ -167,21 +156,16 @@ SPEC REPOS:
     - GTMSessionFetcher
     - Kingfisher
     - leveldb-library
-    - Masonry
     - nanopb
     - NVActivityIndicatorView
     - paper-onboarding
     - PMAlertController
     - pop
     - Protobuf
-    - SparrowKit
-    - SPPermission
     - TextFieldEffects
     - TransitionButton
-    - VegaScrollFlowLayout
 
 SPEC CHECKSUMS:
-  BATabBarController: 5613abe7e9e840e4d47deecef6f5082187b24ecf
   BulletinBoard: 927f4f9fd22503ceecd71bfc830fd65d5996593a
   Firebase: 8bb9268bff82374f2cbaaabb143e725743c316ae
   FirebaseABTesting: 1f50b8d50f5e3469eea54e7463a7b7fe221d1f5e
@@ -202,19 +186,15 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
   Kingfisher: fcec238063d17404fca89bf0a850583211c4cbf6
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
-  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   NVActivityIndicatorView: ec34a7b88c51fab270004a1a1f32116e711010cd
   paper-onboarding: a2e3a710fd27ac0b5635ec5490660e7ec09289b5
   PMAlertController: 06dab8160066fc4ce991c880e3722cd403e2926a
   pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
-  SparrowKit: f870970d54344688012e147a6816d99ccdc2f280
-  SPPermission: 82d2071b4a6fd91e1f29ba68ef1d9e0485c26eeb
   TextFieldEffects: 7d372f58aeaf9acd9626bbf962680aef926b085d
   TransitionButton: fb271583d9c9e4bb116b97103047e5157653f233
-  VegaScrollFlowLayout: 9158061f29179147755f937c2b21693fc5dbbac3
 
-PODFILE CHECKSUM: 677a64e39a7b93ea35578d16ab58576b27a0a822
+PODFILE CHECKSUM: 5b8bf911b86a2dccf9637e7521b8ad588cbe773d
 
 COCOAPODS: 1.5.2

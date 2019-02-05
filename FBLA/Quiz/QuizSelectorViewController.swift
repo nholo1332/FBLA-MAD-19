@@ -15,6 +15,15 @@ class QuizSelectorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let mainvc = self.parent as! MainViewController
+        mainvc.navigationItem.title = ""
+        mainvc.navigationController?.view.backgroundColor = UIColor.white
+        if #available(iOS 11.0, *) {
+            mainvc.navigationController?.navigationBar.prefersLargeTitles = false
+        }
+    }
 
     @IBAction func competitiveEvents(_ sender: Any) {
         let vc = QuizViewController(nibName: "QuizViewController", bundle: nil)

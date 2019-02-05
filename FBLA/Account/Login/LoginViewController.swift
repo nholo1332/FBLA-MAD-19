@@ -39,14 +39,13 @@ class LoginViewController: UIViewController {
             textField?.keyboardType = .emailAddress
         }
         alertVC.addAction(PMAlertAction(title: "Ok", style: .cancel, action: { () in
-            //alertVC.textFields[0].text
             Auth.auth().sendPasswordReset(withEmail: alertVC.textFields[0].text ?? "", completion: { (error) in
                 if error == nil {
                     let errorVC = PMAlertController(title: "Sent", description: "Check your inbox for a reset email.", image: nil, style: .alert)
                     errorVC.addAction(PMAlertAction(title: "Ok", style: .cancel, action: nil))
                     self.present(errorVC, animated: true, completion: nil)
                 }else{
-                    let errorVC = PMAlertController(title: "Error", description: "There was an error: \(error.localizedDescription)", image: nil, style: .alert)
+                    let errorVC = PMAlertController(title: "Error", description: "There was an error: \(error!.localizedDescription)", image: nil, style: .alert)
                     errorVC.addAction(PMAlertAction(title: "Ok", style: .cancel, action: nil))
                     self.present(errorVC, animated: true, completion: nil)
                 }
