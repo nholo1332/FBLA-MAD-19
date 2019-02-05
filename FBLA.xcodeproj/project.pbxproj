@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4F50B7B721F3976A003DB8F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F50B7B621F3976A003DB8F0 /* AppDelegate.swift */; };
-		4F50B7B921F3976A003DB8F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F50B7B821F3976A003DB8F0 /* ViewController.swift */; };
-		4F50B7BC21F3976A003DB8F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F50B7BA21F3976A003DB8F0 /* Main.storyboard */; };
 		4F50B7BE21F3976B003DB8F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F50B7BD21F3976B003DB8F0 /* Assets.xcassets */; };
 		4F50B7C121F3976B003DB8F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F50B7BF21F3976B003DB8F0 /* LaunchScreen.storyboard */; };
 		4F50B7CC21F3976B003DB8F0 /* FBLATests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F50B7CB21F3976B003DB8F0 /* FBLATests.swift */; };
@@ -23,6 +21,8 @@
 		4F74B0E72207C85F00D056E1 /* LeaderboardTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F74B0E52207C85F00D056E1 /* LeaderboardTableViewController.xib */; };
 		4F74B0EA2207C98400D056E1 /* LeaderboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F74B0E82207C98400D056E1 /* LeaderboardTableViewCell.swift */; };
 		4F74B0EB2207C98400D056E1 /* LeaderboardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F74B0E92207C98400D056E1 /* LeaderboardTableViewCell.xib */; };
+		4F74B0F2220916F700D056E1 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F74B0F0220916F700D056E1 /* IntroViewController.swift */; };
+		4F74B0F3220916F700D056E1 /* IntroViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F74B0F1220916F700D056E1 /* IntroViewController.xib */; };
 		4F7B882521F3994100F42C4B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4F7B882421F3994100F42C4B /* GoogleService-Info.plist */; };
 		4F7F663721F3B84D008004AC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7F663621F3B84D008004AC /* MainViewController.swift */; };
 		4F7F664521F3C6DF008004AC /* BooksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7F664321F3C6DF008004AC /* BooksTableViewController.swift */; };
@@ -64,8 +64,6 @@
 		433851189EE15FD3050A3415 /* Pods-FBLA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBLA.release.xcconfig"; path = "Pods/Target Support Files/Pods-FBLA/Pods-FBLA.release.xcconfig"; sourceTree = "<group>"; };
 		4F50B7B321F3976A003DB8F0 /* FBLA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FBLA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F50B7B621F3976A003DB8F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4F50B7B821F3976A003DB8F0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		4F50B7BB21F3976A003DB8F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4F50B7BD21F3976B003DB8F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4F50B7C021F3976B003DB8F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4F50B7C221F3976B003DB8F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -84,6 +82,12 @@
 		4F74B0E52207C85F00D056E1 /* LeaderboardTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeaderboardTableViewController.xib; sourceTree = "<group>"; };
 		4F74B0E82207C98400D056E1 /* LeaderboardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardTableViewCell.swift; sourceTree = "<group>"; };
 		4F74B0E92207C98400D056E1 /* LeaderboardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeaderboardTableViewCell.xib; sourceTree = "<group>"; };
+		4F74B0F0220916F700D056E1 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
+		4F74B0F1220916F700D056E1 /* IntroViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IntroViewController.xib; sourceTree = "<group>"; };
+		4F74B0F52209184E00D056E1 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		4F74B0F62209184F00D056E1 /* Nunito-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Light.ttf"; sourceTree = "<group>"; };
+		4F74B0F72209185000D056E1 /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
+		4F74B0F82209185000D056E1 /* Nunito-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Regular.ttf"; sourceTree = "<group>"; };
 		4F7B882421F3994100F42C4B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4F7F663621F3B84D008004AC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		4F7F664321F3C6DF008004AC /* BooksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksTableViewController.swift; sourceTree = "<group>"; };
@@ -155,16 +159,17 @@
 		4F50B7B521F3976A003DB8F0 /* FBLA */ = {
 			isa = PBXGroup;
 			children = (
+				4F74B0ED220916A000D056E1 /* Settings */,
 				4F50B7B621F3976A003DB8F0 /* AppDelegate.swift */,
 				4F7F6669220225E3008004AC /* Loading */,
 				4F7F663521F3B835008004AC /* Main */,
+				4F74B0EC2209169800D056E1 /* Intro */,
 				4F7F667022062C45008004AC /* Quiz */,
 				4F7F664221F3C4C3008004AC /* Books */,
 				4F74B0E32207C83E00D056E1 /* Leaderboard */,
 				4F7F665621FD23C2008004AC /* Account */,
 				4F7F665421F9630B008004AC /* Functions.swift */,
-				4F50B7B821F3976A003DB8F0 /* ViewController.swift */,
-				4F50B7BA21F3976A003DB8F0 /* Main.storyboard */,
+				4F74B0F42209181800D056E1 /* Fonts */,
 				4F50B7BD21F3976B003DB8F0 /* Assets.xcassets */,
 				4F50B7BF21F3976B003DB8F0 /* LaunchScreen.storyboard */,
 				4F7B882421F3994100F42C4B /* GoogleService-Info.plist */,
@@ -228,6 +233,49 @@
 				4F74B0E92207C98400D056E1 /* LeaderboardTableViewCell.xib */,
 			);
 			path = Leaderboard;
+			sourceTree = "<group>";
+		};
+		4F74B0EC2209169800D056E1 /* Intro */ = {
+			isa = PBXGroup;
+			children = (
+				4F74B0F0220916F700D056E1 /* IntroViewController.swift */,
+				4F74B0F1220916F700D056E1 /* IntroViewController.xib */,
+			);
+			path = Intro;
+			sourceTree = "<group>";
+		};
+		4F74B0ED220916A000D056E1 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				4F74B0EF220916BD00D056E1 /* Terms */,
+				4F74B0EE220916B300D056E1 /* Libraries */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		4F74B0EE220916B300D056E1 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+		4F74B0EF220916BD00D056E1 /* Terms */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Terms;
+			sourceTree = "<group>";
+		};
+		4F74B0F42209181800D056E1 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				4F74B0F72209185000D056E1 /* Nunito-Bold.ttf */,
+				4F74B0F62209184F00D056E1 /* Nunito-Light.ttf */,
+				4F74B0F82209185000D056E1 /* Nunito-Regular.ttf */,
+				4F74B0F52209184E00D056E1 /* OpenSans-Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		4F7F663521F3B835008004AC /* Main */ = {
@@ -436,8 +484,8 @@
 				4F74B0E72207C85F00D056E1 /* LeaderboardTableViewController.xib in Resources */,
 				4F7F664C21F3C841008004AC /* BooksStoryboard.storyboard in Resources */,
 				4F7F666521FD2488008004AC /* ResetPassViewController.xib in Resources */,
+				4F74B0F3220916F700D056E1 /* IntroViewController.xib in Resources */,
 				4F7F666021FD2423008004AC /* LoginViewController.xib in Resources */,
-				4F50B7BC21F3976A003DB8F0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,6 +532,7 @@
 				"${BUILT_PRODUCTS_DIR}/fluid-slider/fluid_slider.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+				"${BUILT_PRODUCTS_DIR}/paper-onboarding/paper_onboarding.framework",
 				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -507,6 +556,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/fluid_slider.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/paper_onboarding.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -556,9 +606,9 @@
 				4F74B0EA2207C98400D056E1 /* LeaderboardTableViewCell.swift in Sources */,
 				4F74B0E02206679E00D056E1 /* QuizViewController.swift in Sources */,
 				4F7F665B21FD2414008004AC /* SignupViewController.swift in Sources */,
-				4F50B7B921F3976A003DB8F0 /* ViewController.swift in Sources */,
 				4F7F6673220633CC008004AC /* QuizSelectorViewController.swift in Sources */,
 				4F74B0E62207C85F00D056E1 /* LeaderboardTableViewController.swift in Sources */,
+				4F74B0F2220916F700D056E1 /* IntroViewController.swift in Sources */,
 				4F7F666421FD2488008004AC /* ResetPassViewController.swift in Sources */,
 				4F7F664521F3C6DF008004AC /* BooksTableViewController.swift in Sources */,
 				4F74B0DD2206672600D056E1 /* Model.swift in Sources */,
@@ -603,14 +653,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		4F50B7BA21F3976A003DB8F0 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4F50B7BB21F3976A003DB8F0 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		4F50B7BF21F3976B003DB8F0 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

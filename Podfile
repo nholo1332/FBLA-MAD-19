@@ -25,6 +25,7 @@ pod 'BulletinBoard'
 pod 'BATabBarController'
 pod 'TextFieldEffects'
 pod 'PMAlertController'
+pod 'paper-onboarding'
 
 # Other pods
 pod 'Kingfisher'

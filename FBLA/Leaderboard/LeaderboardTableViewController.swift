@@ -13,8 +13,8 @@ import Firebase
 class LeaderboardTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var myNameLabel: UILabel!
-    @IBOutlet weak var myScoreLabel: UILabel!
+    /*@IBOutlet weak var myNameLabel: UILabel!
+    @IBOutlet weak var myScoreLabel: UILabel!*/
     
     var ref: DatabaseReference!
     var snapshot = DataSnapshot()
@@ -62,10 +62,6 @@ class LeaderboardTableViewController: UIViewController, UITableViewDataSource, U
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return totalCount
-    }
-    
-    func tableView(_: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 140
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

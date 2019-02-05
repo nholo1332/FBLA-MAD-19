@@ -20,19 +20,19 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aTy-Qi-3b6">
-                        <rect key="frame" x="7" y="4" width="306" height="81.5"/>
+                        <rect key="frame" x="7" y="4" width="306" height="68.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ke-5a-xyD">
-                                <rect key="frame" x="8" y="8" width="239" height="33.5"/>
+                                <rect key="frame" x="8" y="8" width="239" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Points" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TIE-XN-YRt">
-                                <rect key="frame" x="8" y="52.5" width="112" height="21"/>
+                                <rect key="frame" x="8" y="39.5" width="112" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="8WV-Ui-tAz"/>
-                                    <constraint firstAttribute="width" constant="112" id="8zz-5f-6xz"/>
+                                    <constraint firstAttribute="height" constant="21" id="0Br-DP-Hxe"/>
+                                    <constraint firstAttribute="width" constant="112" id="Eob-O1-2nJ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -41,25 +41,27 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="TIE-XN-YRt" firstAttribute="bottom" secondItem="aTy-Qi-3b6" secondAttribute="bottomMargin" id="I4F-lj-UYT"/>
-                            <constraint firstAttribute="trailing" secondItem="0Ke-5a-xyD" secondAttribute="trailing" constant="59" id="Ua7-TP-Y0E"/>
-                            <constraint firstItem="TIE-XN-YRt" firstAttribute="top" secondItem="0Ke-5a-xyD" secondAttribute="bottom" constant="11" id="XNX-re-Y0s"/>
-                            <constraint firstItem="0Ke-5a-xyD" firstAttribute="leading" secondItem="TIE-XN-YRt" secondAttribute="leading" id="YNr-3b-fka"/>
-                            <constraint firstItem="0Ke-5a-xyD" firstAttribute="leading" secondItem="aTy-Qi-3b6" secondAttribute="leadingMargin" id="fSY-Ig-d5C"/>
-                            <constraint firstItem="0Ke-5a-xyD" firstAttribute="top" secondItem="aTy-Qi-3b6" secondAttribute="topMargin" id="lJO-ba-P1S"/>
+                            <constraint firstItem="0Ke-5a-xyD" firstAttribute="top" secondItem="aTy-Qi-3b6" secondAttribute="topMargin" id="8ET-su-zdy"/>
+                            <constraint firstItem="0Ke-5a-xyD" firstAttribute="leading" secondItem="TIE-XN-YRt" secondAttribute="leading" id="Dbv-Nm-pDT"/>
+                            <constraint firstItem="TIE-XN-YRt" firstAttribute="top" secondItem="0Ke-5a-xyD" secondAttribute="bottom" constant="11" id="LVE-7s-WrN"/>
+                            <constraint firstItem="TIE-XN-YRt" firstAttribute="bottom" secondItem="aTy-Qi-3b6" secondAttribute="bottomMargin" id="O0z-Iw-6Mh"/>
+                            <constraint firstAttribute="width" constant="306" id="SFE-TI-6Kf"/>
+                            <constraint firstItem="0Ke-5a-xyD" firstAttribute="leading" secondItem="aTy-Qi-3b6" secondAttribute="leadingMargin" id="XAN-E4-DVm"/>
+                            <constraint firstAttribute="trailing" secondItem="0Ke-5a-xyD" secondAttribute="trailing" constant="59" id="aeY-4U-BIx"/>
+                            <constraint firstAttribute="height" constant="82" id="bnA-Lh-n53"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                <integer key="value" value="35"/>
+                                <integer key="value" value="20"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="aTy-Qi-3b6" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="5Tx-sE-AjN"/>
-                    <constraint firstItem="aTy-Qi-3b6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-9" id="Dkk-x1-BNB"/>
-                    <constraint firstItem="aTy-Qi-3b6" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="PlL-Zd-Yh8"/>
-                    <constraint firstItem="aTy-Qi-3b6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-7" id="scZ-rU-ur4"/>
+                    <constraint firstItem="aTy-Qi-3b6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-7" id="4aL-aL-629"/>
+                    <constraint firstItem="aTy-Qi-3b6" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="Ail-40-Atg"/>
+                    <constraint firstItem="aTy-Qi-3b6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-9" id="eW0-pc-kiA"/>
+                    <constraint firstItem="aTy-Qi-3b6" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="f2J-Yb-BDF"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>

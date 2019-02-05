@@ -114,6 +114,7 @@ PODS:
   - NVActivityIndicatorView (4.5.1):
     - NVActivityIndicatorView/Presenter (= 4.5.1)
   - NVActivityIndicatorView/Presenter (4.5.1)
+  - paper-onboarding (5.0.0)
   - PMAlertController (3.5.0)
   - pop (1.0.12)
   - Protobuf (3.6.1)
@@ -135,6 +136,7 @@ DEPENDENCIES:
   - FoldingCell
   - Kingfisher
   - NVActivityIndicatorView
+  - paper-onboarding
   - PMAlertController
   - SparrowKit
   - SPPermission (~> 2.9)
@@ -168,6 +170,7 @@ SPEC REPOS:
     - Masonry
     - nanopb
     - NVActivityIndicatorView
+    - paper-onboarding
     - PMAlertController
     - pop
     - Protobuf
@@ -202,6 +205,7 @@ SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   NVActivityIndicatorView: ec34a7b88c51fab270004a1a1f32116e711010cd
+  paper-onboarding: a2e3a710fd27ac0b5635ec5490660e7ec09289b5
   PMAlertController: 06dab8160066fc4ce991c880e3722cd403e2926a
   pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
@@ -211,6 +215,6 @@ SPEC CHECKSUMS:
   TransitionButton: fb271583d9c9e4bb116b97103047e5157653f233
   VegaScrollFlowLayout: 9158061f29179147755f937c2b21693fc5dbbac3
 
-PODFILE CHECKSUM: 789d61ee6b48f7a8fa54be1d05cd67ed07011016
+PODFILE CHECKSUM: 677a64e39a7b93ea35578d16ab58576b27a0a822
 
 COCOAPODS: 1.5.2

@@ -12,8 +12,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LeaderboardTableViewController" customModule="FBLA" customModuleProvider="target">
             <connections>
-                <outlet property="myNameLabel" destination="3a9-Np-lrC" id="qcJ-70-EDI"/>
-                <outlet property="myScoreLabel" destination="tHh-nG-UgC" id="jF2-M6-2Kx"/>
                 <outlet property="tableView" destination="hOB-P6-o2G" id="UvW-1h-UfP"/>
                 <outlet property="view" destination="hOB-P6-o2G" id="3Wp-NZ-rSD"/>
             </connections>
@@ -23,73 +21,35 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hOB-P6-o2G">
-                    <rect key="frame" x="0.0" y="120" width="375" height="547"/>
-                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                    <color key="sectionIndexColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <color key="sectionIndexBackgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                    <color key="sectionIndexTrackingBackgroundColor" cocoaTouchSystemColor="darkTextColor"/>
-                </tableView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3IK-IV-hI6">
-                    <rect key="frame" x="17" y="20" width="341" height="92"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vGV-AR-Mn2">
+                    <rect key="frame" x="0.0" y="113" width="375" height="554"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3a9-Np-lrC">
-                            <rect key="frame" x="8" y="8" width="247" height="43"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tHh-nG-UgC">
-                            <rect key="frame" x="8" y="59" width="160" height="25"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="160" id="IKN-Wm-Frn"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Me)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KuN-Pk-8eW">
-                            <rect key="frame" x="297" y="19" width="36" height="21"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="36" id="DZD-NA-GFP"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="140" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hOB-P6-o2G">
+                            <rect key="frame" x="0.0" y="-8" width="375" height="562"/>
+                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            <color key="sectionIndexColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="sectionIndexBackgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            <color key="sectionIndexTrackingBackgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        </tableView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="KuN-Pk-8eW" firstAttribute="leading" secondItem="3a9-Np-lrC" secondAttribute="trailing" constant="42" id="1iz-on-bbo"/>
-                        <constraint firstItem="KuN-Pk-8eW" firstAttribute="top" secondItem="3IK-IV-hI6" secondAttribute="top" constant="19" id="1pn-Mh-RS2"/>
-                        <constraint firstItem="3a9-Np-lrC" firstAttribute="leading" secondItem="3IK-IV-hI6" secondAttribute="leadingMargin" id="E1y-ec-oOq"/>
-                        <constraint firstItem="KuN-Pk-8eW" firstAttribute="trailing" secondItem="3IK-IV-hI6" secondAttribute="trailingMargin" id="X2h-64-dHh"/>
-                        <constraint firstItem="3a9-Np-lrC" firstAttribute="leading" secondItem="tHh-nG-UgC" secondAttribute="leading" id="bfk-rt-56S"/>
-                        <constraint firstItem="tHh-nG-UgC" firstAttribute="bottom" secondItem="3IK-IV-hI6" secondAttribute="bottomMargin" id="bj9-bb-Mgv"/>
-                        <constraint firstItem="tHh-nG-UgC" firstAttribute="top" secondItem="3a9-Np-lrC" secondAttribute="bottom" constant="8" symbolic="YES" id="czR-Ik-Sqm"/>
-                        <constraint firstItem="3a9-Np-lrC" firstAttribute="top" secondItem="3IK-IV-hI6" secondAttribute="topMargin" id="dSJ-bW-HID"/>
-                        <constraint firstAttribute="bottom" secondItem="KuN-Pk-8eW" secondAttribute="bottom" constant="52" id="h0U-i8-M4F"/>
-                        <constraint firstItem="3a9-Np-lrC" firstAttribute="centerY" secondItem="KuN-Pk-8eW" secondAttribute="centerY" id="jdv-rd-e5n"/>
+                        <constraint firstAttribute="bottom" secondItem="hOB-P6-o2G" secondAttribute="bottom" id="Acr-6u-3Jx"/>
+                        <constraint firstAttribute="trailing" secondItem="hOB-P6-o2G" secondAttribute="trailing" id="GtN-H6-X3A"/>
+                        <constraint firstItem="hOB-P6-o2G" firstAttribute="leading" secondItem="vGV-AR-Mn2" secondAttribute="leading" id="W2Z-Ya-2f6"/>
+                        <constraint firstItem="hOB-P6-o2G" firstAttribute="top" secondItem="vGV-AR-Mn2" secondAttribute="top" constant="-8" id="ZZ9-MY-a99"/>
                     </constraints>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                            <integer key="value" value="35"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
                 </view>
             </subviews>
             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
             <constraints>
-                <constraint firstItem="hOB-P6-o2G" firstAttribute="bottom" secondItem="P7r-hB-ijt" secondAttribute="bottom" id="DWb-lF-0wL"/>
-                <constraint firstItem="3IK-IV-hI6" firstAttribute="top" secondItem="P7r-hB-ijt" secondAttribute="top" id="GI2-dE-Olc"/>
-                <constraint firstItem="hOB-P6-o2G" firstAttribute="leading" secondItem="Y0P-hX-yKj" secondAttribute="leading" id="JRj-yE-WVS"/>
-                <constraint firstItem="3IK-IV-hI6" firstAttribute="leading" secondItem="P7r-hB-ijt" secondAttribute="leading" constant="17" id="JUR-YK-tZO"/>
-                <constraint firstItem="hOB-P6-o2G" firstAttribute="top" secondItem="3IK-IV-hI6" secondAttribute="bottom" constant="8" symbolic="YES" id="Pab-0f-lX0"/>
-                <constraint firstItem="3IK-IV-hI6" firstAttribute="centerX" secondItem="hOB-P6-o2G" secondAttribute="centerX" id="U4r-1o-CmR"/>
-                <constraint firstAttribute="trailing" secondItem="hOB-P6-o2G" secondAttribute="trailing" id="lf1-Sh-bBc"/>
+                <constraint firstItem="vGV-AR-Mn2" firstAttribute="top" secondItem="P7r-hB-ijt" secondAttribute="top" constant="93" id="0iA-F8-JR4"/>
+                <constraint firstItem="vGV-AR-Mn2" firstAttribute="bottom" secondItem="P7r-hB-ijt" secondAttribute="bottom" id="FPJ-km-udD"/>
+                <constraint firstAttribute="trailing" secondItem="vGV-AR-Mn2" secondAttribute="trailing" id="jZW-iM-Dn4"/>
+                <constraint firstItem="vGV-AR-Mn2" firstAttribute="leading" secondItem="Y0P-hX-yKj" secondAttribute="leading" id="zja-VU-XlY"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="P7r-hB-ijt"/>
-            <point key="canvasLocation" x="260" y="86"/>
+            <point key="canvasLocation" x="260" y="85.907046476761622"/>
         </view>
     </objects>
 </document>

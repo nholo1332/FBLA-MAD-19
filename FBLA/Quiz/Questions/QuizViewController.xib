@@ -10,6 +10,14 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Nunito-Bold.ttf">
+            <string>Nunito-Bold</string>
+        </array>
+        <array key="OpenSans-Regular.ttf">
+            <string>OpenSans</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QuizViewController" customModule="FBLA" customModuleProvider="target">
             <connections>
@@ -45,7 +53,7 @@
                         </label>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" text="..." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xr6-P2-fxj">
                             <rect key="frame" x="0.0" y="38" width="375" height="164"/>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="17"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="5SZ-eI-aNY">
@@ -54,7 +62,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="56" id="WUL-vv-E15"/>
                             </constraints>
-                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                            <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="15"/>
                             <state key="normal" title="Button">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
@@ -73,7 +81,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="56" id="h7f-AM-k59"/>
                             </constraints>
-                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                            <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="15"/>
                             <state key="normal" title="Button">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
@@ -92,7 +100,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="56" id="NuV-F7-Oqt"/>
                             </constraints>
-                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                            <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="15"/>
                             <state key="normal" title="Button">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
@@ -111,7 +119,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="56" id="ukj-ca-vzU"/>
                             </constraints>
-                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                            <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="15"/>
                             <state key="normal" title="Button">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
