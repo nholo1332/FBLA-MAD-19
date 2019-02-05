@@ -1,0 +1,37 @@
+//Allow any authenticated users to view (but not edit) other user's name
+//Allow full database read by those who are authenticated
+//Allow users to edit their part book info (for reserving books, but only their data)
+//Allow users to edit their leaderboard scores
+//Index the leaderboard scores to send to the client in the order of highest score to least
+{
+  "rules": {
+    	".read": "auth != null",
+    "$uid": {
+      ".write": "$uid === auth.uid"
+    },
+    "Books": {
+      "requestedAmount": {
+        ".write": "auth != null"
+      },
+      "soonestAvailable": {
+        ".write": "auth != null"
+      },
+      "reservations": {
+        "$uid": {
+        ".write": "$uid === auth.uid"
+      	},
+      },
+      "users": {
+        "$uid": {
+        ".write": "$uid === auth.uid"
+      	},
+      },
+    },
+    "leaderboard": {
+      ".indexOn": ".value",
+      "$uid": {
+      	".write": "$uid === auth.uid"
+    	},
+    }
+  }
+}
