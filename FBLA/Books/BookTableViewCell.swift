@@ -95,7 +95,6 @@ class BookTableViewCell: FoldingCell {
             if snapshot.childSnapshot(forPath: "users").exists() {
                 if (snapshot.childSnapshot(forPath: "users").value as! [String]).contains((Auth.auth().currentUser?.uid)!){
                     
-                    //message.text = "RETURN BY: \(formatter.date(from: snapshot.childSnapshot(forPath: "reservations/\((Auth.auth().currentUser?.uid)!)/end").value as! String)!)"
                     message.text = "RETURN BY: \(formatter.string(from: stringFormatter.date(from: snapshot.childSnapshot(forPath: "reservations/\((Auth.auth().currentUser?.uid)!)/end").value as! String)!))"
                     
                     openRequestButton.isEnabled = false
@@ -112,8 +111,6 @@ class BookTableViewCell: FoldingCell {
                     
                     openInfoBottom.text = "RETURN BY"
                     openInfoBottom1.text = "\(formatter.string(from: stringFormatter.date(from: snapshot.childSnapshot(forPath: "reservations/\((Auth.auth().currentUser?.uid)!)/end").value as! String)!))"
-                    
-                    //message.text = "RETURN BY: \(formatter.string(from: stringFormatter.date(from: snapshot.childSnapshot(forPath: "reservations/\((Auth.auth().currentUser?.uid)!)/end").value as! String)!))"
                     
                     closedDateInfo.text = "RESERVE START"
                     closedDate.text = "\(formatter.string(from: stringFormatter.date(from: snapshot.childSnapshot(forPath: "reservations/\((Auth.auth().currentUser?.uid)!)/start").value as! String)!))"
@@ -139,18 +136,6 @@ class BookTableViewCell: FoldingCell {
                 closedDateInfo2.text = "RESERVE UNTIL"
                 closedDate2.text = formatter.string(from: Calendar.current.date(byAdding: .day, value: (snapshot.childSnapshot(forPath: "maxDays").value as! Int), to: Date())!)
             }
-            
-            /*if snapshot.childSnapshot(forPath: "image").exists() {
-                downloadImage(into: self.openImage,
-                              from: "Books/Images/\(snapshot.childSnapshot(forPath: "image").value as! String)", completion: { error in
-                                
-                                if error != nil {
-                                    print("Image error: \(error.debugDescription)")
-                                    self.openImage.image = UIImage(named: "image")
-                                }
-                                
-                })
-            }*/
         }
     }
     

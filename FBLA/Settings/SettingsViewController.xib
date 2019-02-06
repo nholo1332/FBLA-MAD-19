@@ -18,7 +18,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingsViewController" customModule="FBLA" customModuleProvider="target">
             <connections>
+                <outlet property="librariesButton" destination="P9Q-Le-Sa1" id="Lni-tY-xc8"/>
+                <outlet property="logoutButton" destination="kcC-HC-glg" id="zc1-YN-Rks"/>
+                <outlet property="privacyButton" destination="qLJ-6w-Hxu" id="ApK-Sx-LM1"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="welcomeLabel" destination="Q1b-BA-a2H" id="H7a-OD-WsA"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -38,7 +42,7 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="kcC-HC-glg">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="kcC-HC-glg" customClass="TransitionButton" customModule="TransitionButton">
                             <rect key="frame" x="25" y="111" width="292" height="60"/>
                             <color key="backgroundColor" name="PrimaryRed"/>
                             <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="17"/>
@@ -50,6 +54,9 @@
                                     <integer key="value" value="25"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="logoutAction:" destination="-1" eventType="touchUpInside" id="ZBS-va-tWC"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="qLJ-6w-Hxu">
                             <rect key="frame" x="25" y="207" width="292" height="60"/>
@@ -67,6 +74,9 @@
                                     <integer key="value" value="25"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="privacyAction:" destination="-1" eventType="touchUpInside" id="7gR-PE-eDN"/>
+                            </connections>
                         </button>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" text="View the terms of service and the privacy policy." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wcb-7D-Ynk">
                             <rect key="frame" x="25" y="275" width="292" height="52"/>
@@ -89,6 +99,9 @@
                                     <integer key="value" value="25"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="librariesAction:" destination="-1" eventType="touchUpInside" id="LMc-Ou-3PS"/>
+                            </connections>
                         </button>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" text="View the open source libraries used to make this application." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nA9-01-bb2">
                             <rect key="frame" x="25" y="403" width="292" height="49.5"/>

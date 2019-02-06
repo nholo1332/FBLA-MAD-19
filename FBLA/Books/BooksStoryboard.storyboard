@@ -55,7 +55,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="0.36470588240000001" green="0.2901960784" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" name="PrimaryPurple"/>
                                                     <constraints>
                                                         <constraint firstItem="XyP-Do-boE" firstAttribute="centerX" secondItem="Y1I-ot-m33" secondAttribute="centerX" constant="0.5" id="EZD-qZ-Gkf"/>
                                                         <constraint firstAttribute="width" constant="88" id="cib-cm-GSG"/>
@@ -243,7 +243,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
-                                                            <color key="backgroundColor" red="0.36470588240000001" green="0.29411764709999999" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="backgroundColor" name="PrimaryPurple"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="bottom" secondItem="GD3-Pi-sMH" secondAttribute="bottom" id="CAu-3p-nMU"/>
                                                                 <constraint firstItem="kZ8-a1-yAT" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="RdR-gd-cFw" secondAttribute="leading" constant="20" symbolic="YES" id="Ext-NI-GbA"/>
@@ -262,8 +262,9 @@
                                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image" translatesAutoresizingMaskIntoConstraints="NO" id="HXU-u9-Zub">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HXU-u9-Zub">
                                                             <rect key="frame" x="0.0" y="49" width="560" height="116"/>
+                                                            <color key="backgroundColor" name="PrimaryPurple"/>
                                                         </imageView>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bVl-CD-5Im" userLabel="LeftVoew">
                                                             <rect key="frame" x="10" y="117" width="179.5" height="40"/>
@@ -375,9 +376,6 @@
                                                             <color key="textColor" red="0.13725490200000001" green="0.13725490200000001" blue="0.13725490200000001" alpha="0.49546030410000003" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="CFd-ba-vRf">
-                                                            <rect key="frame" x="522" y="40" width="16" height="25"/>
-                                                        </imageView>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GAy-Gg-cVC" userLabel="line">
                                                             <rect key="frame" x="22" y="92" width="516" height="1"/>
                                                             <color key="backgroundColor" red="0.39607843139999999" green="0.40000000000000002" blue="0.39607843139999999" alpha="0.20135663009999999" colorSpace="custom" customColorSpace="sRGB"/>
@@ -436,10 +434,8 @@
                                                     <constraints>
                                                         <constraint firstAttribute="bottom" secondItem="46E-8o-aJq" secondAttribute="bottom" id="7bw-aS-38t"/>
                                                         <constraint firstItem="itd-Lq-uTR" firstAttribute="leading" secondItem="8Ic-r6-mEV" secondAttribute="leading" constant="15" id="8k2-gP-PH2"/>
-                                                        <constraint firstItem="GAy-Gg-cVC" firstAttribute="top" secondItem="CFd-ba-vRf" secondAttribute="bottom" constant="27" id="Aju-LE-Wzh"/>
                                                         <constraint firstItem="CeA-sV-GW1" firstAttribute="trailing" secondItem="le6-xC-oOl" secondAttribute="trailing" id="BsR-TM-6Pu"/>
                                                         <constraint firstItem="le6-xC-oOl" firstAttribute="top" secondItem="UmG-cK-cgJ" secondAttribute="bottom" constant="8" symbolic="YES" id="DLI-M7-pST"/>
-                                                        <constraint firstItem="CFd-ba-vRf" firstAttribute="trailing" secondItem="GAy-Gg-cVC" secondAttribute="trailing" id="ECM-On-w98"/>
                                                         <constraint firstItem="GAy-Gg-cVC" firstAttribute="centerY" secondItem="8Ic-r6-mEV" secondAttribute="centerY" constant="10" id="ECX-H9-0oN"/>
                                                         <constraint firstAttribute="trailing" secondItem="GAy-Gg-cVC" secondAttribute="trailing" constant="22" id="Ke0-ZI-B6t"/>
                                                         <constraint firstItem="UmG-cK-cgJ" firstAttribute="top" secondItem="8Ic-r6-mEV" secondAttribute="top" constant="11" id="MAZ-kk-Nk0"/>
@@ -448,7 +444,6 @@
                                                         <constraint firstItem="GAy-Gg-cVC" firstAttribute="leading" secondItem="8Ic-r6-mEV" secondAttribute="leading" constant="22" id="Pkd-CG-TWd"/>
                                                         <constraint firstItem="46E-8o-aJq" firstAttribute="leading" secondItem="GAy-Gg-cVC" secondAttribute="leading" id="TTv-Si-MMX"/>
                                                         <constraint firstItem="46E-8o-aJq" firstAttribute="top" secondItem="GAy-Gg-cVC" secondAttribute="bottom" constant="-1" id="TlJ-iP-rDf"/>
-                                                        <constraint firstItem="CFd-ba-vRf" firstAttribute="leading" secondItem="le6-xC-oOl" secondAttribute="trailing" constant="27" id="Ts7-Gl-5Jt"/>
                                                         <constraint firstAttribute="bottom" secondItem="tRk-TX-e5x" secondAttribute="bottom" id="cfL-76-G6B"/>
                                                         <constraint firstItem="UmG-cK-cgJ" firstAttribute="leading" secondItem="GAy-Gg-cVC" secondAttribute="leading" id="eS2-Bc-Nag"/>
                                                         <constraint firstItem="itd-Lq-uTR" firstAttribute="centerX" secondItem="tRk-TX-e5x" secondAttribute="centerX" id="kDb-TW-IUY"/>
@@ -668,11 +663,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="arrow" width="16" height="25"/>
         <image name="dots" width="14" height="84"/>
-        <image name="image" width="681" height="330"/>
         <namedColor name="PrimaryGrey">
             <color red="0.47843137254901963" green="0.49411764705882355" blue="0.50588235294117645" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="PrimaryPurple">
+            <color red="0.36470588235294116" green="0.29411764705882354" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

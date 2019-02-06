@@ -95,14 +95,14 @@ class BooksTableViewController: UITableViewController, bulletinb {
         reservePage.isDismissable = true
         
         reserveDonePage.actionHandler = { (item: BLTNActionItem) in
-            /*DispatchQueue.main.async(execute: { () -> Void in
+            DispatchQueue.main.async(execute: { () -> Void in
                 self.ref = Database.database().reference()
                 self.ref.observe(DataEventType.value, with: { (dataSnap) in
                     self.snapshot = dataSnap
                     self.totalCount = Int(dataSnap.childSnapshot(forPath: "Books").childrenCount)
                     self.tableView.reloadData()
                 })
-            })*/
+            })
             self.bulletinManager.dismissBulletin()
         }
         
@@ -188,16 +188,6 @@ class BooksTableViewController: UITableViewController, bulletinb {
         }
         
         cell.number = indexPath.row
-        /*cell.data = [
-            snapshot.childSnapshot(forPath: "/\(indexPath.row)/title").value as! String,
-            snapshot.childSnapshot(forPath: "/\(indexPath.row)/subject").value as! String,
-            snapshot.childSnapshot(forPath: "/\(indexPath.row)/type").value as! String,
-            snapshot.childSnapshot(forPath: "/\(indexPath.row)/target").value as! String]
-        cell.intData = [
-            snapshot.childSnapshot(forPath: "/\(indexPath.row)/amount").value as! Int,
-            snapshot.childSnapshot(forPath: "/\(indexPath.row)/available").value as! Int,
-            snapshot.childSnapshot(forPath: "/\(indexPath.row)/maxDays").value as! Int]
-        cell.usersReserved = snapshot.childSnapshot(forPath: "/\(indexPath.row)/users").value as! [String]*/
         cell.snapshot = snapshot.childSnapshot(forPath: "Books/\(indexPath.row)")
         cell.bulletinDelegate = self
         

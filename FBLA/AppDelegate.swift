@@ -17,26 +17,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //TODO: Add comments for code
     //TODO: Clean up code and remove prints and commented code
     //TODO: Add social media share for quiz 100% result (for Facebook + Twitter)
-    //TODO: Settings view (licensing/terms and libraries)
     //TODO: Add bug reporting
     //TODO: Custom app icon
     //TODO: README with instructions
     //TODO: Finish the onboarding view
-    //TODO: Remove image from the Book cell
-    //TODO: Add credits for image in account and books view
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         FirebaseApp.configure()
-        
-        /*window = UIWindow(frame: UIScreen.main.bounds)
-        
-        let mainVC = MainViewController()
-        let navigationVC = UINavigationController(rootViewController: mainVC)
-        
-        window!.rootViewController = navigationVC
-        window!.makeKeyAndVisible()*/
         
         window = UIWindow(frame: UIScreen.main.bounds)
         

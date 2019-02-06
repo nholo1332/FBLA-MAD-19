@@ -31,7 +31,11 @@ class LibrariesViewController: UIViewController, UICollectionViewDataSource, UIC
             Library(name: "BulletinBoard", creator: "alexaubry", openSource: "GitHub", viewUsed: "Bottom alert"),
             Library(name: "TextFieldEffects", creator: "raulriera", openSource: "GitHub", viewUsed: "Account"),
             Library(name: "PMAlertController", creator: "pmusolino", openSource: "GitHub", viewUsed: "Alert"),
-            Library(name: "paper-onboarding", creator: "Ramotion", openSource: "GitHub", viewUsed: "Onboarding View")
+            Library(name: "paper-onboarding", creator: "Ramotion", openSource: "GitHub", viewUsed: "Onboarding View"),
+            Library(name: "Nunito", creator: "Vernon Adams", openSource: "Google Fonts", viewUsed: "Text font"),
+            Library(name: "Open Sans", creator: "Steve Matteson", openSource: "Google Fonts", viewUsed: "Text font"),
+            Library(name: "Himalayas", creator: "Wallpaper Maiden", openSource: "Wallpaper Maiden", viewUsed: "Image (account)"),
+            Library(name: "Background", creator: "Ramotion", openSource: "GitHub", viewUsed: "Books")
         ]
         
         collectionView.register(UINib(nibName: "LibraryCell", bundle: nil), forCellWithReuseIdentifier: "LibraryCell")
@@ -39,20 +43,6 @@ class LibrariesViewController: UIViewController, UICollectionViewDataSource, UIC
         configureCollectionViewLayout()
         collectionView.dataSource = self
         collectionView.delegate = self
-        setUpNavBar()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        setUpNavBar()
-    }
-    
-    func setUpNavBar() {
-        let mainvc = self.parent as! MainViewController
-        mainvc.navigationItem.title = "Libraries"
-        mainvc.navigationController?.view.backgroundColor = UIColor.white
-        if #available(iOS 11.0, *) {
-            mainvc.navigationController?.navigationBar.prefersLargeTitles = true
-        }
     }
     
     func configureCollectionViewLayout() {
