@@ -36,13 +36,13 @@ class QuizSelectorViewController: UIViewController {
 
     @IBAction func competitiveEvents(_ sender: Any) {
         let vc = QuizViewController(nibName: "QuizViewController", bundle: nil)
-        vc.category = "competitiveEvents"
+        vc.category = "competitive events"
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func businessSkills(_ sender: Any) {
         let vc = QuizViewController(nibName: "QuizViewController", bundle: nil)
-        vc.category = "businessSkills"
+        vc.category = "business skills"
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

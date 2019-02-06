@@ -13,6 +13,9 @@ pod 'Firebase/Auth'
 pod 'Firebase/Storage'
 pod 'Firebase/Performance'
 
+#Social Media
+pod 'FacebookShare'
+
 # Design pods
 pod 'TransitionButton'
 pod 'NVActivityIndicatorView'
@@ -22,8 +25,5 @@ pod 'BulletinBoard'
 pod 'TextFieldEffects'
 pod 'PMAlertController'
 pod 'paper-onboarding'
-
-# Other pods
-pod 'Kingfisher'
 
 end

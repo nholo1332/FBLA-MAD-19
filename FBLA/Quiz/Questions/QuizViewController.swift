@@ -11,6 +11,7 @@ import BLTNBoard
 import PMAlertController
 import NVActivityIndicatorView
 import Firebase
+import FacebookShare
 
 class QuizViewController: UIViewController {
     
@@ -45,7 +46,7 @@ class QuizViewController: UIViewController {
     //TODO: Add more questions
     var category: String = "" {
         didSet {
-            if category == "competitiveEvents"{
+            if category == "competitive events"{
                 self.questionsToUse = [
                     questions.competitiveEvents.question1,
                     questions.competitiveEvents.question2,
@@ -53,7 +54,7 @@ class QuizViewController: UIViewController {
                     questions.competitiveEvents.question4,
                     questions.competitiveEvents.question5
                 ]
-            }else if category == "businessSkills"{
+            }else if category == "business skills"{
                 
             }else if category == "sponsors"{
                 
@@ -234,6 +235,26 @@ class QuizViewController: UIViewController {
             self.navigationController?.popToRootViewController(animated: true)
         }
         doneManager.showBulletin(above: self)
+    }
+    
+    func shareFacebook() {
+        let content: LinkShareContent = LinkShareContent.init(url: URL.init(string: "http://nebraskafbla.org") ?? URL.init(fileURLWithPath: "http://nebraskafbla.org"), quote: "I got a 5/5 on the \(category) quiz in Noah Holoubek and Mitchel Beeson's FBLA HQ app!")
+        
+        let shareDialog = ShareDialog(content: content)
+        shareDialog.mode = .native
+        shareDialog.failsOnInvalidData = true
+        shareDialog.completion = { result in
+            // Handle share results
+        }
+        do
+        {
+            try shareDialog.show()
+        }
+        catch
+        {
+            print("Exception")
+            
+        }
     }
     
 }

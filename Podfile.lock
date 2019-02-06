@@ -1,5 +1,23 @@
 PODS:
+  - Bolts (1.9.0):
+    - Bolts/AppLinks (= 1.9.0)
+    - Bolts/Tasks (= 1.9.0)
+  - Bolts/AppLinks (1.9.0):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.9.0)
   - BulletinBoard (3.0.0)
+  - FacebookCore (0.5.0):
+    - Bolts (~> 1.9)
+    - FBSDKCoreKit (~> 4.37)
+  - FacebookShare (0.5.0):
+    - Bolts (~> 1.9)
+    - FacebookCore (~> 0.5)
+    - FBSDKCoreKit (~> 4.37)
+    - FBSDKShareKit (~> 4.37)
+  - FBSDKCoreKit (4.39.1):
+    - Bolts (~> 1.9)
+  - FBSDKShareKit (4.39.1):
+    - FBSDKCoreKit
   - Firebase/Auth (5.15.0):
     - Firebase/CoreOnly
     - FirebaseAuth (= 5.2.0)
@@ -101,7 +119,6 @@ PODS:
   - GoogleUtilities/UserDefaults (5.3.7):
     - GoogleUtilities/Logger
   - GTMSessionFetcher/Core (1.2.1)
-  - Kingfisher (5.1.0)
   - leveldb-library (1.20)
   - nanopb (0.3.901):
     - nanopb/decode (= 0.3.901)
@@ -120,6 +137,7 @@ PODS:
 
 DEPENDENCIES:
   - BulletinBoard
+  - FacebookShare
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
@@ -127,7 +145,6 @@ DEPENDENCIES:
   - Firebase/Storage
   - fluid-slider
   - FoldingCell
-  - Kingfisher
   - NVActivityIndicatorView
   - paper-onboarding
   - PMAlertController
@@ -136,7 +153,12 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Bolts
     - BulletinBoard
+    - FacebookCore
+    - FacebookShare
+    - FBSDKCoreKit
+    - FBSDKShareKit
     - Firebase
     - FirebaseABTesting
     - FirebaseAnalytics
@@ -154,7 +176,6 @@ SPEC REPOS:
     - GoogleToolboxForMac
     - GoogleUtilities
     - GTMSessionFetcher
-    - Kingfisher
     - leveldb-library
     - nanopb
     - NVActivityIndicatorView
@@ -166,7 +187,12 @@ SPEC REPOS:
     - TransitionButton
 
 SPEC CHECKSUMS:
+  Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
   BulletinBoard: 927f4f9fd22503ceecd71bfc830fd65d5996593a
+  FacebookCore: 74288d0add931d361b1596beae787ab72c438249
+  FacebookShare: 963b4bb1124a64a395b1e428163d70b5774116e8
+  FBSDKCoreKit: f442aa96179cc9b382bb4abeb7e340a47cca8f91
+  FBSDKShareKit: 27d7b982e7b1f4638da2f2b1ab6eba5afc6b5888
   Firebase: 8bb9268bff82374f2cbaaabb143e725743c316ae
   FirebaseABTesting: 1f50b8d50f5e3469eea54e7463a7b7fe221d1f5e
   FirebaseAnalytics: c06f9d70577d79074214700a71fd5d39de5550fb
@@ -184,7 +210,6 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: ff31605b7d66400dcec09bed5861689aebadda4d
   GoogleUtilities: 111a012f4c3a29c9e7c954c082fafd6ee3c999c0
   GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
-  Kingfisher: fcec238063d17404fca89bf0a850583211c4cbf6
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   NVActivityIndicatorView: ec34a7b88c51fab270004a1a1f32116e711010cd
@@ -195,6 +220,6 @@ SPEC CHECKSUMS:
   TextFieldEffects: 7d372f58aeaf9acd9626bbf962680aef926b085d
   TransitionButton: fb271583d9c9e4bb116b97103047e5157653f233
 
-PODFILE CHECKSUM: 5b8bf911b86a2dccf9637e7521b8ad588cbe773d
+PODFILE CHECKSUM: b5c6f3aa99a7e169e4509c445bd273f8a4eaebbb
 
 COCOAPODS: 1.5.2
