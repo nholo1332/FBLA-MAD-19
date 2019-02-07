@@ -15,10 +15,11 @@ import Firebase
 
 class SignupViewController: UIViewController {
     
-    @IBOutlet weak var emailField: UITextField!
-    @IBOutlet weak var firstNameField: UITextField!
-    @IBOutlet weak var lastNameField: UITextField!
-    @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var emailField: MadokaTextField!
+    @IBOutlet weak var firstNameField: MadokaTextField!
+    @IBOutlet weak var lastNameField: MadokaTextField!
+    @IBOutlet weak var passwordField: MadokaTextField!
+    @IBOutlet weak var signupButton: TransitionButton!
     
     let controller = UIAlertController()
     
@@ -51,36 +52,97 @@ class SignupViewController: UIViewController {
     }
     
     @IBAction func signupAction(_ sender: Any) {
-        present(controller, animated: true, completion: nil)
-        if (!fieldsAreFilled()) {
-            showError(title: "Field error", message: "Please fill all the fiels before attempting to signup for an account.")
-            controller.dismiss(animated: true, completion: nil)
-            return
-        }
         
-        if (profileSettingsAreAdequate()) {
-            Auth.auth().createUser(withEmail: emailField.text!, password: passwordField.text!, completion: { (user, error) in
-                
-                if let error = error {
-                    self.showError(title: "Error", message: "Error: \(error.localizedDescription)")
-                    self.controller.dismiss(animated: true, completion: nil)
-                    return
-                }
-                
-                self.userRef.child((user?.user.uid)!).setValue(
-                    ["firstName" : self.firstNameField.text!,
-                     "lastName" : self.lastNameField.text!
-                    ]
-                ) {
-                    (error:Error?, ref:DatabaseReference) in
-                    //code here to send user to another View
-                    let mainVC = MainViewController()
-                    let navigationVC = UINavigationController(rootViewController: mainVC)
-                    self.present(navigationVC, animated: true, completion: nil)
-                }
+        signupButton.startAnimation() // 2: Then start the animation when the user tap the button
+        let qualityOfServiceClass = DispatchQoS.QoSClass.background
+        let backgroundQueue = DispatchQueue.global(qos: qualityOfServiceClass)
+        backgroundQueue.async(execute: {
+            
+            self.present(self.controller, animated: true, completion: nil)
+            if (!self.fieldsAreFilled()) {
+                DispatchQueue.main.async(execute: { () -> Void in
+                    self.signupButton.stopAnimation(animationStyle: .shake, completion: {
+                        self.showError(title: "Field error", message: "Please fill all the fiels before attempting to signup for an account.")
+                        self.controller.dismiss(animated: true, completion: nil)
+                    })
+                })
+                return
             }
-                
+            
+            if (self.profileSettingsAreAdequate()) {
+                Auth.auth().createUser(withEmail: self.emailField.text!, password: self.passwordField.text!, completion: { (user, error) in
+                    
+                    if let error = error {
+                        
+                        DispatchQueue.main.async(execute: { () -> Void in
+                        self.signupButton.stopAnimation(animationStyle: .shake, completion: {
+                                self.showError(title: "Error", message: "Error: \(error.localizedDescription)")
+                                self.controller.dismiss(animated: true, completion: nil)
+                            })
+                        })
+                        
+                        return
+                    }
+                    
+                    self.userRef.child((user?.user.uid)!).setValue(
+                        ["firstName" : self.firstNameField.text!,
+                         "lastName" : self.lastNameField.text!
+                        ]
+                    ) {
+                        (error:Error?, ref:DatabaseReference) in
+                        //code here to send user to another View
+                        DispatchQueue.main.async(execute: { () -> Void in
+                            self.signupButton.stopAnimation(animationStyle: .expand, completion: {
+                                let mainVC = MainViewController()
+                                let navigationVC = UINavigationController(rootViewController: mainVC)
+                                self.present(navigationVC, animated: true, completion: nil)
+                            })
+                        })
+                    }
+                }
+                    
+                )}
+            
+            /*DispatchQueue.main.async(execute: { () -> Void in
+                signupButton.stopAnimation(animationStyle: .expand, completion: {
+                    let secondVC = UIViewController()
+                    self.present(secondVC, animated: true, completion: nil)
+                })
+            })*/
+        })
+        
+        /*DispatchQueue.main.async(execute: { () -> Void in
+            self.present(self.controller, animated: true, completion: nil)
+            if (!self.fieldsAreFilled()) {
+                self.showError(title: "Field error", message: "Please fill all the fiels before attempting to signup for an account.")
+                self.controller.dismiss(animated: true, completion: nil)
+                return
+            }
+            
+            if (self.profileSettingsAreAdequate()) {
+                Auth.auth().createUser(withEmail: self.emailField.text!, password: self.passwordField.text!, completion: { (user, error) in
+                    
+                    if let error = error {
+                        self.showError(title: "Error", message: "Error: \(error.localizedDescription)")
+                        self.controller.dismiss(animated: true, completion: nil)
+                        return
+                    }
+                    
+                    self.userRef.child((user?.user.uid)!).setValue(
+                        ["firstName" : self.firstNameField.text!,
+                         "lastName" : self.lastNameField.text!
+                        ]
+                    ) {
+                        (error:Error?, ref:DatabaseReference) in
+                        //code here to send user to another View
+                        let mainVC = MainViewController()
+                        let navigationVC = UINavigationController(rootViewController: mainVC)
+                        self.present(navigationVC, animated: true, completion: nil)
+                    }
+                }
+                    
             )}
+        })*/
     }
     
     
@@ -102,8 +164,7 @@ class SignupViewController: UIViewController {
     }
     
     private func fieldsAreFilled() -> Bool {
-        //There seems to be a bug when testing if the text fields are filled (.text returns nil and having an optional does not fix)
-        return true
+        return self.emailField.text != "" && self.firstNameField.text != "" && self.lastNameField.text != "" && self.passwordField.text != ""
     }
     
     

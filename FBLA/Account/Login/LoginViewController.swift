@@ -104,8 +104,7 @@ class LoginViewController: UIViewController {
     }
     
     private func fieldsAreFilled() -> Bool {
-        //There seems to be a bug when testing if the text fields are filled (.text returns nil and having an optional does not fix)
-        return true
+        return self.emailField.text != "" && self.passwordField.text != ""
     }
     
     @objc func dismissKeyboard() {

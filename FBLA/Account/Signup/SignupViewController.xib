@@ -21,6 +21,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignupViewController" customModule="FBLA" customModuleProvider="target">
             <connections>
+                <outlet property="signupButton" destination="aFa-HS-IXf" id="Z8b-xh-wTf"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
