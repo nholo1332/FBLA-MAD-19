@@ -244,7 +244,6 @@ class QuizViewController: UIViewController {
         endPage.image = UIImage(named: "completed")
         endPage.descriptionText = "Congratulations, you finished the quiz!  Your quiz score will be added to your total score and appended to the leaderboard."
         endPage.actionButtonTitle = "Done"
-        endPage.alternativeButtonTitle = "Done"
         endPage.requiresCloseButton = false
         endPage.isDismissable = false
         
