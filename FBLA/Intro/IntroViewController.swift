@@ -19,25 +19,25 @@ class IntroViewController: UIViewController, PaperOnboardingDelegate, PaperOnboa
     static let descriptionFont = UIFont(name: "OpenSans-Regular", size: 14.0) ?? UIFont.systemFont(ofSize: 14.0)
     
     //Add the following items to the onboarding view (to be shown to the user).
-    let onBoardItem: OnboardingItemInfo = OnboardingItemInfo(informationImage: UIImage(named: "completed")!,
-                        title: "Hotels",
-                        description: "All hotels and hostels are sorted by hospitality rating",
-                        pageIcon: UIImage(named: "completed")!,
-                        color: UIColor(red: CGFloat(0.40), green: CGFloat(0.56), blue: CGFloat(0.71), alpha: CGFloat(1.00)),
+    let onBoardItem: OnboardingItemInfo = OnboardingItemInfo(informationImage: UIImage(named: "intro-quiz")!,
+                        title: "Quiz",
+                        description: "Quiz youself on some topics of FBLA!  Test your knowdledge of FBLA to get more out of the FBLA program.",
+                        pageIcon: UIImage(named: "intro-quiz-bottom")!,
+                        color: UIColor.init(named: "PrimaryRed")!,
                         titleColor: UIColor.white, descriptionColor: UIColor.white, titleFont: titleFont, descriptionFont: descriptionFont)
         
-    let onBoardItem2: OnboardingItemInfo = OnboardingItemInfo(informationImage: UIImage(named: "completed")!,
-                        title: "Banks",
-                        description: "We carefully verify all banks before add them into the app",
-                        pageIcon: UIImage(named: "completed")!,
-                        color: UIColor(red: CGFloat(0.40), green: CGFloat(0.69), blue: CGFloat(0.71), alpha: CGFloat(1.00)),
+    let onBoardItem2: OnboardingItemInfo = OnboardingItemInfo(informationImage: UIImage(named: "intro-leaderboard")!,
+                        title: "Leaderboards",
+                        description: "Check your score against all the other users of the app!  You can compare your score by viewing the leaderboards.",
+                        pageIcon: UIImage(named: "intro-leaderboard-bottom")!,
+                        color: UIColor.init(named: "PrimaryGrey")!,
                         titleColor: UIColor.white, descriptionColor: UIColor.white, titleFont: titleFont, descriptionFont: descriptionFont)
-        
-    let onBoardItem3: OnboardingItemInfo = OnboardingItemInfo(informationImage: UIImage(named: "completed")!,
-                        title: "Stores",
-                        description: "All local stores are categorized for your convenience",
-                        pageIcon: UIImage(named: "completed")!,
-                        color: UIColor(red: CGFloat(0.61), green: CGFloat(0.56), blue: CGFloat(0.74), alpha: CGFloat(1.00)),
+    
+    let onBoardItem3: OnboardingItemInfo = OnboardingItemInfo(informationImage: UIImage(named: "intro-book")!,
+                        title: "Books",
+                        description: "Need some more information from an FBLA book?  No problem, check out the books tab to reserve books.",
+                        pageIcon: UIImage(named: "intro-book-bottom")!,
+                        color: UIColor.init(named: "PrimaryBlue")!,
                         titleColor: UIColor.white, descriptionColor: UIColor.white, titleFont: titleFont, descriptionFont: descriptionFont)
 
     override func viewDidLoad() {

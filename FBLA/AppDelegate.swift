@@ -16,8 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     //TODO: Custom app icon
-    //TODO: README with instructions
-    //TODO: Finish the onboarding view
+    //TODO: README
+    //TODO: Create PDF with screenshots
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
