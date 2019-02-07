@@ -56,7 +56,7 @@ class BookTableViewCell: FoldingCell {
     var snapshot = DataSnapshot() {
         didSet {
             //Setup our date formatters. As I said before, Firebase can't store the raw NSDate so we had to make it a string. This first formatter is to convert the database Date into an NSDate. The second is to convert it to a Date format that is easier (and makes more sense for book reserving) to read.
-            stringFormatter.dateFormat = "yyyy-MM-dd hh:mm:ssZZZ"
+            stringFormatter.dateFormat = "yyyy-MM-dd HH:mm:ssZ"
             formatter.dateFormat = "MM-dd-yyyy"
             
             //Closed cell info
@@ -98,7 +98,7 @@ class BookTableViewCell: FoldingCell {
             if snapshot.childSnapshot(forPath: "users").exists() {
                 if (snapshot.childSnapshot(forPath: "users").value as! [String]).contains((Auth.auth().currentUser?.uid)!){
                     
-                    message.text = "RETURN BY: \(formatter.string(from: stringFormatter.date(from: snapshot.childSnapshot(forPath: "reservations/\((Auth.auth().currentUser?.uid)!)/end").value as! String)!))"
+                    message.text = "RETURN BY: \(formatter.string(from: stringFormatter.date(from: snapshot.childSnapshot(forPath: "reservations/\(Auth.auth().currentUser!.uid)/end").value as! String)!))"
                     
                     openRequestButton.isEnabled = false
                     slider.isEnabled = false
@@ -129,12 +129,13 @@ class BookTableViewCell: FoldingCell {
                     closedDate2.text = "\(formatter.string(from: stringFormatter.date(from: snapshot.childSnapshot(forPath: "reservations/\((Auth.auth().currentUser?.uid)!)/end").value as! String)!))"
                 }else{
                     openInfoBottom.text = "SOONEST AVAILABLE"
+                    print("\(snapshot.childSnapshot(forPath: "soonestAvailable").value as! String)")
                     openInfoBottom1.text = "\(formatter.string(from: stringFormatter.date(from: snapshot.childSnapshot(forPath: "soonestAvailable").value as! String)!))"
                     
                     closedDateInfo.text = "SOONEST AVAILABLE"
                     closedDate.text = "\(formatter.string(from: stringFormatter.date(from: snapshot.childSnapshot(forPath: "soonestAvailable").value as! String)!))"
                     closedDateInfo2.text = "RESERVE UNTIL"
-                    closedDate2.text = String(describing: Calendar.current.date(byAdding: .day, value: (snapshot.childSnapshot(forPath: "maxDays").value as! Int), to: formatter.date(from: snapshot.childSnapshot(forPath: "/soonestAvailable").value as! String)!))
+                    closedDate2.text = formatter.string(from: Calendar.current.date(byAdding: .day, value: (snapshot.childSnapshot(forPath: "maxDays").value as! Int), to: stringFormatter.date(from: snapshot.childSnapshot(forPath: "soonestAvailable").value as! String)!)!)
                 }
             }else{
                 message.text = "RESERVE THIS BOOK NOW"

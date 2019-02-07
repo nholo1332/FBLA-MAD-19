@@ -6,8 +6,10 @@
 {
   "rules": {
     	".read": "auth != null",
-    "$uid": {
+    "users": {
+      "$uid": {
       ".write": "$uid === auth.uid"
+    	}
     },
     "Books": {
       "requestedAmount": {
@@ -26,6 +28,9 @@
         ".write": "$uid === auth.uid"
       	},
       },
+    },
+    "bugs": {
+      ".write": "auth != null"
     },
     "leaderboard": {
       ".indexOn": ".value",

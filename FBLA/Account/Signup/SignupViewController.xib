@@ -21,6 +21,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignupViewController" customModule="FBLA" customModuleProvider="target">
             <connections>
+                <outlet property="emailField" destination="aLy-Vs-VA0" id="chS-pq-Nha"/>
+                <outlet property="firstNameField" destination="k6d-wQ-9UA" id="gMv-uf-8EI"/>
+                <outlet property="lastNameField" destination="Mca-md-PyX" id="dJv-w6-QLp"/>
+                <outlet property="passwordField" destination="Ivm-Lv-mh9" id="7a3-IY-xN1"/>
                 <outlet property="signupButton" destination="aFa-HS-IXf" id="Z8b-xh-wTf"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
