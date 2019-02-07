@@ -44,6 +44,7 @@ class QuizViewController: UIViewController {
     }()
     
     //TODO: Add more questions
+    //Load the questions based on the category that was passed to this view
     var category: String = "" {
         didSet {
             if category == "competitive events"{
@@ -80,6 +81,7 @@ class QuizViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        //Show the view at the bottom to confirm the user wants to take the quiz now.
         DispatchQueue.main.async(execute: { () -> Void in
             self.beginPage = BLTNPageItem(title: "Ready?")
             self.beginPage.image = UIImage(named: "book")
@@ -119,6 +121,7 @@ class QuizViewController: UIViewController {
     }
     
     func startQuiz() -> Void {
+        //Shuffle and load the questions and answers in a random order.
         questionsToUse.shuffle()
         
         for i in 0 ..< questionsToUse.count {
@@ -136,13 +139,11 @@ class QuizViewController: UIViewController {
     }
     
     func showQuestion(_ questionId : Int) -> Void {
+        //Actually present the question and answers.
         enableButtons()
         
         let selectedQuestion : Question = questionsToUse[questionId]
         question.text = selectedQuestion.question
-        
-        /*var questionNums = [0, 1, 2, 3]
-        questionNums.shuffle()*/
         
         answer1.setTitle(selectedQuestion.answers[0].response, for: UIControl.State())
         answer2.setTitle(selectedQuestion.answers[1].response, for: UIControl.State())
@@ -167,11 +168,13 @@ class QuizViewController: UIViewController {
     }
     
     func selectAnswer(_ answerId : Int) -> Void {
+        //Show the user if they answered correctly or incorrectly.
         disableButtons()
         
         let answer : Answer = questionsToUse[currentQuestion].answers[answerId]
         
         if (true == answer.isRight) {
+            //Correct answer
             grade += 1
             
             let feedbackAlert = PMAlertController(title: "Correct!", description: "", image: UIImage(named: "correct"), style: .alert)
@@ -184,6 +187,7 @@ class QuizViewController: UIViewController {
             }))
             self.present(feedbackAlert, animated: true, completion: nil)
         } else {
+            //Incorrect answer
             let feedbackAlert = PMAlertController(title: "Incorrect", description: "", image: UIImage(named: "incorrect"), style: .alert)
             feedbackAlert.addAction(PMAlertAction(title: "Ok", style: .default, action: { () in
                 if (true == self.quizEnded) {
@@ -197,6 +201,7 @@ class QuizViewController: UIViewController {
     }
     
     func nextQuestion() {
+        //Move to the next question
         currentQuestion += 1
         currentQuestionLabel.text = "\(currentQuestion + 1)/5"
         let progress: Float = (Float(currentQuestion) + 1.0)/5.0
@@ -210,6 +215,7 @@ class QuizViewController: UIViewController {
     }
     
     func endQuiz() {
+        //Finish the quiz. If the user got 5/5, then show the option to share their score to Facebook. If they didn't, just show a button to return to the home screen.
         quizEnded = true
         
         endPage = BLTNPageItem(title: "\(grade)/5")
@@ -220,7 +226,7 @@ class QuizViewController: UIViewController {
         endPage.requiresCloseButton = false
         endPage.isDismissable = false
         
-        if grade == 1 {
+        if grade == 5 {
             endPage.actionButtonTitle = "Share"
             endPage.alternativeButtonTitle = "Done"
             
@@ -231,7 +237,7 @@ class QuizViewController: UIViewController {
             endPage.alternativeHandler = { (item: BLTNActionItem) in
                 self.ref = Database.database().reference()
                 self.ref.child("leaderboard").observeSingleEvent(of: .value, with: { (snapshot) in
-                    
+                    //Add their current grade to their existing leaderboard score and update the database.
                     if snapshot.childSnapshot(forPath: "\(Auth.auth().currentUser!.uid)").exists() {
                         let leaderboardGrade = (snapshot.childSnapshot(forPath: "\(Auth.auth().currentUser!.uid)").value as! Int) + self.grade
                         self.ref.child("leaderboard/\(Auth.auth().currentUser!.uid)").setValue(leaderboardGrade)
@@ -244,6 +250,7 @@ class QuizViewController: UIViewController {
                 self.navigationController?.popToRootViewController(animated: true)
             }
         }else{
+            //Not a 5/5 so only show a button to go back home.
             endPage.actionHandler = { (item: BLTNActionItem) in
                 self.ref = Database.database().reference()
                 self.ref.child("leaderboard").observeSingleEvent(of: .value, with: { (snapshot) in
@@ -265,6 +272,7 @@ class QuizViewController: UIViewController {
     }
     
     func shareFacebook() {
+        //Present the Facebook share once the user has selected to share their score.  Present as a web view in the app because their regular (integrated) modal seemed to have a bug.
         let content: LinkShareContent = LinkShareContent.init(url: URL.init(string: "http://nebraskafbla.org") ?? URL.init(fileURLWithPath: "http://nebraskafbla.org"), quote: "I got a 5/5 on the \(category) quiz in Noah Holoubek and Mitchel Beeson's FBLA HQ app!")
         
         let shareDialog = ShareDialog(content: content)
@@ -274,7 +282,7 @@ class QuizViewController: UIViewController {
         shareDialog.completion = { result in
             self.ref = Database.database().reference()
             self.ref.child("leaderboard").observeSingleEvent(of: .value, with: { (snapshot) in
-                
+                //Also add their new grade to their existing one in the database
                 if snapshot.childSnapshot(forPath: "\(Auth.auth().currentUser!.uid)").exists() {
                     let leaderboardGrade = (snapshot.childSnapshot(forPath: "\(Auth.auth().currentUser!.uid)").value as! Int) + self.grade
                     self.ref.child("leaderboard/\(Auth.auth().currentUser!.uid)").setValue(leaderboardGrade)

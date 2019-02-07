@@ -42,6 +42,7 @@ class BooksTableViewController: UITableViewController, bulletinb {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        //Customize the navigation controller because it looks much nicer with the navigation like this.
         let mainvc = self.parent as! MainViewController
         mainvc.navigationItem.title = "Books"
         mainvc.navigationItem.rightBarButtonItem = nil
@@ -49,7 +50,7 @@ class BooksTableViewController: UITableViewController, bulletinb {
         if #available(iOS 11.0, *) {
             mainvc.navigationController?.navigationBar.prefersLargeTitles = false
         }
-        
+        //Show an alert so the user knows the app is fetching data from the database.
         let controller = UIAlertController(title: "Loading", message: "", preferredStyle: .alert)
         let loading = NVActivityIndicatorView(frame: CGRect(x: 10,y: 5,width: 50, height: 50), type: NVActivityIndicatorType.ballScaleRippleMultiple, color: UIColor.init(named: "PrimaryBlue"), padding: 10)
         loading.startAnimating()
@@ -59,6 +60,7 @@ class BooksTableViewController: UITableViewController, bulletinb {
         DispatchQueue.main.async(execute: { () -> Void in
             self.ref = Database.database().reference()
             self.ref.observe(DataEventType.value, with: { (dataSnap) in
+                //Again, save the data as a variable so it can be accessed and passed around later without another call.
                 self.snapshot = dataSnap
                 self.totalCount = Int(dataSnap.childSnapshot(forPath: "Books").childrenCount)
                 self.tableView.reloadData()
@@ -68,6 +70,7 @@ class BooksTableViewController: UITableViewController, bulletinb {
     }
     
     private func setup() {
+        //Because the cells animate their size, we need to store and array of the possible cell sizes.  We also want to have a custom refresh handler (to fetch new data from the database when the user requests.
         cellHeights = Array(repeating: Const.closeCellHeight, count: Const.rowsCount)
         tableView.estimatedRowHeight = Const.closeCellHeight
         tableView.rowHeight = UITableView.automaticDimension
@@ -85,6 +88,7 @@ class BooksTableViewController: UITableViewController, bulletinb {
     }
     
     func showBulletin(days: Int, returnDate: Date, bookID: Int) {
+        //Handle the call from the cell to present the book reserving process.
         let formatter = DateFormatter()
         formatter.dateFormat = "MM-dd-yyyy"
         
@@ -99,6 +103,7 @@ class BooksTableViewController: UITableViewController, bulletinb {
             DispatchQueue.main.async(execute: { () -> Void in
                 self.ref = Database.database().reference()
                 self.ref.observe(DataEventType.value, with: { (dataSnap) in
+                    //Reload the data to show new changes after a reserve has completed.
                     self.snapshot = dataSnap
                     self.totalCount = Int(dataSnap.childSnapshot(forPath: "Books").childrenCount)
                     self.tableView.reloadData()
@@ -118,7 +123,7 @@ class BooksTableViewController: UITableViewController, bulletinb {
         
         reservePage.actionHandler = { (item: BLTNActionItem) in
             item.manager?.displayActivityIndicator()
-            
+            //Save the required data for the book reserve to the database.  Because lovely Firebase Database can't store a raw NSDate, we need to save it as a string and later convert it to a date and then format how we want.
             if self.snapshot.childSnapshot(forPath: "Books").childSnapshot(forPath: "\(bookID)").childSnapshot(forPath: "users").exists() {
                 
                 var currentUsers = (self.snapshot.childSnapshot(forPath: "Books/\(bookID)/users").value as! [String])
@@ -157,6 +162,7 @@ class BooksTableViewController: UITableViewController, bulletinb {
     }
     
     @objc func refreshHandler() {
+        //Here is where we actually refresh the data.  We want to run this as async because it needs to take control of the main thread so we can esnure it actually makes a call to the database to retrieve all the data.
         let deadlineTime = DispatchTime.now() + .seconds(3)
         DispatchQueue.main.async(execute: { () -> Void in
             self.ref = Database.database().reference()
@@ -187,7 +193,7 @@ class BooksTableViewController: UITableViewController, bulletinb {
         } else {
             cell.unfold(true, animated: false, completion: nil)
         }
-        
+        //As I stated earlier, we may want to pass the DataSnapshot as a variable to decrease the number of server calls.  This would be very detrimental to the speed of the app if in the cell view had to call to the server to retrieve the data for each book (think if you had around 30 books...).  This way it is also easier to implement new data into the database (because we don't have to create a whole other variable to pass into the cell view, it already exists in the snapshot).
         cell.number = indexPath.row
         cell.snapshot = snapshot.childSnapshot(forPath: "Books/\(indexPath.row)")
         cell.bulletinDelegate = self
@@ -207,6 +213,7 @@ class BooksTableViewController: UITableViewController, bulletinb {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FoldingCell", for: indexPath) as! FoldingCell
+        //Set some of the animation variables so we can run some of those cool animations later on.
         let durations: [TimeInterval] = [0.26, 0.2, 0.2]
         cell.durationsForExpandedState = durations
         cell.durationsForCollapsedState = durations
@@ -218,7 +225,7 @@ class BooksTableViewController: UITableViewController, bulletinb {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        //Handle the cool animations you see when the cell folds and unfolds.
         let cell = tableView.cellForRow(at: indexPath) as! FoldingCell
         
         if cell.isAnimating() {

@@ -15,6 +15,7 @@ class termsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //load the terms from the html file
         let url = Bundle.main.url(forResource: "terms", withExtension: "html")
         let request = URLRequest(url: url!)
         termsWebView.loadRequest(request)

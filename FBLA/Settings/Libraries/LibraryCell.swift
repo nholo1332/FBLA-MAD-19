@@ -17,7 +17,7 @@ class LibraryCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        //Do some UI setup for the cell.
         layer.cornerRadius = 14
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOpacity = 0.3

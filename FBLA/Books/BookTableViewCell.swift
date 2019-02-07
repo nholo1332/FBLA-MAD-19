@@ -14,7 +14,7 @@ import BLTNBoard
 
 class BookTableViewCell: FoldingCell {
     
-    //closed info
+    //Closed cell info
     @IBOutlet var closeNumberLabel: UILabel!
     @IBOutlet weak var closeMaxReserve: UILabel!
     @IBOutlet weak var message: UITextView!
@@ -25,7 +25,7 @@ class BookTableViewCell: FoldingCell {
     @IBOutlet weak var closedDate: UILabel!
     @IBOutlet weak var closedDate2: UILabel!
     
-    //open info
+    //Open cell info
     @IBOutlet var openNumberLabel: UILabel!
     @IBOutlet weak var slider: Slider!
     @IBOutlet weak var maxReserve: UILabel!
@@ -52,17 +52,19 @@ class BookTableViewCell: FoldingCell {
         }
     }
     
+    //Run a didSet function so these updates happen when the snapshot is sent to the cell.
     var snapshot = DataSnapshot() {
         didSet {
-            formatter.dateFormat = "MM-dd-yyyy"
+            //Setup our date formatters. As I said before, Firebase can't store the raw NSDate so we had to make it a string. This first formatter is to convert the database Date into an NSDate.  The second is to convert it to a Date format that is easier (and makes more sense for book reserving) to read.
             stringFormatter.dateFormat = "yyyy-MM-dd hh:mm:ssZZZ"
+            formatter.dateFormat = "MM-dd-yyyy"
             
-            //closed info
+            //Closed cell info
             closeMaxReserve.text = "\(snapshot.childSnapshot(forPath: "maxDays").value as! Int) days"
             requestCount.text = "\(snapshot.childSnapshot(forPath: "requestedAmount").value as! Int)"
             closedReference.text = (snapshot.childSnapshot(forPath: "reference").value as! String).uppercased()
             
-            //open info
+            //Open cell info
             maxReserve.text = "\(snapshot.childSnapshot(forPath: "maxDays").value as! Int) days"
             openNumberLabel.text = (snapshot.childSnapshot(forPath: "title").value as! String)
             openRequests.text = "\(snapshot.childSnapshot(forPath: "requestedAmount").value as! Int)"
@@ -74,7 +76,7 @@ class BookTableViewCell: FoldingCell {
             openPeopleReserve.text = "\((snapshot.childSnapshot(forPath: "requestedAmount").value as! Int)) people have reserved a book"
             
             
-            //Other setup
+            //Other setup for the cool slider we can use to select the amount of days we want to reserve the book for.
             let labelTextAttributes: [NSAttributedString.Key : Any] = [.font: UIFont.systemFont(ofSize: 12, weight: .bold), .foregroundColor: UIColor.white]
             slider.attributedTextForFraction = { fraction in
                 let formatter = NumberFormatter()
@@ -92,6 +94,7 @@ class BookTableViewCell: FoldingCell {
             slider.contentViewColor = UIColor.init(named: "PrimaryBlue")
             slider.valueViewColor = .white
             
+            //Run some checks on the recieved data to see if the user has already reserved the book.  If they have, then show the appropriate information that would be helpful (such as the return date).
             if snapshot.childSnapshot(forPath: "users").exists() {
                 if (snapshot.childSnapshot(forPath: "users").value as! [String]).contains((Auth.auth().currentUser?.uid)!){
                     
@@ -140,6 +143,7 @@ class BookTableViewCell: FoldingCell {
     }
     
     override func awakeFromNib() {
+        //Make sure the cell is being formatted correctly whenever the app may temporarily transition it to the background.
         foregroundView.layer.cornerRadius = 10
         foregroundView.layer.masksToBounds = true
         super.awakeFromNib()
@@ -151,11 +155,10 @@ class BookTableViewCell: FoldingCell {
     }
 }
 
-// MARK: - Actions ⚡️
-
 extension BookTableViewCell {
     
     @IBAction func buttonHandler(_: AnyObject) {
+        //Becuase the Bulletin can't be called on a TableViewCell, we needed to make a custom protocol and function for it to be ran on the BooksTableViewControler, since that is also the ViewController.  
         let formatter = DateFormatter()
         formatter.dateFormat = "MM-dd-yyyy"
         

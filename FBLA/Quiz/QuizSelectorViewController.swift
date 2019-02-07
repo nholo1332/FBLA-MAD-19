@@ -10,13 +10,12 @@ import UIKit
 
 class QuizSelectorViewController: UIViewController {
     
-    //TODO: Add scroll view for the xib view
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        //Don't show the view name because we handled that in the view (.xib) file.  Also configure anything else that is different for this view in the navigation bar
         let mainvc = self.parent as! MainViewController
         mainvc.navigationItem.title = ""
         mainvc.navigationItem.rightBarButtonItem = nil
@@ -27,6 +26,7 @@ class QuizSelectorViewController: UIViewController {
     }
     
     @IBAction func showLeaderboards(_ sender: Any) {
+        //Present the leaderboards (in a UIViewAlert to make the view easier to navigate).
         let tableViewController = LeaderboardTableViewController()
         let alertController = UIAlertController(title: "Leaderboards", message: "Message", preferredStyle: .alert)
         alertController.setValue(tableViewController, forKey: "contentViewController")
@@ -34,7 +34,8 @@ class QuizSelectorViewController: UIViewController {
         alertController.addAction(cancelAction)
         self.present(alertController, animated: true, completion: nil)
     }
-
+    
+    //Move the user to the quiz view and pass the quiz, they want to take, as string variable.
     @IBAction func competitiveEvents(_ sender: Any) {
         let vc = QuizViewController(nibName: "QuizViewController", bundle: nil)
         vc.category = "competitive events"

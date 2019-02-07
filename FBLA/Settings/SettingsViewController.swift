@@ -24,6 +24,7 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Get user data and save current bugs (to count children in the database).
         self.ref = Database.database().reference()
         self.ref.child("users/\(Auth.auth().currentUser!.uid)").observeSingleEvent(of: .value, with: { (dataSnap) in
             self.welcomeLabel.text = "Hello, \(dataSnap.childSnapshot(forPath: "firstName").value as! String)"
@@ -38,12 +39,14 @@ class SettingsViewController: UIViewController {
         privacyButton.isEnabled = true
         librariesButton.isEnabled = true
         
+        //Add the bug report button and also configure the navigation bar (just how we want it; to look nice and match the view).
         let mainvc = self.parent as! MainViewController
         mainvc.navigationItem.title = "Settings"
         mainvc.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Bug?", style: .done, target: self, action: #selector(reportBug))
     }
     
     @objc func reportBug() {
+        //Show the alert to present the user with the fields to fill the big report out.
         let alertVC = PMAlertController(title: "Report Bug", description: "Find a bug?  Please use the form below to send in a bug report.", image: nil, style: .alert)
         alertVC.addTextField { (textField) in
             textField?.placeholder = "Bug title"
@@ -55,6 +58,7 @@ class SettingsViewController: UIViewController {
             textField?.placeholder = "Description"
         }
         alertVC.addAction(PMAlertAction(title: "Send", style: .default, action: { () in
+            //Send that data nice and safely to the server so we can check that bug report out and fix it ASAP (as long as the user has entered all the data, of course).
             if alertVC.textFields[0].text != "" && alertVC.textFields[1].text != "" && alertVC.textFields[2].text != "" {
                 let bugNumber = Int(self.snapshot.childrenCount)
                 self.ref.child("bugs/\(bugNumber)/title").setValue(alertVC.textFields[0].text ?? "")
@@ -77,6 +81,7 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func logoutAction(_ button: TransitionButton) {
+        //If the user wants to signout, handle their request here.
         privacyButton.isEnabled = false
         librariesButton.isEnabled = false
         logoutButton.startAnimation()
@@ -100,6 +105,7 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func privacyAction(_ sender: Any) {
+        //Show the privacy and terms of service page (in case the user is bored and wants to do some reading).
         let termsVC = termsViewController(nibName: "termsViewController", bundle: nil)
         termsVC.navigationItem.title = "TOS & Privacy"
         termsVC.navigationItem.rightBarButtonItem = nil
@@ -107,6 +113,7 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func librariesAction(_ sender: Any) {
+        //Show the libraries so we can give credit to those awesome people who make dependencies and allow others to use then for free.
         let librariesVC = LibrariesViewController(nibName: "LibrariesViewController", bundle: nil)
         librariesVC.navigationItem.title = "Libraries"
         librariesVC.navigationItem.rightBarButtonItem = nil

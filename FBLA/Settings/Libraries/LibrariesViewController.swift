@@ -21,6 +21,7 @@ class LibrariesViewController: UIViewController, UICollectionViewDataSource, UIC
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        //populate the view with all libraries/dependencies used in this app
         libraries = [
             Library(name: "Firebase", creator: "Google", openSource: "GitHub", viewUsed: "Account/Database"),
             Library(name: "TransitionButton", creator: "AladinWay", openSource: "GitHub", viewUsed: "Account"),
@@ -39,6 +40,7 @@ class LibrariesViewController: UIViewController, UICollectionViewDataSource, UIC
             Library(name: "Icons (not app icon)", creator: "Icons8", openSource: "Icons8", viewUsed: "Icons")
         ]
         
+        //Setup the view cell here.
         collectionView.register(UINib(nibName: "LibraryCell", bundle: nil), forCellWithReuseIdentifier: "LibraryCell")
         collectionView.contentInset.bottom = itemHeight
         configureCollectionViewLayout()
@@ -47,6 +49,7 @@ class LibrariesViewController: UIViewController, UICollectionViewDataSource, UIC
     }
     
     func configureCollectionViewLayout() {
+        //Configure the layout to use the VegaScrollLayout.
         guard let layout = collectionView.collectionViewLayout as? VegaScrollFlowLayout else { return }
         layout.minimumLineSpacing = lineSpacing
         layout.sectionInset = UIEdgeInsets(top: topInset, left: 0, bottom: 0, right: 0)

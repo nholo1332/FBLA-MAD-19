@@ -14,6 +14,7 @@ class LeaderboardTableViewCell: UITableViewCell {
     @IBOutlet weak var pointsLabel: UILabel!
     
     func setInfo(name: String, points: Int){
+        //Display the data passed from the TableViewController.
         nameLabel.text = name
         pointsLabel.text = "\(points)"
     }

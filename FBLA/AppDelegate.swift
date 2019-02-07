@@ -15,12 +15,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    //TODO: Add comments for code
-    //TODO: Clean up code and remove prints and commented code
     //TODO: Custom app icon
     //TODO: README with instructions
     //TODO: Finish the onboarding view
-
+    //TODO: Add scroll view for the quiz selector view
+    //TODO: Add scroll view for the signup view
+    //TODO: Add scroll view for the login view
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         

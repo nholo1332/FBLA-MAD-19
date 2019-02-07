@@ -21,10 +21,12 @@ class LeaderboardTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //Register the leaderboard cell to this view controller
         self.tableView.register(UINib(nibName: "LeaderboardTableViewCell", bundle: nil), forCellReuseIdentifier: "LeaderboardCell")
         
+        //Request a big height in the UIAlertController
         self.preferredContentSize = CGSize(width: 272, height: 400)
-        
+        //Some customization for the tableview
         self.tableView.separatorStyle = .none
         self.tableView.backgroundColor = UIColor.init(named: "PrimaryTableView")
     }
@@ -34,10 +36,12 @@ class LeaderboardTableViewController: UITableViewController {
         DispatchQueue.main.async(execute: { () -> Void in
             self.ref = Database.database().reference()
             self.ref.observe(DataEventType.value, with: { (dataSnap) in
+                //Retrieve the data from the leaderboard child table from the database.  This saves it as a variable so all leaderboard data can be accessed later without making another call to the database.
                 self.snapshot = dataSnap
                 self.totalCount = Int(dataSnap.childSnapshot(forPath: "leaderboard").childrenCount)
                 
                 for child in dataSnap.childSnapshot(forPath: "leaderboard").children {
+                    //Append each score as an array to make it more efficient for the tableview to load and present.
                     let myChild = child as! DataSnapshot
                     self.uids.append(myChild.key)
                     self.scores.append(myChild.value as! Int)
@@ -57,6 +61,7 @@ class LeaderboardTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LeaderboardCell", for: indexPath) as! LeaderboardTableViewCell
+        //Pass the user's name to the cell for it to display.
         let name = "\(snapshot.childSnapshot(forPath: "users/\(uids[indexPath.row])/firstName").value as! String) \((snapshot.childSnapshot(forPath: "users/\(uids[indexPath.row])/lastName").value as! String).prefix(1))."
         cell.setInfo(name: name, points: scores[indexPath.row])
         return cell

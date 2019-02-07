@@ -9,7 +9,7 @@
 import UIKit
 
 struct questions {
-    
+    //Store all the questions as structs so they can be easily saved in the QuizViewController
     struct competitiveEvents {
         static let question1 = Question(
             question: "How many different kinds of competitive events are there, when pertaining to the number of people involved.",

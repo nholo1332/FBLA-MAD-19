@@ -12,7 +12,7 @@ class MainViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //Setup the tab bar at the bottom of the screen (to navigate to different views).
         let quizVC = QuizSelectorViewController(nibName: "QuizSelectorViewController", bundle: nil)
         quizVC.title = "Quizzes"
         let booksSTB = UIStoryboard(name: "BooksStoryboard", bundle: nil)
@@ -25,6 +25,7 @@ class MainViewController: UITabBarController {
         booksVC.tabBarItem = UITabBarItem(title: "Books", image: UIImage(named: "book-icon"), tag: 1)
         settingsVC.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(named: "settings"), tag: 2)
         
+        //Load them as controllers and add them to the navigation as a child of this view controller.
         let controllers = [quizVC, booksVC, settingsVC]
         self.viewControllers = controllers
     }
