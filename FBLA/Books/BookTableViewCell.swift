@@ -55,7 +55,7 @@ class BookTableViewCell: FoldingCell {
     //Run a didSet function so these updates happen when the snapshot is sent to the cell.
     var snapshot = DataSnapshot() {
         didSet {
-            //Setup our date formatters. As I said before, Firebase can't store the raw NSDate so we had to make it a string. This first formatter is to convert the database Date into an NSDate.  The second is to convert it to a Date format that is easier (and makes more sense for book reserving) to read.
+            //Setup our date formatters. As I said before, Firebase can't store the raw NSDate so we had to make it a string. This first formatter is to convert the database Date into an NSDate. The second is to convert it to a Date format that is easier (and makes more sense for book reserving) to read.
             stringFormatter.dateFormat = "yyyy-MM-dd hh:mm:ssZZZ"
             formatter.dateFormat = "MM-dd-yyyy"
             
@@ -94,7 +94,7 @@ class BookTableViewCell: FoldingCell {
             slider.contentViewColor = UIColor.init(named: "PrimaryBlue")
             slider.valueViewColor = .white
             
-            //Run some checks on the recieved data to see if the user has already reserved the book.  If they have, then show the appropriate information that would be helpful (such as the return date).
+            //Run some checks on the recieved data to see if the user has already reserved the book. If they have, then show the appropriate information that would be helpful (such as the return date).
             if snapshot.childSnapshot(forPath: "users").exists() {
                 if (snapshot.childSnapshot(forPath: "users").value as! [String]).contains((Auth.auth().currentUser?.uid)!){
                     
@@ -158,7 +158,7 @@ class BookTableViewCell: FoldingCell {
 extension BookTableViewCell {
     
     @IBAction func buttonHandler(_: AnyObject) {
-        //Becuase the Bulletin can't be called on a TableViewCell, we needed to make a custom protocol and function for it to be ran on the BooksTableViewControler, since that is also the ViewController.  
+        //Becuase the Bulletin can't be called on a TableViewCell, we needed to make a custom protocol and function for it to be ran on the BooksTableViewControler, since that is also the ViewController.
         let formatter = DateFormatter()
         formatter.dateFormat = "MM-dd-yyyy"
         

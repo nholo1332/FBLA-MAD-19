@@ -15,7 +15,7 @@ class LoadingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //Detect if user is logged in and has completed the onboarding view. If they are signed in and have viewed the onboarding, bring them to the home.  If they haven't viewed the onboarding, show it now.  Also if they aren't signed in but have viewed the onboarding, bring them to the login.
+        //Detect if user is logged in and has completed the onboarding view. If they are signed in and have viewed the onboarding, bring them to the home. If they haven't viewed the onboarding, show it now. Also if they aren't signed in but have viewed the onboarding, bring them to the login.
         DispatchQueue.main.async(execute: { () -> Void in
             if UserDefaults.standard.bool(forKey: "oboarding-shown-\(self.version)") {
                 if Auth.auth().currentUser != nil {

@@ -167,6 +167,9 @@
                                                     <state key="normal" title="By creating an account, you agree to our Terms of Service and our Privacy Policy (here).">
                                                         <color key="titleColor" red="0.20000000000000001" green="0.23921568630000001" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="termsPolicyAction:" destination="-1" eventType="touchUpInside" id="pfM-EL-cEW"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

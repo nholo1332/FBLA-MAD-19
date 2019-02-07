@@ -60,7 +60,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginAction(_ button: TransitionButton) {
-        //Use the cool effect of the buttons.  We need to start the loading animation and disable the other buttons. It is easiest to disable all touches on the view while the app processes the login data.
+        //Use the cool effect of the buttons. We need to start the loading animation and disable the other buttons. It is easiest to disable all touches on the view while the app processes the login data.
         button.startAnimation()
         self.view.isUserInteractionEnabled = false
         let qualityOfServiceClass = DispatchQoS.QoSClass.background
@@ -85,7 +85,7 @@ class LoginViewController: UIViewController {
                 if error == nil{
                     DispatchQueue.main.async(execute: { () -> Void in
                         button.stopAnimation(animationStyle: .expand, completion: {
-                           //Whew.  The request went through.  Show the user to their new home view.
+                           //Whew. The request went through. Show the user to their new home view.
                             let mainVC = MainViewController()
                             let navigationVC = UINavigationController(rootViewController: mainVC)
                             self.present(navigationVC, animated: true, completion: nil)
@@ -94,7 +94,7 @@ class LoginViewController: UIViewController {
                 }else{
                     DispatchQueue.main.async(execute: { () -> Void in
                         button.stopAnimation(animationStyle: .shake, completion: {
-                            //Darn, an error occurred.  Show an error and allow view touches again.
+                            //Darn, an error occurred. Show an error and allow view touches again.
                             self.view.isUserInteractionEnabled = true
                             let alertVC = PMAlertController(title: "Error", description: "An error has occurred when attempting to log in.  Error: \(String(describing: error!.localizedDescription))", image: nil, style: .alert)
                             alertVC.addAction(PMAlertAction(title: "Ok", style: .cancel, action: nil))

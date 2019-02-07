@@ -18,7 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //TODO: Custom app icon
     //TODO: README with instructions
     //TODO: Finish the onboarding view
-    //TODO: Add scroll view for the login view
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

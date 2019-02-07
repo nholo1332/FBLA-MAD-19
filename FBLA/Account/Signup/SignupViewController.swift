@@ -38,6 +38,14 @@ class SignupViewController: UIViewController {
         controller.view.addSubview(loading)
     }
     
+    @IBAction func termsPolicyAction(_ sender: Any) {
+        //Allow the users to see our privacy policy before they decide to use the app and signup.
+        let termsVC = termsViewController(nibName: "termsViewController", bundle: nil)
+        termsVC.navigationItem.title = "TOS & Privacy"
+        termsVC.navigationItem.rightBarButtonItem = nil
+        self.navigationController?.pushViewController(termsVC, animated: true)
+    }
+    
     @IBAction func loginAction(_ sender: Any) {
         let vcController = LoginViewController(nibName: "LoginViewController", bundle: nil)
         self.present(vcController, animated: false, completion: nil)

@@ -15,7 +15,7 @@ class QuizSelectorViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        //Don't show the view name because we handled that in the view (.xib) file.  Also configure anything else that is different for this view in the navigation bar
+        //Don't show the view name because we handled that in the view (.xib) file. Also configure anything else that is different for this view in the navigation bar
         let mainvc = self.parent as! MainViewController
         mainvc.navigationItem.title = ""
         mainvc.navigationItem.rightBarButtonItem = nil

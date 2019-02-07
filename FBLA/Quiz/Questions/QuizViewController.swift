@@ -85,7 +85,7 @@ class QuizViewController: UIViewController {
         DispatchQueue.main.async(execute: { () -> Void in
             self.beginPage = BLTNPageItem(title: "Ready?")
             self.beginPage.image = UIImage(named: "book")
-            self.beginPage.descriptionText = "Are you ready to start the quiz?  You will not be able to stop the quiz once started.  Don't worry the quizzes are very short, only 5 questions."
+            self.beginPage.descriptionText = "Are you ready to start the quiz?  You will not be able to stop the quiz once started. Don't worry the quizzes are very short, only 5 questions."
             self.beginPage.actionButtonTitle = "Go!"
             self.beginPage.alternativeButtonTitle = "Cancel"
             self.beginPage.requiresCloseButton = false
@@ -272,7 +272,7 @@ class QuizViewController: UIViewController {
     }
     
     func shareFacebook() {
-        //Present the Facebook share once the user has selected to share their score.  Present as a web view in the app because their regular (integrated) modal seemed to have a bug.
+        //Present the Facebook share once the user has selected to share their score. Present as a web view in the app because their regular (integrated) modal seemed to have a bug.
         let content: LinkShareContent = LinkShareContent.init(url: URL.init(string: "http://nebraskafbla.org") ?? URL.init(fileURLWithPath: "http://nebraskafbla.org"), quote: "I got a 5/5 on the \(category) quiz in Noah Holoubek and Mitchel Beeson's FBLA HQ app!")
         
         let shareDialog = ShareDialog(content: content)

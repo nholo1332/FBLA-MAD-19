@@ -36,7 +36,7 @@ class LeaderboardTableViewController: UITableViewController {
         DispatchQueue.main.async(execute: { () -> Void in
             self.ref = Database.database().reference()
             self.ref.observe(DataEventType.value, with: { (dataSnap) in
-                //Retrieve the data from the leaderboard child table from the database.  This saves it as a variable so all leaderboard data can be accessed later without making another call to the database.
+                //Retrieve the data from the leaderboard child table from the database. This saves it as a variable so all leaderboard data can be accessed later without making another call to the database.
                 self.snapshot = dataSnap
                 self.totalCount = Int(dataSnap.childSnapshot(forPath: "leaderboard").childrenCount)
                 

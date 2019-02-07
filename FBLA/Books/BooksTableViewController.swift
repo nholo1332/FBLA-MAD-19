@@ -70,7 +70,7 @@ class BooksTableViewController: UITableViewController, bulletinb {
     }
     
     private func setup() {
-        //Because the cells animate their size, we need to store and array of the possible cell sizes.  We also want to have a custom refresh handler (to fetch new data from the database when the user requests.
+        //Because the cells animate their size, we need to store and array of the possible cell sizes. We also want to have a custom refresh handler (to fetch new data from the database when the user requests.
         cellHeights = Array(repeating: Const.closeCellHeight, count: Const.rowsCount)
         tableView.estimatedRowHeight = Const.closeCellHeight
         tableView.rowHeight = UITableView.automaticDimension
@@ -94,7 +94,7 @@ class BooksTableViewController: UITableViewController, bulletinb {
         
         reserveDonePage = BLTNPageItem(title: "Reserve Completed")
         reserveDonePage.image = UIImage(named: "completed")
-        reserveDonePage.descriptionText = "Your reservation was successfully completed!  You can now pick up your reserved book.  Make sure to return it by \(formatter.string(from: returnDate))."
+        reserveDonePage.descriptionText = "Your reservation was successfully completed!  You can now pick up your reserved book. Make sure to return it by \(formatter.string(from: returnDate))."
         reserveDonePage.actionButtonTitle = "Done"
         reservePage.requiresCloseButton = false
         reservePage.isDismissable = true
@@ -114,7 +114,7 @@ class BooksTableViewController: UITableViewController, bulletinb {
         
         reservePage = BLTNPageItem(title: "Confirm Reservation")
         reservePage.image = UIImage(named: "book")
-        reservePage.descriptionText = "Confirm you would like to reserve this book for \(days) days.  You will need to return it by \(formatter.string(from: returnDate))."
+        reservePage.descriptionText = "Confirm you would like to reserve this book for \(days) days. You will need to return it by \(formatter.string(from: returnDate))."
         reservePage.actionButtonTitle = "Reserve"
         reservePage.alternativeButtonTitle = "Cancel"
         reservePage.requiresCloseButton = false
@@ -123,7 +123,7 @@ class BooksTableViewController: UITableViewController, bulletinb {
         
         reservePage.actionHandler = { (item: BLTNActionItem) in
             item.manager?.displayActivityIndicator()
-            //Save the required data for the book reserve to the database.  Because lovely Firebase Database can't store a raw NSDate, we need to save it as a string and later convert it to a date and then format how we want.
+            //Save the required data for the book reserve to the database. Because lovely Firebase Database can't store a raw NSDate, we need to save it as a string and later convert it to a date and then format how we want.
             if self.snapshot.childSnapshot(forPath: "Books").childSnapshot(forPath: "\(bookID)").childSnapshot(forPath: "users").exists() {
                 
                 var currentUsers = (self.snapshot.childSnapshot(forPath: "Books/\(bookID)/users").value as! [String])
@@ -162,7 +162,7 @@ class BooksTableViewController: UITableViewController, bulletinb {
     }
     
     @objc func refreshHandler() {
-        //Here is where we actually refresh the data.  We want to run this as async because it needs to take control of the main thread so we can esnure it actually makes a call to the database to retrieve all the data.
+        //Here is where we actually refresh the data. We want to run this as async because it needs to take control of the main thread so we can esnure it actually makes a call to the database to retrieve all the data.
         let deadlineTime = DispatchTime.now() + .seconds(3)
         DispatchQueue.main.async(execute: { () -> Void in
             self.ref = Database.database().reference()
@@ -193,7 +193,7 @@ class BooksTableViewController: UITableViewController, bulletinb {
         } else {
             cell.unfold(true, animated: false, completion: nil)
         }
-        //As I stated earlier, we may want to pass the DataSnapshot as a variable to decrease the number of server calls.  This would be very detrimental to the speed of the app if in the cell view had to call to the server to retrieve the data for each book (think if you had around 30 books...).  This way it is also easier to implement new data into the database (because we don't have to create a whole other variable to pass into the cell view, it already exists in the snapshot).
+        //As I stated earlier, we may want to pass the DataSnapshot as a variable to decrease the number of server calls. This would be very detrimental to the speed of the app if in the cell view had to call to the server to retrieve the data for each book (think if you had around 30 books...). This way it is also easier to implement new data into the database (because we don't have to create a whole other variable to pass into the cell view, it already exists in the snapshot).
         cell.number = indexPath.row
         cell.snapshot = snapshot.childSnapshot(forPath: "Books/\(indexPath.row)")
         cell.bulletinDelegate = self
