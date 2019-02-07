@@ -56,14 +56,36 @@ class QuizViewController: UIViewController {
                     questions.competitiveEvents.question5
                 ]
             }else if category == "business skills"{
-                
+                self.questionsToUse = [
+                    questions.businessSkills.question1,
+                    questions.businessSkills.question2,
+                    questions.businessSkills.question3,
+                    questions.businessSkills.question4,
+                    questions.businessSkills.question5
+                ]
             }else if category == "sponsors"{
-                
+                self.questionsToUse = [
+                    questions.sponsors.question1,
+                    questions.sponsors.question2,
+                    questions.sponsors.question3,
+                    questions.sponsors.question4,
+                    questions.sponsors.question5
+                ]
             }else if category == "parlipro"{
-                
+                self.questionsToUse = [
+                    questions.parlipro.question1,
+                    questions.parlipro.question2,
+                    questions.parlipro.question3,
+                    questions.parlipro.question4,
+                    questions.parlipro.question5
+                ]
             }else if category == "history"{
                 self.questionsToUse = [
-                    questions.history.question1
+                    questions.history.question1,
+                    questions.history.question2,
+                    questions.history.question3,
+                    questions.history.question4,
+                    questions.history.question5
                 ]
             }
         }

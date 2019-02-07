@@ -59,7 +59,51 @@ struct questions {
     }
     
     struct businessSkills {
-        
+        static let question1 = Question(
+            question: "What is NOT a good characteristic of successful business person?",
+            answers: [
+                Answer(answer: "Not a team worker", isRight: true),
+                Answer(answer: "Trustworthy", isRight: false),
+                Answer(answer: "Business vision", isRight: false),
+                Answer(answer: "Honesty", isRight: false)
+            ]
+        )
+        static let question2 = Question(
+            question: "True or false, you should always shake the interviewer's hand upon entering the interview.",
+            answers: [
+                Answer(answer: "True", isRight: true),
+                Answer(answer: "False", isRight: false),
+                Answer(answer: "", isRight: false),
+                Answer(answer: "", isRight: false)
+            ]
+        )
+        static let question3 = Question(
+            question: "Which of the following would NOT be a strategic goal in a company's goal to increase perfomance and growth?",
+            answers: [
+                Answer(answer: "Dramatic decrease in workdays", isRight: true),
+                Answer(answer: "Setting and tracking goals", isRight: false),
+                Answer(answer: "Increasing team productivity", isRight: false),
+                Answer(answer: "Business development planning", isRight: false)
+            ]
+        )
+        static let question4 = Question(
+            question: "Getting or earning a higher level job is known as a...",
+            answers: [
+                Answer(answer: "Promotion", isRight: true),
+                Answer(answer: "Pay raise", isRight: false),
+                Answer(answer: "Demotion", isRight: false),
+                Answer(answer: "Lateral move", isRight: false)
+            ]
+        )
+        static let question5 = Question(
+            question: "An example of a coporate business is...",
+            answers: [
+                Answer(answer: "Adidas", isRight: true),
+                Answer(answer: "Local convenicen store", isRight: false),
+                Answer(answer: "Mom and Pop's shop", isRight: false),
+                Answer(answer: "Stree venders", isRight: false)
+            ]
+        )
     }
     
     struct sponsors {
@@ -175,6 +219,33 @@ struct questions {
                 Answer(answer: "1987, Arkansas", isRight: true),
                 Answer(answer: "1942, South Carolina", isRight: false),
                 Answer(answer: "1970, Tennessee", isRight: false)
+            ]
+        )
+        static let question3 = Question(
+            question: "In 1947, what state was the first to create a state chapter?",
+            answers: [
+                Answer(answer: "Iowa", isRight: true),
+                Answer(answer: "Nebraska", isRight: true),
+                Answer(answer: "Kansas", isRight: false),
+                Answer(answer: "Colorado", isRight: false)
+            ]
+        )
+        static let question4 = Question(
+            question: "In 1958 the what division, Phi Beta Lambda, is created?",
+            answers: [
+                Answer(answer: "Postsecondary", isRight: true),
+                Answer(answer: "Elementary", isRight: true),
+                Answer(answer: "Graduate", isRight: false),
+                Answer(answer: "Secondary", isRight: false)
+            ]
+        )
+        static let question5 = Question(
+            question: "In what year did FBLA’s annual membership break the 200,000 member mark?",
+            answers: [
+                Answer(answer: "1987", isRight: true),
+                Answer(answer: "", isRight: true),
+                Answer(answer: "", isRight: false),
+                Answer(answer: "", isRight: false)
             ]
         )
     }
