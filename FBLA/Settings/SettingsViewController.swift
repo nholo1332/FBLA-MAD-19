@@ -87,7 +87,6 @@ class SettingsViewController: UIViewController {
             do {
                 try Auth.auth().signOut()
             } catch let error as NSError {
-                print(error.localizedDescription)
                 self.navigationController?.popViewController(animated: true)
             }
             

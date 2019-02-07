@@ -272,14 +272,23 @@ class QuizViewController: UIViewController {
         
         shareDialog.failsOnInvalidData = true
         shareDialog.completion = { result in
-            // Handle share results
+            self.ref = Database.database().reference()
+            self.ref.child("leaderboard").observeSingleEvent(of: .value, with: { (snapshot) in
+                
+                if snapshot.childSnapshot(forPath: "\(Auth.auth().currentUser!.uid)").exists() {
+                    let leaderboardGrade = (snapshot.childSnapshot(forPath: "\(Auth.auth().currentUser!.uid)").value as! Int) + self.grade
+                    self.ref.child("leaderboard/\(Auth.auth().currentUser!.uid)").setValue(leaderboardGrade)
+                }else{
+                    self.ref.child("leaderboard/\(Auth.auth().currentUser!.uid)").setValue(self.grade)
+                }
+            })
+            
+            self.doneManager.dismissBulletin()
+            self.navigationController?.popToRootViewController(animated: true)
         }
-        do
-        {
+        do {
             try shareDialog.show()
-        }
-        catch
-        {
+        } catch {
             print("Exception")
             
         }
