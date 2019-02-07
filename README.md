@@ -29,7 +29,7 @@ This app allows you to quiz youself about FBLA and reserve some FBLA books.  Alo
 
 #### CocoaPods
 Once you have the app downloaded, all the required CocoaPods should already be there.  If they are not, you will need to install them.
-In Terminal, type `cd Downloads` (supposing the app is in your Download folder).  Then type `cd FBLA-MAD-19`, and hit enter.  Once in that folder, type `pod install` to install the CocoaPods.  If you don't have CocoaPods CLI installed, install it by running `sudo gem install cocoapods`.
+In Terminal, type `cd Downloads` (supposing the app is in your Download folder).  Then type `cd FBLA-MAD-19`, and hit enter (make sure to have the download unzipped before running the commands in Terminal).  Once in that folder, type `pod install` to install the CocoaPods.  If you don't have CocoaPods CLI installed, install it by running `sudo gem install cocoapods`.
 
 ## Built with
 - Xcode 10
