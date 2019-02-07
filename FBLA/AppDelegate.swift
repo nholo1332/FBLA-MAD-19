@@ -18,7 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //TODO: Custom app icon
     //TODO: README with instructions
     //TODO: Finish the onboarding view
-    //TODO: Add scroll view for the quiz selector view
     //TODO: Add scroll view for the signup view
     //TODO: Add scroll view for the login view
     
