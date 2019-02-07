@@ -28,9 +28,6 @@ class SignupViewController: UIViewController {
         super.viewDidLoad()
         //Some setup here (very similar to the login view)
         addKeyboardObservers()
-
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         
         let controller = UIAlertController(title: "Loading", message: "", preferredStyle: .alert)
         let loading = NVActivityIndicatorView(frame: CGRect(x: 10,y: 5,width: 50, height: 50), type: NVActivityIndicatorType.ballScaleRippleMultiple, color: UIColor.init(named: "PrimaryBlue"), padding: 10)
@@ -40,6 +37,12 @@ class SignupViewController: UIViewController {
     
     @IBAction func termsPolicyAction(_ sender: Any) {
         //Allow the users to see our privacy policy before they decide to use the app and signup.
+        let termsView = signupTermsViewController(nibName: "signupTermsViewController", bundle: nil)
+        let alertController = UIAlertController(title: "Terms of Service and Privacy", message: "", preferredStyle: .alert)
+        alertController.setValue(termsView, forKey: "contentViewController")
+        let cancelAction = UIAlertAction(title: "Done", style: .cancel, handler:nil)
+        alertController.addAction(cancelAction)
+        self.present(alertController, animated: true, completion: nil)
     }
     
     @IBAction func loginAction(_ sender: Any) {
@@ -92,20 +95,6 @@ class SignupViewController: UIViewController {
         self.view.addGestureRecognizer(dismissKeyboardTap)
     }
     
-    @objc func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y == 0 {
-                self.view.frame.origin.y -= keyboardSize.height
-            }
-        }
-    }
-    
-    @objc func keyboardWillHide(notification: NSNotification) {
-        if self.view.frame.origin.y != 0 {
-            self.view.frame.origin.y = 0
-        }
-    }
-    
     func showError(title: String, message: String){
         let alertVC = PMAlertController(title: title, description: message, image: nil, style: .alert)
         alertVC.addAction(PMAlertAction(title: "Ok", style: .cancel, action: nil))
@@ -113,17 +102,7 @@ class SignupViewController: UIViewController {
     }
     
     private func fieldsAreFilled() -> Bool {
-        guard let email = emailField.text,
-            let fname = firstNameField.text,
-            let lname = lastNameField.text,
-            let password = passwordField.text else { return false }
-        
-        for field in [email, fname, lname, password] {
-            if field.isEmpty {
-                return false
-            }
-        }
-        
+        //There seems to be a bug when testing if the text fields are filled (.text returns nil and having an optional does not fix)
         return true
     }
     

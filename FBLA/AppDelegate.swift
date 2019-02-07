@@ -14,8 +14,7 @@ import FacebookCore
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-    //TODO: Custom app icon
+    
     //TODO: README
     //TODO: Create PDF with screenshots
     

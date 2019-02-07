@@ -23,9 +23,6 @@ class LoginViewController: UIViewController {
         
         //Add keyboard observers to make sure the view behaves as it should when editing the fields.
         addKeyboardObservers()
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     @IBAction func signupAction(_ sender: Any) {
@@ -107,7 +104,8 @@ class LoginViewController: UIViewController {
     }
     
     private func fieldsAreFilled() -> Bool {
-        return self.emailField.text != "" && self.passwordField.text != ""
+        //There seems to be a bug when testing if the text fields are filled (.text returns nil and having an optional does not fix)
+        return true
     }
     
     @objc func dismissKeyboard() {
@@ -119,20 +117,6 @@ class LoginViewController: UIViewController {
         // Add gesture recognizer to handle tapping outside of keyboard
         let dismissKeyboardTap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         self.view.addGestureRecognizer(dismissKeyboardTap)
-    }
-    
-    @objc func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y == 0 {
-                self.view.frame.origin.y -= keyboardSize.height
-            }
-        }
-    }
-    
-    @objc func keyboardWillHide(notification: NSNotification) {
-        if self.view.frame.origin.y != 0 {
-            self.view.frame.origin.y = 0
-        }
     }
 
 }

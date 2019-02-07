@@ -44,7 +44,7 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nw6-Fd-5dL">
                                             <rect key="frame" x="0.0" y="240.99999999999997" width="375" height="444.33333333333326"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aLy-Vs-VA0" customClass="MadokaTextField" customModule="TextFieldEffects">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aLy-Vs-VA0" customClass="MadokaTextField" customModule="TextFieldEffects">
                                                     <rect key="frame" x="24" y="8" width="323" height="60"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="60" id="oty-NV-F0w"/>

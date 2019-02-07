@@ -13,6 +13,8 @@
 		4F50B7CC21F3976B003DB8F0 /* FBLATests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F50B7CB21F3976B003DB8F0 /* FBLATests.swift */; };
 		4F50B7D721F3976B003DB8F0 /* FBLAUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F50B7D621F3976B003DB8F0 /* FBLAUITests.swift */; };
 		4F50B7E621F397A4003DB8F0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F50B7E521F397A4003DB8F0 /* MapKit.framework */; };
+		4F7006F2220C8F79000C48D0 /* signupTermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7006F0220C8F79000C48D0 /* signupTermsViewController.swift */; };
+		4F7006F3220C8F79000C48D0 /* signupTermsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F7006F1220C8F79000C48D0 /* signupTermsViewController.xib */; };
 		4F74B0DA220666EE00D056E1 /* Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F74B0D9220666EE00D056E1 /* Questions.swift */; };
 		4F74B0DD2206672600D056E1 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F74B0DC2206672600D056E1 /* Model.swift */; };
 		4F74B0E02206679E00D056E1 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F74B0DE2206679E00D056E1 /* QuizViewController.swift */; };
@@ -86,6 +88,8 @@
 		4F50B7D621F3976B003DB8F0 /* FBLAUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBLAUITests.swift; sourceTree = "<group>"; };
 		4F50B7D821F3976B003DB8F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F50B7E521F397A4003DB8F0 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		4F7006F0220C8F79000C48D0 /* signupTermsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signupTermsViewController.swift; sourceTree = "<group>"; };
+		4F7006F1220C8F79000C48D0 /* signupTermsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = signupTermsViewController.xib; sourceTree = "<group>"; };
 		4F74B0D9220666EE00D056E1 /* Questions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Questions.swift; sourceTree = "<group>"; };
 		4F74B0DC2206672600D056E1 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		4F74B0DE2206679E00D056E1 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
@@ -225,6 +229,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4F7006EF220C8F5B000C48D0 /* Terms */ = {
+			isa = PBXGroup;
+			children = (
+				4F7006F0220C8F79000C48D0 /* signupTermsViewController.swift */,
+				4F7006F1220C8F79000C48D0 /* signupTermsViewController.xib */,
+			);
+			path = Terms;
+			sourceTree = "<group>";
+		};
 		4F74B0D8220666D700D056E1 /* Questions */ = {
 			isa = PBXGroup;
 			children = (
@@ -357,6 +370,7 @@
 			children = (
 				4F7F665921FD2414008004AC /* SignupViewController.swift */,
 				4F7F665A21FD2414008004AC /* SignupViewController.xib */,
+				4F7006EF220C8F5B000C48D0 /* Terms */,
 			);
 			path = Signup;
 			sourceTree = "<group>";
@@ -508,6 +522,7 @@
 				4F74B0EB2207C98400D056E1 /* LeaderboardTableViewCell.xib in Resources */,
 				4F7F6674220633CC008004AC /* QuizSelectorViewController.xib in Resources */,
 				4F50B7C121F3976B003DB8F0 /* LaunchScreen.storyboard in Resources */,
+				4F7006F3220C8F79000C48D0 /* signupTermsViewController.xib in Resources */,
 				4F74B10B220A4E2700D056E1 /* SettingsViewController.xib in Resources */,
 				4F74B0E12206679E00D056E1 /* QuizViewController.xib in Resources */,
 				4F7B882521F3994100F42C4B /* GoogleService-Info.plist in Resources */,
@@ -637,6 +652,7 @@
 			files = (
 				4F7F663721F3B84D008004AC /* MainViewController.swift in Sources */,
 				4F74B0EA2207C98400D056E1 /* LeaderboardTableViewCell.swift in Sources */,
+				4F7006F2220C8F79000C48D0 /* signupTermsViewController.swift in Sources */,
 				4F74B0E02206679E00D056E1 /* QuizViewController.swift in Sources */,
 				4F74B10A220A4E2700D056E1 /* SettingsViewController.swift in Sources */,
 				4F7F665B21FD2414008004AC /* SignupViewController.swift in Sources */,
