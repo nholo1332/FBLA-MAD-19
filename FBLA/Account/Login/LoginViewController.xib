@@ -48,13 +48,6 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iJI-Fc-S3k">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="850"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FBLA-logo" translatesAutoresizingMaskIntoConstraints="NO" id="fZE-Om-XMd">
-                                            <rect key="frame" x="37" y="74" width="301" height="156"/>
-                                            <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="156" id="b4e-KP-wSY"/>
-                                            </constraints>
-                                        </imageView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="miM-bb-1WB">
                                             <rect key="frame" x="8" y="337" width="359" height="329"/>
                                             <subviews>
@@ -171,14 +164,21 @@
                                                 <action selector="forgotPassword:" destination="-1" eventType="touchUpInside" id="gZA-Ci-43Q"/>
                                             </connections>
                                         </button>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DB(t)" translatesAutoresizingMaskIntoConstraints="NO" id="fZE-Om-XMd">
+                                            <rect key="frame" x="37" y="43" width="301" height="255"/>
+                                            <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="255" id="b4e-KP-wSY"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="0.19846960616438356" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstItem="fZE-Om-XMd" firstAttribute="leading" secondItem="iJI-Fc-S3k" secondAttribute="leading" constant="37" id="2xH-64-DMz"/>
-                                        <constraint firstItem="fZE-Om-XMd" firstAttribute="top" secondItem="iJI-Fc-S3k" secondAttribute="top" constant="74" id="5EP-Kn-NiA"/>
+                                        <constraint firstItem="fZE-Om-XMd" firstAttribute="top" secondItem="iJI-Fc-S3k" secondAttribute="top" constant="43" id="5EP-Kn-NiA"/>
                                         <constraint firstItem="miM-bb-1WB" firstAttribute="trailing" secondItem="iJI-Fc-S3k" secondAttribute="trailingMargin" id="9tp-UW-Oj0"/>
                                         <constraint firstAttribute="height" constant="850" id="BEf-IT-1BG"/>
-                                        <constraint firstItem="miM-bb-1WB" firstAttribute="top" secondItem="fZE-Om-XMd" secondAttribute="bottom" constant="107" id="HpO-BG-UPH"/>
+                                        <constraint firstItem="miM-bb-1WB" firstAttribute="top" secondItem="fZE-Om-XMd" secondAttribute="bottom" constant="39" id="HpO-BG-UPH"/>
                                         <constraint firstAttribute="bottom" secondItem="miM-bb-1WB" secondAttribute="bottom" constant="184" id="MMF-gW-Ily"/>
                                         <constraint firstItem="miM-bb-1WB" firstAttribute="leading" secondItem="iJI-Fc-S3k" secondAttribute="leadingMargin" id="Mas-ab-nhi"/>
                                         <constraint firstItem="09q-xq-Zp3" firstAttribute="bottom" secondItem="miM-bb-1WB" secondAttribute="bottom" id="S2R-CV-a67"/>
@@ -221,7 +221,7 @@
         </view>
     </objects>
     <resources>
-        <image name="FBLA-logo" width="1240" height="850"/>
+        <image name="DB(t)" width="1000" height="1000"/>
         <image name="account-background" width="4256" height="2832"/>
         <namedColor name="PrimaryBlue">
             <color red="0.0" green="0.32156862745098042" blue="0.60784313725490191" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

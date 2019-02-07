@@ -39,17 +39,10 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="850"/>
                                 </imageView>
                                 <view contentMode="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="Zt5-Oz-zXn">
-                                    <rect key="frame" x="0.0" y="12" width="375" height="850"/>
+                                    <rect key="frame" x="0.0" y="12" width="375" height="850.33333333333337"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FBLA-logo" translatesAutoresizingMaskIntoConstraints="NO" id="ORF-Ll-QwT">
-                                            <rect key="frame" x="37" y="8" width="312" height="156"/>
-                                            <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="156" id="Lmo-cR-beL"/>
-                                            </constraints>
-                                        </imageView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nw6-Fd-5dL">
-                                            <rect key="frame" x="0.0" y="241" width="375" height="444"/>
+                                            <rect key="frame" x="0.0" y="240.99999999999997" width="375" height="444.33333333333326"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aLy-Vs-VA0" customClass="MadokaTextField" customModule="TextFieldEffects">
                                                     <rect key="frame" x="24" y="8" width="323" height="60"/>
@@ -86,7 +79,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </textField>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ivm-Lv-mh9" customClass="MadokaTextField" customModule="TextFieldEffects">
-                                                    <rect key="frame" x="24" y="212" width="323" height="49"/>
+                                                    <rect key="frame" x="24" y="212" width="323" height="49.333333333333314"/>
                                                     <color key="textColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="20"/>
                                                     <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
@@ -117,7 +110,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </textField>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d02-k7-Y17" customClass="TransitionButton" customModule="TransitionButton">
-                                                    <rect key="frame" x="93" y="374" width="173" height="50"/>
+                                                    <rect key="frame" x="93" y="374.33333333333337" width="173" height="50"/>
                                                     <color key="backgroundColor" name="PrimaryBlue"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="50" id="RzI-9M-LaN"/>
@@ -138,7 +131,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aFa-HS-IXf" customClass="TransitionButton" customModule="TransitionButton">
-                                                    <rect key="frame" x="24" y="261" width="323" height="50"/>
+                                                    <rect key="frame" x="24" y="261.33333333333337" width="323" height="50"/>
                                                     <color key="backgroundColor" name="PrimaryRed"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="50" id="sn2-Zb-ADl"/>
@@ -159,7 +152,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="RjO-sZ-f30">
-                                                    <rect key="frame" x="12" y="319" width="335" height="36"/>
+                                                    <rect key="frame" x="12" y="319.33333333333337" width="335" height="36"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="335" id="qv7-7y-zP5"/>
                                                     </constraints>
@@ -203,14 +196,21 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </view>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DB(t)" translatesAutoresizingMaskIntoConstraints="NO" id="ORF-Ll-QwT">
+                                            <rect key="frame" x="37" y="0.0" width="301" height="255"/>
+                                            <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="255" id="Lmo-cR-beL"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="0.19846960620000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstItem="Nw6-Fd-5dL" firstAttribute="leading" secondItem="Zt5-Oz-zXn" secondAttribute="leadingMargin" constant="-8" id="BJQ-D9-K3Z"/>
-                                        <constraint firstItem="ORF-Ll-QwT" firstAttribute="centerX" secondItem="Nw6-Fd-5dL" secondAttribute="centerX" constant="5.5" id="CeK-7f-e7r"/>
+                                        <constraint firstItem="ORF-Ll-QwT" firstAttribute="centerX" secondItem="Nw6-Fd-5dL" secondAttribute="centerX" id="CeK-7f-e7r"/>
                                         <constraint firstItem="Nw6-Fd-5dL" firstAttribute="trailing" secondItem="Zt5-Oz-zXn" secondAttribute="trailingMargin" constant="8" id="DlY-TY-fLw"/>
-                                        <constraint firstItem="ORF-Ll-QwT" firstAttribute="top" secondItem="Zt5-Oz-zXn" secondAttribute="top" constant="8" id="Ffb-Um-G3f"/>
-                                        <constraint firstItem="Nw6-Fd-5dL" firstAttribute="top" secondItem="ORF-Ll-QwT" secondAttribute="bottom" constant="77" id="M1b-hE-9hD"/>
+                                        <constraint firstItem="ORF-Ll-QwT" firstAttribute="top" secondItem="Zt5-Oz-zXn" secondAttribute="top" id="Ffb-Um-G3f"/>
+                                        <constraint firstItem="Nw6-Fd-5dL" firstAttribute="top" secondItem="ORF-Ll-QwT" secondAttribute="bottom" constant="-14.000000000000028" id="M1b-hE-9hD"/>
                                         <constraint firstAttribute="bottom" secondItem="Nw6-Fd-5dL" secondAttribute="bottom" constant="165" id="X8l-1r-MJC"/>
                                         <constraint firstItem="ORF-Ll-QwT" firstAttribute="leading" secondItem="Zt5-Oz-zXn" secondAttribute="leading" constant="37" id="gsm-U9-Qri"/>
                                     </constraints>
@@ -251,7 +251,7 @@
         </view>
     </objects>
     <resources>
-        <image name="FBLA-logo" width="1240" height="850"/>
+        <image name="DB(t)" width="1000" height="1000"/>
         <image name="account-background" width="4256" height="2832"/>
         <namedColor name="PrimaryBlue">
             <color red="0.0" green="0.32156862745098042" blue="0.60784313725490191" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

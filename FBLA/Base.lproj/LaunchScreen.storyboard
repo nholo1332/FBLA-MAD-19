@@ -1,10 +1,20 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Nunito-Bold.ttf">
+            <string>Nunito-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
@@ -13,13 +23,42 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DB" translatesAutoresizingMaskIntoConstraints="NO" id="xV8-MP-rBA">
+                                <rect key="frame" x="37" y="206" width="301" height="255"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="xV8-MP-rBA" secondAttribute="height" multiplier="301:255" id="obz-P6-L3g"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Down to Business" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="6WK-pm-eD0">
+                                <rect key="frame" x="57" y="469" width="261" height="62"/>
+                                <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="25"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" name="PrimaryBlue"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="6WK-pm-eD0" secondAttribute="bottom" constant="136" id="2d4-ic-7w3"/>
+                            <constraint firstItem="6WK-pm-eD0" firstAttribute="top" secondItem="xV8-MP-rBA" secondAttribute="bottom" constant="8" symbolic="YES" id="DWP-bA-ELg"/>
+                            <constraint firstItem="xV8-MP-rBA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="186" id="YeZ-CY-95X"/>
+                            <constraint firstItem="6WK-pm-eD0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="57" id="cPs-i5-GF7"/>
+                            <constraint firstItem="xV8-MP-rBA" firstAttribute="centerX" secondItem="6WK-pm-eD0" secondAttribute="centerX" id="ijl-7k-Inv"/>
+                            <constraint firstItem="xV8-MP-rBA" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="rCY-rd-61X"/>
+                            <constraint firstItem="xV8-MP-rBA" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="rbw-xL-aWo"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="DB" width="1000" height="1000"/>
+        <namedColor name="PrimaryBlue">
+            <color red="0.0" green="0.32156862745098042" blue="0.60784313725490191" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>
