@@ -109,27 +109,6 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </textField>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d02-k7-Y17" customClass="TransitionButton" customModule="TransitionButton">
-                                                    <rect key="frame" x="93" y="374.33333333333337" width="173" height="50"/>
-                                                    <color key="backgroundColor" name="PrimaryBlue"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="50" id="RzI-9M-LaN"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="18"/>
-                                                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <state key="normal" title="Login"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="spinnerColor">
-                                                            <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                            <real key="value" value="25"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                    <connections>
-                                                        <action selector="loginAction:" destination="-1" eventType="touchUpInside" id="uo7-iF-I5V"/>
-                                                    </connections>
-                                                </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aFa-HS-IXf" customClass="TransitionButton" customModule="TransitionButton">
                                                     <rect key="frame" x="24" y="261.33333333333337" width="323" height="50"/>
                                                     <color key="backgroundColor" name="PrimaryRed"/>
@@ -164,6 +143,27 @@
                                                         <action selector="termsPolicyAction:" destination="-1" eventType="touchUpInside" id="pfM-EL-cEW"/>
                                                     </connections>
                                                 </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d02-k7-Y17" customClass="TransitionButton" customModule="TransitionButton">
+                                                    <rect key="frame" x="101" y="386" width="173" height="50"/>
+                                                    <color key="backgroundColor" name="PrimaryBlue"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="RzI-9M-LaN"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="18"/>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <state key="normal" title="Login"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="spinnerColor">
+                                                            <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="25"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="loginAction:" destination="-1" eventType="touchUpInside" id="uo7-iF-I5V"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
@@ -171,24 +171,24 @@
                                                 <constraint firstItem="aLy-Vs-VA0" firstAttribute="leading" secondItem="k6d-wQ-9UA" secondAttribute="leading" id="78V-a4-YOU"/>
                                                 <constraint firstItem="Mca-md-PyX" firstAttribute="trailing" secondItem="Ivm-Lv-mh9" secondAttribute="trailing" id="84I-Y3-ntN"/>
                                                 <constraint firstItem="Ivm-Lv-mh9" firstAttribute="centerX" secondItem="aFa-HS-IXf" secondAttribute="centerX" id="8gU-ZB-vad"/>
-                                                <constraint firstItem="d02-k7-Y17" firstAttribute="top" secondItem="RjO-sZ-f30" secondAttribute="bottom" constant="19" id="Dnh-bS-Krq"/>
+                                                <constraint firstItem="d02-k7-Y17" firstAttribute="top" secondItem="RjO-sZ-f30" secondAttribute="bottom" constant="30.666666666666629" id="Dnh-bS-Krq"/>
                                                 <constraint firstItem="aFa-HS-IXf" firstAttribute="leading" secondItem="Nw6-Fd-5dL" secondAttribute="leading" constant="24" id="EqB-Dn-1gW"/>
                                                 <constraint firstItem="Mca-md-PyX" firstAttribute="top" secondItem="k6d-wQ-9UA" secondAttribute="bottom" constant="8" symbolic="YES" id="GM0-jK-UZp"/>
-                                                <constraint firstItem="aFa-HS-IXf" firstAttribute="centerX" secondItem="d02-k7-Y17" secondAttribute="centerX" constant="6" id="Gr8-sU-wy8"/>
+                                                <constraint firstItem="aFa-HS-IXf" firstAttribute="centerX" secondItem="d02-k7-Y17" secondAttribute="centerX" constant="-2" id="Gr8-sU-wy8"/>
                                                 <constraint firstItem="aLy-Vs-VA0" firstAttribute="trailing" secondItem="k6d-wQ-9UA" secondAttribute="trailing" id="Hi5-T0-IL8"/>
-                                                <constraint firstAttribute="bottom" secondItem="d02-k7-Y17" secondAttribute="bottom" constant="20" id="Kml-af-nrq"/>
+                                                <constraint firstAttribute="bottom" secondItem="d02-k7-Y17" secondAttribute="bottom" constant="8.3333333333332575" id="Kml-af-nrq"/>
                                                 <constraint firstItem="k6d-wQ-9UA" firstAttribute="trailing" secondItem="Mca-md-PyX" secondAttribute="trailing" id="LeT-82-kzX"/>
                                                 <constraint firstItem="Ivm-Lv-mh9" firstAttribute="top" secondItem="Mca-md-PyX" secondAttribute="bottom" constant="8" symbolic="YES" id="N6G-SR-Evi"/>
                                                 <constraint firstItem="RjO-sZ-f30" firstAttribute="top" secondItem="aFa-HS-IXf" secondAttribute="bottom" constant="8" symbolic="YES" id="Pfd-1S-2Ic"/>
                                                 <constraint firstItem="RjO-sZ-f30" firstAttribute="leading" secondItem="aFa-HS-IXf" secondAttribute="leading" constant="-12" id="PhH-eT-GCn"/>
-                                                <constraint firstItem="d02-k7-Y17" firstAttribute="leading" secondItem="Nw6-Fd-5dL" secondAttribute="leading" constant="93" id="U7k-xQ-R1V"/>
+                                                <constraint firstItem="d02-k7-Y17" firstAttribute="leading" secondItem="Nw6-Fd-5dL" secondAttribute="leading" constant="101" id="U7k-xQ-R1V"/>
                                                 <constraint firstItem="aLy-Vs-VA0" firstAttribute="centerX" secondItem="Nw6-Fd-5dL" secondAttribute="centerX" constant="-2" id="azt-HD-pXd"/>
                                                 <constraint firstItem="aLy-Vs-VA0" firstAttribute="top" secondItem="Nw6-Fd-5dL" secondAttribute="top" constant="8" id="cPh-oY-8wa"/>
                                                 <constraint firstItem="aLy-Vs-VA0" firstAttribute="leading" secondItem="Nw6-Fd-5dL" secondAttribute="leading" constant="24" id="gja-tT-lXf"/>
                                                 <constraint firstItem="Mca-md-PyX" firstAttribute="leading" secondItem="Ivm-Lv-mh9" secondAttribute="leading" id="mgv-YD-QGL"/>
                                                 <constraint firstItem="aFa-HS-IXf" firstAttribute="top" secondItem="Ivm-Lv-mh9" secondAttribute="bottom" id="mxF-Bc-Gyo"/>
                                                 <constraint firstItem="k6d-wQ-9UA" firstAttribute="top" secondItem="aLy-Vs-VA0" secondAttribute="bottom" constant="8" symbolic="YES" id="v7Z-RB-acz"/>
-                                                <constraint firstItem="d02-k7-Y17" firstAttribute="top" secondItem="aFa-HS-IXf" secondAttribute="bottom" constant="63" id="wIX-NN-hYx"/>
+                                                <constraint firstItem="d02-k7-Y17" firstAttribute="top" secondItem="aFa-HS-IXf" secondAttribute="bottom" constant="74.666666666666629" id="wIX-NN-hYx"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">

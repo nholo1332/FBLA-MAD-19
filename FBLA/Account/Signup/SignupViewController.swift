@@ -40,10 +40,6 @@ class SignupViewController: UIViewController {
     
     @IBAction func termsPolicyAction(_ sender: Any) {
         //Allow the users to see our privacy policy before they decide to use the app and signup.
-        let termsVC = termsViewController(nibName: "termsViewController", bundle: nil)
-        termsVC.navigationItem.title = "TOS & Privacy"
-        termsVC.navigationItem.rightBarButtonItem = nil
-        self.navigationController?.pushViewController(termsVC, animated: true)
     }
     
     @IBAction func loginAction(_ sender: Any) {
@@ -117,8 +113,18 @@ class SignupViewController: UIViewController {
     }
     
     private func fieldsAreFilled() -> Bool {
+        guard let email = emailField.text,
+            let fname = firstNameField.text,
+            let lname = lastNameField.text,
+            let password = passwordField.text else { return false }
         
-        return emailField.text != "" && firstNameField.text != "" && lastNameField.text != "" && passwordField.text != ""
+        for field in [email, fname, lname, password] {
+            if field.isEmpty {
+                return false
+            }
+        }
+        
+        return true
     }
     
     
