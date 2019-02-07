@@ -101,13 +101,21 @@ class BookTableViewCell: FoldingCell {
                     message.text = "RETURN BY: \(formatter.string(from: stringFormatter.date(from: snapshot.childSnapshot(forPath: "reservations/\((Auth.auth().currentUser?.uid)!)/end").value as! String)!))"
                     
                     openRequestButton.isEnabled = false
+                    slider.isEnabled = false
                     openRequestButton.alpha = 0.3
+                    slider.alpha = 0.3
                 }else if ((snapshot.childSnapshot(forPath: "amount").value as! Int) == (snapshot.childSnapshot(forPath: "requestedAmount").value as! Int)){
                     message.text = "BOOK NOT AVAILABLE"
                     openRequestButton.isEnabled = false
+                    slider.isEnabled = false
                     openRequestButton.alpha = 0.3
+                    slider.alpha = 0.3
                 }else{
                     message.text = "RESERVE THIS BOOK NOW"
+                    openRequestButton.isEnabled = true
+                    slider.isEnabled = true
+                    openRequestButton.alpha = 1
+                    slider.alpha = 1
                 }
                 
                 if (snapshot.childSnapshot(forPath: "users").value as! [String]).contains((Auth.auth().currentUser?.uid)!) {

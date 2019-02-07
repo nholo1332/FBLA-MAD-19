@@ -7,8 +7,15 @@
 //
 
 import UIKit
+import Firebase
 
 class QuizSelectorViewController: UIViewController {
+    
+    var ref: DatabaseReference!
+    var snapshot = DataSnapshot()
+    
+    @IBOutlet weak var leaderboardButton: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,12 +30,29 @@ class QuizSelectorViewController: UIViewController {
         if #available(iOS 11.0, *) {
             mainvc.navigationController?.navigationBar.prefersLargeTitles = false
         }
+        
+        DispatchQueue.main.async(execute: { () -> Void in
+            self.leaderboardButton.isEnabled = false
+            self.leaderboardButton.alpha = 0.8
+            self.ref = Database.database().reference()
+            self.ref.child("leaderboard").observe(DataEventType.value, with: { (dataSnap) in
+                self.snapshot = dataSnap
+                self.leaderboardButton.isEnabled = true
+                self.leaderboardButton.alpha = 1
+            })
+        })
     }
     
     @IBAction func showLeaderboards(_ sender: Any) {
         //Present the leaderboards (in a UIViewAlert to make the view easier to navigate).
+        var message = String()
+        if snapshot.childSnapshot(forPath: "\(Auth.auth().currentUser!.uid)").exists() {
+            message = "You have \(snapshot.childSnapshot(forPath: "\(Auth.auth().currentUser!.uid)").value as! Int) points"
+        }else{
+            message = "Take some quizzes to create a spot on the leaderboard!"
+        }
         let tableViewController = LeaderboardTableViewController()
-        let alertController = UIAlertController(title: "Leaderboards", message: "Message", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Leaderboards", message: message, preferredStyle: .alert)
         alertController.setValue(tableViewController, forKey: "contentViewController")
         let cancelAction = UIAlertAction(title: "Done", style: .cancel, handler:nil)
         alertController.addAction(cancelAction)
