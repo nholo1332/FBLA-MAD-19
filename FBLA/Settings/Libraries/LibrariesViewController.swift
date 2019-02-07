@@ -35,7 +35,8 @@ class LibrariesViewController: UIViewController, UICollectionViewDataSource, UIC
             Library(name: "Nunito", creator: "Vernon Adams", openSource: "Google Fonts", viewUsed: "Text font"),
             Library(name: "Open Sans", creator: "Steve Matteson", openSource: "Google Fonts", viewUsed: "Text font"),
             Library(name: "Himalayas", creator: "Wallpaper Maiden", openSource: "Wallpaper Maiden", viewUsed: "Image (account)"),
-            Library(name: "Background", creator: "Ramotion", openSource: "GitHub", viewUsed: "Books")
+            Library(name: "Background", creator: "Ramotion", openSource: "GitHub", viewUsed: "Books"),
+            Library(name: "Icons (not app icon)", creator: "Icons8", openSource: "Icons8", viewUsed: "Icons")
         ]
         
         collectionView.register(UINib(nibName: "LibraryCell", bundle: nil), forCellWithReuseIdentifier: "LibraryCell")

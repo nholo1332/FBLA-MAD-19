@@ -268,7 +268,8 @@ class QuizViewController: UIViewController {
         let content: LinkShareContent = LinkShareContent.init(url: URL.init(string: "http://nebraskafbla.org") ?? URL.init(fileURLWithPath: "http://nebraskafbla.org"), quote: "I got a 5/5 on the \(category) quiz in Noah Holoubek and Mitchel Beeson's FBLA HQ app!")
         
         let shareDialog = ShareDialog(content: content)
-        shareDialog.mode = .native
+        shareDialog.mode = .web
+        
         shareDialog.failsOnInvalidData = true
         shareDialog.completion = { result in
             // Handle share results
@@ -282,6 +283,7 @@ class QuizViewController: UIViewController {
             print("Exception")
             
         }
+        
     }
     
 }
