@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FacebookCore
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,8 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     //TODO: Add comments for code
     //TODO: Clean up code and remove prints and commented code
-    //TODO: Add social media share for quiz 100% result (for Facebook + Twitter)
-    //TODO: Add bug reporting
     //TODO: Custom app icon
     //TODO: README with instructions
     //TODO: Finish the onboarding view
@@ -25,8 +24,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        //Another setup for Facebook SDK
+        SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
+        
+        //Configure and start Firebase
         FirebaseApp.configure()
         
+        //Setup the root (main and initial) view controller and present it
         window = UIWindow(frame: UIScreen.main.bounds)
         
         let vcController = LoadingViewController(nibName: "LoadingViewController", bundle: nil)
@@ -57,6 +61,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        //Facebook SDK URL initialization
+        let appId = SDKSettings.appId
+        if url.scheme != nil && url.scheme!.hasPrefix("fb\(appId)") && url.host ==  "authorize" {
+            return SDKApplicationDelegate.shared.application(app, open: url, options: options)
+        }
+        return false
     }
 
 

@@ -44,6 +44,7 @@ class BooksTableViewController: UITableViewController, bulletinb {
     override func viewWillAppear(_ animated: Bool) {
         let mainvc = self.parent as! MainViewController
         mainvc.navigationItem.title = "Books"
+        mainvc.navigationItem.rightBarButtonItem = nil
         mainvc.navigationController?.view.backgroundColor = UIColor.white
         if #available(iOS 11.0, *) {
             mainvc.navigationController?.navigationBar.prefersLargeTitles = false

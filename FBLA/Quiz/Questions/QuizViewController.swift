@@ -216,24 +216,51 @@ class QuizViewController: UIViewController {
         endPage.image = UIImage(named: "completed")
         endPage.descriptionText = "Congratulations, you finished the quiz!  Your quiz score will be added to your total score and appended to the leaderboard."
         endPage.actionButtonTitle = "Done"
+        endPage.alternativeButtonTitle = "Done"
         endPage.requiresCloseButton = false
         endPage.isDismissable = false
         
-        endPage.actionHandler = { (item: BLTNActionItem) in
-            self.ref = Database.database().reference()
-            self.ref.child("leaderboard").observeSingleEvent(of: .value, with: { (snapshot) in
+        if grade == 1 {
+            endPage.actionButtonTitle = "Share"
+            endPage.alternativeButtonTitle = "Done"
+            
+            endPage.actionHandler = { (item: BLTNActionItem) in
+                self.shareFacebook()
+            }
+            
+            endPage.alternativeHandler = { (item: BLTNActionItem) in
+                self.ref = Database.database().reference()
+                self.ref.child("leaderboard").observeSingleEvent(of: .value, with: { (snapshot) in
+                    
+                    if snapshot.childSnapshot(forPath: "\(Auth.auth().currentUser!.uid)").exists() {
+                        let leaderboardGrade = (snapshot.childSnapshot(forPath: "\(Auth.auth().currentUser!.uid)").value as! Int) + self.grade
+                        self.ref.child("leaderboard/\(Auth.auth().currentUser!.uid)").setValue(leaderboardGrade)
+                    }else{
+                        self.ref.child("leaderboard/\(Auth.auth().currentUser!.uid)").setValue(self.grade)
+                    }
+                })
                 
-                if snapshot.childSnapshot(forPath: "\(Auth.auth().currentUser!.uid)").exists() {
-                    let leaderboardGrade = (snapshot.childSnapshot(forPath: "\(Auth.auth().currentUser!.uid)").value as! Int) + self.grade
-                    self.ref.child("leaderboard/\(Auth.auth().currentUser!.uid)").setValue(leaderboardGrade)
-                }else{
-                    self.ref.child("leaderboard/\(Auth.auth().currentUser!.uid)").setValue(self.grade)
-                }
-            })
+                self.doneManager.dismissBulletin()
+                self.navigationController?.popToRootViewController(animated: true)
+            }
+        }else{
+            endPage.actionHandler = { (item: BLTNActionItem) in
+                self.ref = Database.database().reference()
+                self.ref.child("leaderboard").observeSingleEvent(of: .value, with: { (snapshot) in
+                    
+                    if snapshot.childSnapshot(forPath: "\(Auth.auth().currentUser!.uid)").exists() {
+                        let leaderboardGrade = (snapshot.childSnapshot(forPath: "\(Auth.auth().currentUser!.uid)").value as! Int) + self.grade
+                        self.ref.child("leaderboard/\(Auth.auth().currentUser!.uid)").setValue(leaderboardGrade)
+                    }else{
+                        self.ref.child("leaderboard/\(Auth.auth().currentUser!.uid)").setValue(self.grade)
+                    }
+                })
                 
-            self.doneManager.dismissBulletin()
-            self.navigationController?.popToRootViewController(animated: true)
+                self.doneManager.dismissBulletin()
+                self.navigationController?.popToRootViewController(animated: true)
+            }
         }
+        
         doneManager.showBulletin(above: self)
     }
     

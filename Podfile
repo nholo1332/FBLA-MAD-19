@@ -15,6 +15,7 @@ pod 'Firebase/Performance'
 
 #Social Media
 pod 'FacebookShare'
+#pod 'TwitterKit' #Need an approved dev account (not approved in time for submission)
 
 # Design pods
 pod 'TransitionButton'
