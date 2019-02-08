@@ -21,7 +21,7 @@ class IntroViewController: UIViewController, PaperOnboardingDelegate, PaperOnboa
     //Add the following items to the onboarding view (to be shown to the user).
     let onBoardItem: OnboardingItemInfo = OnboardingItemInfo(informationImage: UIImage(named: "intro-quiz")!,
                         title: "Quiz",
-                        description: "Quiz yourself on some topics of FBLA!  Test your knowledge of FBLA to get more out of the FBLA program.",
+                        description: "Quiz yourself on some topics of FBLA!  Test your knowledge of FBLA to get more out of the FBLA program.  If you get 5/5 on a quiz, you have the option to share your awesome score to Facebook!",
                         pageIcon: UIImage(named: "intro-quiz-bottom")!,
                         color: UIColor.init(named: "PrimaryRed")!,
                         titleColor: UIColor.white, descriptionColor: UIColor.white, titleFont: titleFont, descriptionFont: descriptionFont)
