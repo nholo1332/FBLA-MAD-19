@@ -60,7 +60,7 @@ struct questions {
     
     struct businessSkills {
         static let question1 = Question(
-            question: "What is NOT a good characteristic of successful business person?",
+            question: "What is NOT a good characteristic of a successful business person?",
             answers: [
                 Answer(answer: "Not a team worker", isRight: true),
                 Answer(answer: "Trustworthy", isRight: false),
@@ -231,7 +231,7 @@ struct questions {
             ]
         )
         static let question4 = Question(
-            question: "In 1958 the what division, Phi Beta Lambda, is created?",
+            question: "In 1958 what division of Phi Beta Lambda was created?",
             answers: [
                 Answer(answer: "Postsecondary", isRight: true),
                 Answer(answer: "Elementary", isRight: true),
