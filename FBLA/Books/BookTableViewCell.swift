@@ -168,7 +168,6 @@ extension BookTableViewCell {
     
     @IBAction func buttonHandler(_: AnyObject) {
         //Becuase the Bulletin can't be called on a TableViewCell, we needed to make a custom protocol and function for it to be ran on the BooksTableViewControler, since that is also the ViewController.
-        DispatchQueue.main.async(execute: { () -> Void in
             let formatter = DateFormatter()
             formatter.dateFormat = "MM-dd-yyyy"
             
@@ -182,6 +181,5 @@ extension BookTableViewCell {
             let newDate = Calendar.current.date(byAdding: .day, value: Int(truncating: numFormatter.number(from: days)!), to: Date())
             
             self.bulletinDelegate!.showBulletin(days: Int(truncating: numFormatter.number(from: days)!), returnDate: newDate!, bookID: self.number)
-        })
     }
 }
