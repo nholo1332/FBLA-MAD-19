@@ -30,6 +30,9 @@ This app allows you to quiz youself about FBLA and reserve some FBLA books.  Alo
 - iOS 11.0+
 - Xcode 10.1
 
+## Opening Project
+To open the project, unzip the download and find the `FBLA.xcworkspace`.  Open that with Xcode.  If Xcode can't find the import statements or dependencies, use the installation guide below.
+
 ## Installation
 
 #### CocoaPods
