@@ -96,12 +96,12 @@ struct questions {
             ]
         )
         static let question5 = Question(
-            question: "An example of a coporate business is...",
+            question: "An example of a corporate business is...",
             answers: [
                 Answer(answer: "Adidas", isRight: true),
-                Answer(answer: "Local convenicen store", isRight: false),
+                Answer(answer: "Local convenience store", isRight: false),
                 Answer(answer: "Mom and Pop's shop", isRight: false),
-                Answer(answer: "Stree venders", isRight: false)
+                Answer(answer: "Street vendors", isRight: false)
             ]
         )
     }

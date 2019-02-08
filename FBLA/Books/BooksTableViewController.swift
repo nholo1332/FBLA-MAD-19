@@ -130,9 +130,7 @@ class BooksTableViewController: UITableViewController, bulletinb {
                 
                 var currentUsers = (self.snapshot.childSnapshot(forPath: "Books/\(bookID)/users").value as! [String])
                 currentUsers.append("\(Auth.auth().currentUser!.uid)")
-                print("0")
                 self.ref.child("Books").child("\(bookID)").child("users").setValue(currentUsers)
-                print("1")
             }else{
                 let users = ["\(Auth.auth().currentUser!.uid)"]
                 self.ref.child("Books/\(bookID)/users").setValue(users)
@@ -141,24 +139,19 @@ class BooksTableViewController: UITableViewController, bulletinb {
             if self.snapshot.childSnapshot(forPath: "Books/\(bookID)/soonestAvailable").exists() {
                 if stringFormatter.date(from: self.snapshot.childSnapshot(forPath: "Books/\(bookID)/soonestAvailable").value as! String)! < returnDate {
                     self.ref.child("Books/\(bookID)/soonestAvailable").setValue("\(returnDate)")
-                    print("2")
                 }
             }else{
                 self.ref.child("Books/\(bookID)/soonestAvailable").setValue("\(returnDate)")
-                print("3")
             }
             
             self.ref.child("Books/\(bookID)/reservations/\(Auth.auth().currentUser!.uid)/end").setValue("\(returnDate)")
             print("4")
             self.ref.child("Books/\(bookID)/reservations/\(Auth.auth().currentUser!.uid)/start").setValue("\(Date())")
-            print("5")
             
             if self.snapshot.childSnapshot(forPath: "Books/\(bookID)/requestedAmount").exists() {
                 self.ref.child("Books/\(bookID)/requestedAmount").setValue((self.snapshot.childSnapshot(forPath: "Books/\(bookID)/requestedAmount").value as! Int) + 1)
-                print("6")
             }else{
                 self.ref.child("Books/\(bookID)/requestedAmount").setValue(1)
-                print("7")
             }
             
             item.manager?.displayNextItem()
@@ -169,6 +162,10 @@ class BooksTableViewController: UITableViewController, bulletinb {
         }
         
         bulletinManager.showBulletin(above: self)
+    }
+    
+    func reloadManager() {
+        bulletinManager = BLTNItemManager(rootItem: reservePage)
     }
     
     @objc func refreshHandler() {

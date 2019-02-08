@@ -38,16 +38,16 @@ class LeaderboardTableViewController: UITableViewController {
             self.ref.observe(DataEventType.value, with: { (dataSnap) in
                 //Retrieve the data from the leaderboard child table from the database. This saves it as a variable so all leaderboard data can be accessed later without making another call to the database.
                 self.snapshot = dataSnap
-                self.totalCount = Int(dataSnap.childSnapshot(forPath: "leaderboard").childrenCount)
-                
                 for child in dataSnap.childSnapshot(forPath: "leaderboard").children {
                     //Append each score as an array to make it more efficient for the tableview to load and present.
                     let myChild = child as! DataSnapshot
                     self.uids.append(myChild.key)
                     self.scores.append(myChild.value as! Int)
                 }
+                self.totalCount = Int(dataSnap.childSnapshot(forPath: "leaderboard").childrenCount)
                 self.tableView.reloadData()
             })
+            self.tableView.reloadData()
         })
     }
     
@@ -63,7 +63,7 @@ class LeaderboardTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LeaderboardCell", for: indexPath) as! LeaderboardTableViewCell
         //Pass the user's name to the cell for it to display.
         let name = "\(snapshot.childSnapshot(forPath: "users/\(uids[indexPath.row])/firstName").value as! String) \((snapshot.childSnapshot(forPath: "users/\(uids[indexPath.row])/lastName").value as! String).prefix(1))."
-        cell.setInfo(name: name, points: scores[indexPath.row])
+        cell.setInfo(name: name, scores: scores, rank: indexPath.row)
         return cell
     }
 }

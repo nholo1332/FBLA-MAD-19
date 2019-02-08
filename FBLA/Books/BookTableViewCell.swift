@@ -168,12 +168,20 @@ extension BookTableViewCell {
     
     @IBAction func buttonHandler(_: AnyObject) {
         //Becuase the Bulletin can't be called on a TableViewCell, we needed to make a custom protocol and function for it to be ran on the BooksTableViewControler, since that is also the ViewController.
-        let formatter = DateFormatter()
-        formatter.dateFormat = "MM-dd-yyyy"
-        
-        let days: CGFloat = slider.fraction * CGFloat(self.snapshot.childSnapshot(forPath: "maxDays").value as! Int)
-        let newDate = Calendar.current.date(byAdding: .day, value: Int(days), to: Date())
-        
-        bulletinDelegate?.showBulletin(days: Int(days), returnDate: newDate!, bookID: number)
+        DispatchQueue.main.async(execute: { () -> Void in
+            let formatter = DateFormatter()
+            formatter.dateFormat = "MM-dd-yyyy"
+            
+            let numFormatter = NumberFormatter()
+            numFormatter.maximumIntegerDigits = 3
+            numFormatter.maximumFractionDigits = 0
+            
+            let days = numFormatter.string(from: (self.slider.fraction * CGFloat(self.snapshot.childSnapshot(forPath: "maxDays").value as! Int) as NSNumber)) ?? ""
+            
+            print("Days: \(days)")
+            let newDate = Calendar.current.date(byAdding: .day, value: Int(truncating: numFormatter.number(from: days)!), to: Date())
+            
+            self.bulletinDelegate!.showBulletin(days: Int(truncating: numFormatter.number(from: days)!), returnDate: newDate!, bookID: self.number)
+        })
     }
 }

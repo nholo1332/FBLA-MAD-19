@@ -43,7 +43,6 @@ class QuizViewController: UIViewController {
         return BLTNItemManager(rootItem: rootItem)
     }()
     
-    //TODO: Add more questions
     //Load the questions based on the category that was passed to this view
     var category: String = "" {
         didSet {
