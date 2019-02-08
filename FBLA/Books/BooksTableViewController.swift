@@ -36,6 +36,8 @@ class BooksTableViewController: UITableViewController, bulletinb {
         return BLTNItemManager(rootItem: rootItem)
     }()
     
+    var bulletinShown = Bool()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -88,80 +90,84 @@ class BooksTableViewController: UITableViewController, bulletinb {
     }
     
     func showBulletin(days: Int, returnDate: Date, bookID: Int) {
+        if bulletinShown {
+            reloadManager()
+        }
         //Handle the call from the cell to present the book reserving process.
         let formatter = DateFormatter()
         let stringFormatter = DateFormatter()
         formatter.dateFormat = "MM-dd-yyyy"
         stringFormatter.dateFormat = "yyyy-MM-dd HH:mm:ssZ"
         
-        reserveDonePage = BLTNPageItem(title: "Reserve Completed")
-        reserveDonePage.image = UIImage(named: "completed")
-        reserveDonePage.descriptionText = "Your reservation was successfully completed!  You can now pick up your reserved book. Make sure to return it by \(formatter.string(from: returnDate))."
-        reserveDonePage.actionButtonTitle = "Done"
-        reservePage.requiresCloseButton = false
-        reservePage.isDismissable = true
-        
-        reserveDonePage.actionHandler = { (item: BLTNActionItem) in
-            DispatchQueue.main.async(execute: { () -> Void in
-                self.ref = Database.database().reference()
-                self.ref.observe(DataEventType.value, with: { (dataSnap) in
-                    //Reload the data to show new changes after a reserve has completed.
-                    self.snapshot = dataSnap
-                    self.totalCount = Int(dataSnap.childSnapshot(forPath: "Books").childrenCount)
-                    self.tableView.reloadData()
+            self.reservePage.descriptionText = "Confirm you would like to reserve this book for \(days) days. You will need to return it by \(formatter.string(from: returnDate))."
+            self.reserveDonePage = BLTNPageItem(title: "Reserve Completed")
+            self.reserveDonePage.image = UIImage(named: "completed")
+            self.reserveDonePage.descriptionText = "Your reservation was successfully completed!  You can now pick up your reserved book. Make sure to return it by \(formatter.string(from: returnDate))."
+            self.reserveDonePage.actionButtonTitle = "Done"
+            self.reservePage.requiresCloseButton = false
+            self.reservePage.isDismissable = true
+            
+            self.reserveDonePage.actionHandler = { (item: BLTNActionItem) in
+                DispatchQueue.main.async(execute: { () -> Void in
+                    self.ref = Database.database().reference()
+                    self.ref.observe(DataEventType.value, with: { (dataSnap) in
+                        //Reload the data to show new changes after a reserve has completed.
+                        self.snapshot = dataSnap
+                        self.totalCount = Int(dataSnap.childSnapshot(forPath: "Books").childrenCount)
+                        self.tableView.reloadData()
+                    })
                 })
-            })
-            self.bulletinManager.dismissBulletin()
-        }
-        
-        reservePage = BLTNPageItem(title: "Confirm Reservation")
-        reservePage.image = UIImage(named: "book")
-        reservePage.descriptionText = "Confirm you would like to reserve this book for \(days) days. You will need to return it by \(formatter.string(from: returnDate))."
-        reservePage.actionButtonTitle = "Reserve"
-        reservePage.alternativeButtonTitle = "Cancel"
-        reservePage.requiresCloseButton = false
-        reservePage.isDismissable = false
-        reservePage.next = reserveDonePage
-        
-        reservePage.actionHandler = { (item: BLTNActionItem) in
-            item.manager?.displayActivityIndicator()
-            //Save the required data for the book reserve to the database. Because lovely Firebase Database can't store a raw NSDate, we need to save it as a string and later convert it to a date and then format how we want.
-            if self.snapshot.childSnapshot(forPath: "Books").childSnapshot(forPath: "\(bookID)").childSnapshot(forPath: "users").exists() {
-                
-                var currentUsers = (self.snapshot.childSnapshot(forPath: "Books/\(bookID)/users").value as! [String])
-                currentUsers.append("\(Auth.auth().currentUser!.uid)")
-                self.ref.child("Books").child("\(bookID)").child("users").setValue(currentUsers)
-            }else{
-                let users = ["\(Auth.auth().currentUser!.uid)"]
-                self.ref.child("Books/\(bookID)/users").setValue(users)
+                self.bulletinManager.dismissBulletin(animated: true)
             }
             
-            if self.snapshot.childSnapshot(forPath: "Books/\(bookID)/soonestAvailable").exists() {
-                if stringFormatter.date(from: self.snapshot.childSnapshot(forPath: "Books/\(bookID)/soonestAvailable").value as! String)! < returnDate {
+            self.reservePage = BLTNPageItem(title: "Confirm Reservation")
+            self.reservePage.image = UIImage(named: "book")
+            self.reservePage.descriptionText = "Confirm you would like to reserve this book for \(days) days. You will need to return it by \(formatter.string(from: returnDate))."
+            self.reservePage.actionButtonTitle = "Reserve"
+            self.reservePage.alternativeButtonTitle = "Cancel"
+            self.reservePage.requiresCloseButton = false
+            self.reservePage.isDismissable = false
+            self.reservePage.next = self.reserveDonePage
+            
+            self.reservePage.actionHandler = { (item: BLTNActionItem) in
+                item.manager?.displayActivityIndicator()
+                //Save the required data for the book reserve to the database. Because lovely Firebase Database can't store a raw NSDate, we need to save it as a string and later convert it to a date and then format how we want.
+                if self.snapshot.childSnapshot(forPath: "Books").childSnapshot(forPath: "\(bookID)").childSnapshot(forPath: "users").exists() {
+                    
+                    var currentUsers = (self.snapshot.childSnapshot(forPath: "Books/\(bookID)/users").value as! [String])
+                    currentUsers.append("\(Auth.auth().currentUser!.uid)")
+                    self.ref.child("Books").child("\(bookID)").child("users").setValue(currentUsers)
+                }else{
+                    let users = ["\(Auth.auth().currentUser!.uid)"]
+                    self.ref.child("Books/\(bookID)/users").setValue(users)
+                }
+                
+                if self.snapshot.childSnapshot(forPath: "Books/\(bookID)/soonestAvailable").exists() {
+                    if stringFormatter.date(from: self.snapshot.childSnapshot(forPath: "Books/\(bookID)/soonestAvailable").value as! String)! < returnDate {
+                        self.ref.child("Books/\(bookID)/soonestAvailable").setValue("\(returnDate)")
+                    }
+                }else{
                     self.ref.child("Books/\(bookID)/soonestAvailable").setValue("\(returnDate)")
                 }
-            }else{
-                self.ref.child("Books/\(bookID)/soonestAvailable").setValue("\(returnDate)")
+                
+                self.ref.child("Books/\(bookID)/reservations/\(Auth.auth().currentUser!.uid)/end").setValue("\(returnDate)")
+                print("4")
+                self.ref.child("Books/\(bookID)/reservations/\(Auth.auth().currentUser!.uid)/start").setValue("\(Date())")
+                
+                if self.snapshot.childSnapshot(forPath: "Books/\(bookID)/requestedAmount").exists() {
+                    self.ref.child("Books/\(bookID)/requestedAmount").setValue((self.snapshot.childSnapshot(forPath: "Books/\(bookID)/requestedAmount").value as! Int) + 1)
+                }else{
+                    self.ref.child("Books/\(bookID)/requestedAmount").setValue(1)
+                }
+                
+                item.manager?.displayNextItem()
             }
             
-            self.ref.child("Books/\(bookID)/reservations/\(Auth.auth().currentUser!.uid)/end").setValue("\(returnDate)")
-            print("4")
-            self.ref.child("Books/\(bookID)/reservations/\(Auth.auth().currentUser!.uid)/start").setValue("\(Date())")
-            
-            if self.snapshot.childSnapshot(forPath: "Books/\(bookID)/requestedAmount").exists() {
-                self.ref.child("Books/\(bookID)/requestedAmount").setValue((self.snapshot.childSnapshot(forPath: "Books/\(bookID)/requestedAmount").value as! Int) + 1)
-            }else{
-                self.ref.child("Books/\(bookID)/requestedAmount").setValue(1)
+            self.reservePage.alternativeHandler = { (item: BLTNActionItem) in
+                self.bulletinManager.dismissBulletin(animated: true)
             }
-            
-            item.manager?.displayNextItem()
-        }
-        
-        reservePage.alternativeHandler = { (item: BLTNActionItem) in
-            self.bulletinManager.dismissBulletin()
-        }
-        
-        bulletinManager.showBulletin(above: self)
+            bulletinShown = true
+            self.bulletinManager.showBulletin(above: self)
     }
     
     func reloadManager() {

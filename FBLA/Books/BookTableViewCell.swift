@@ -129,7 +129,6 @@ class BookTableViewCell: FoldingCell {
                     closedDate2.text = "\(formatter.string(from: stringFormatter.date(from: snapshot.childSnapshot(forPath: "reservations/\((Auth.auth().currentUser?.uid)!)/end").value as! String)!))"
                 }else{
                     openInfoBottom.text = "SOONEST AVAILABLE"
-                    print("\(snapshot.childSnapshot(forPath: "soonestAvailable").value as! String)")
                     openInfoBottom1.text = "\(formatter.string(from: stringFormatter.date(from: snapshot.childSnapshot(forPath: "soonestAvailable").value as! String)!))"
                     
                     closedDateInfo.text = "SOONEST AVAILABLE"
@@ -177,9 +176,8 @@ extension BookTableViewCell {
             
             let days = numFormatter.string(from: (self.slider.fraction * CGFloat(self.snapshot.childSnapshot(forPath: "maxDays").value as! Int) as NSNumber)) ?? ""
             
-            print("Days: \(days)")
             let newDate = Calendar.current.date(byAdding: .day, value: Int(truncating: numFormatter.number(from: days)!), to: Date())
-            
+        
             self.bulletinDelegate!.showBulletin(days: Int(truncating: numFormatter.number(from: days)!), returnDate: newDate!, bookID: self.number)
     }
 }
