@@ -47,6 +47,8 @@ class LeaderboardTableViewController: UITableViewController {
                 self.totalCount = Int(dataSnap.childSnapshot(forPath: "leaderboard").childrenCount)
                 self.tableView.reloadData()
             })
+            self.uids.reverse()
+            self.scores.reverse()
             self.tableView.reloadData()
         })
     }
