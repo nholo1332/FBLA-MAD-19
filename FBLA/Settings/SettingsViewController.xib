@@ -21,6 +21,7 @@
                 <outlet property="librariesButton" destination="P9Q-Le-Sa1" id="Lni-tY-xc8"/>
                 <outlet property="logoutButton" destination="kcC-HC-glg" id="zc1-YN-Rks"/>
                 <outlet property="privacyButton" destination="qLJ-6w-Hxu" id="ApK-Sx-LM1"/>
+                <outlet property="versionLabel" destination="c0c-X8-xjM" id="Wf2-vI-WEF"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="welcomeLabel" destination="Q1b-BA-a2H" id="H7a-OD-WsA"/>
             </connections>
@@ -83,6 +84,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="52" id="Xgl-NS-jOH"/>
                             </constraints>
+                            <color key="textColor" name="PrimaryGrey"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
@@ -108,6 +110,7 @@
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" text="View the open source libraries used to make this application." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nA9-01-bb2">
                             <rect key="frame" x="25" y="403" width="293" height="50"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textColor" name="PrimaryGrey"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
@@ -117,20 +120,30 @@
                                 <constraint firstAttribute="height" constant="87" id="l0f-FG-hyj"/>
                             </constraints>
                         </imageView>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" text="Version" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c0c-X8-xjM">
+                            <rect key="frame" x="25" y="514" width="293" height="26"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textColor" name="PrimaryGrey"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="qLJ-6w-Hxu" firstAttribute="centerY" secondItem="TES-Lu-b3A" secondAttribute="centerY" constant="-33" id="0RO-11-2pa"/>
                         <constraint firstItem="kcC-HC-glg" firstAttribute="top" secondItem="TES-Lu-b3A" secondAttribute="top" constant="111" id="3pc-bu-sSg"/>
+                        <constraint firstItem="c0c-X8-xjM" firstAttribute="bottom" secondItem="Y4a-Q0-XSg" secondAttribute="bottom" id="AEI-hV-KIs"/>
                         <constraint firstItem="qLJ-6w-Hxu" firstAttribute="leading" secondItem="wcb-7D-Ynk" secondAttribute="leading" id="D7R-hb-FHy"/>
                         <constraint firstItem="P9Q-Le-Sa1" firstAttribute="top" secondItem="wcb-7D-Ynk" secondAttribute="bottom" constant="8" symbolic="YES" id="DNh-GH-33g"/>
                         <constraint firstItem="kcC-HC-glg" firstAttribute="leading" secondItem="P9Q-Le-Sa1" secondAttribute="leading" id="EL5-NB-H6q"/>
                         <constraint firstItem="kcC-HC-glg" firstAttribute="leading" secondItem="wcb-7D-Ynk" secondAttribute="leading" id="FHh-di-XY7"/>
+                        <constraint firstItem="c0c-X8-xjM" firstAttribute="leading" secondItem="nA9-01-bb2" secondAttribute="leading" id="FWC-Na-XPQ"/>
                         <constraint firstAttribute="bottom" secondItem="Y4a-Q0-XSg" secondAttribute="bottom" id="FxM-FX-f30"/>
                         <constraint firstItem="nA9-01-bb2" firstAttribute="top" secondItem="P9Q-Le-Sa1" secondAttribute="bottom" constant="8" symbolic="YES" id="GO6-ai-hna"/>
                         <constraint firstItem="kcC-HC-glg" firstAttribute="trailing" secondItem="wcb-7D-Ynk" secondAttribute="trailing" id="Jb9-77-Yjm"/>
                         <constraint firstItem="Y4a-Q0-XSg" firstAttribute="centerX" secondItem="nA9-01-bb2" secondAttribute="centerX" id="LKB-Bf-7er"/>
                         <constraint firstItem="Q1b-BA-a2H" firstAttribute="centerX" secondItem="kcC-HC-glg" secondAttribute="centerX" id="MFf-sR-Yjz"/>
+                        <constraint firstItem="c0c-X8-xjM" firstAttribute="trailing" secondItem="nA9-01-bb2" secondAttribute="trailing" id="N4W-GN-NL5"/>
                         <constraint firstItem="qLJ-6w-Hxu" firstAttribute="top" secondItem="kcC-HC-glg" secondAttribute="bottom" constant="36" id="SyJ-9a-QTK"/>
                         <constraint firstItem="kcC-HC-glg" firstAttribute="trailing" secondItem="P9Q-Le-Sa1" secondAttribute="trailing" id="TgP-ia-FyC"/>
                         <constraint firstItem="wcb-7D-Ynk" firstAttribute="top" secondItem="qLJ-6w-Hxu" secondAttribute="bottom" constant="8" symbolic="YES" id="Udo-Hg-YDg"/>
@@ -141,6 +154,7 @@
                         <constraint firstItem="Y4a-Q0-XSg" firstAttribute="leading" secondItem="TES-Lu-b3A" secondAttribute="leading" constant="96" id="c0I-c5-1VM"/>
                         <constraint firstAttribute="bottom" secondItem="wcb-7D-Ynk" secondAttribute="bottom" constant="213" id="cNW-CY-n6y"/>
                         <constraint firstItem="Q1b-BA-a2H" firstAttribute="top" secondItem="TES-Lu-b3A" secondAttribute="topMargin" id="hP6-nm-wcB"/>
+                        <constraint firstItem="c0c-X8-xjM" firstAttribute="top" secondItem="nA9-01-bb2" secondAttribute="bottom" constant="61" id="ifV-fZ-BBR"/>
                         <constraint firstItem="kcC-HC-glg" firstAttribute="trailing" secondItem="nA9-01-bb2" secondAttribute="trailing" id="j9r-DW-DLt"/>
                         <constraint firstItem="kcC-HC-glg" firstAttribute="centerX" secondItem="TES-Lu-b3A" secondAttribute="centerX" id="k1k-nb-tXR"/>
                         <constraint firstItem="Y4a-Q0-XSg" firstAttribute="top" secondItem="nA9-01-bb2" secondAttribute="bottom" id="lTc-LB-Zxf"/>
@@ -171,6 +185,9 @@
         </namedColor>
         <namedColor name="PrimaryBlue">
             <color red="0.0" green="0.32156862745098042" blue="0.60784313725490191" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="PrimaryGrey">
+            <color red="0.47843137254901963" green="0.49411764705882355" blue="0.50588235294117645" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="PrimaryRed">
             <color red="0.74901960784313726" green="0.18431372549019609" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

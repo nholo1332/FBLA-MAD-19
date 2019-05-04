@@ -17,12 +17,17 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var privacyButton: UIButton!
     @IBOutlet weak var librariesButton: UIButton!
     @IBOutlet weak var welcomeLabel: UILabel!
+    @IBOutlet weak var versionLabel: UITextView!
     
     var ref: DatabaseReference!
     var snapshot = DataSnapshot()
+    
+    let version = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        versionLabel.text = version
         
         //Get user data and save current bugs (to count children in the database).
         self.ref = Database.database().reference()
