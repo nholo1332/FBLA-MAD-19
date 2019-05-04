@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -31,7 +31,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TES-Lu-b3A">
-                    <rect key="frame" x="16" y="55" width="343" height="474"/>
+                    <rect key="frame" x="16" y="55" width="343" height="540"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello, " textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q1b-BA-a2H">
                             <rect key="frame" x="0.0" y="8" width="343" height="81"/>
@@ -106,34 +106,44 @@
                             </connections>
                         </button>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" text="View the open source libraries used to make this application." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nA9-01-bb2">
-                            <rect key="frame" x="25" y="403" width="293" height="49.5"/>
+                            <rect key="frame" x="25" y="403" width="293" height="50"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DB(t)" translatesAutoresizingMaskIntoConstraints="NO" id="Y4a-Q0-XSg">
+                            <rect key="frame" x="96" y="453" width="151" height="87"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="87" id="l0f-FG-hyj"/>
+                            </constraints>
+                        </imageView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="qLJ-6w-Hxu" firstAttribute="centerY" secondItem="TES-Lu-b3A" secondAttribute="centerY" id="0RO-11-2pa"/>
+                        <constraint firstItem="qLJ-6w-Hxu" firstAttribute="centerY" secondItem="TES-Lu-b3A" secondAttribute="centerY" constant="-33" id="0RO-11-2pa"/>
                         <constraint firstItem="kcC-HC-glg" firstAttribute="top" secondItem="TES-Lu-b3A" secondAttribute="top" constant="111" id="3pc-bu-sSg"/>
                         <constraint firstItem="qLJ-6w-Hxu" firstAttribute="leading" secondItem="wcb-7D-Ynk" secondAttribute="leading" id="D7R-hb-FHy"/>
                         <constraint firstItem="P9Q-Le-Sa1" firstAttribute="top" secondItem="wcb-7D-Ynk" secondAttribute="bottom" constant="8" symbolic="YES" id="DNh-GH-33g"/>
                         <constraint firstItem="kcC-HC-glg" firstAttribute="leading" secondItem="P9Q-Le-Sa1" secondAttribute="leading" id="EL5-NB-H6q"/>
                         <constraint firstItem="kcC-HC-glg" firstAttribute="leading" secondItem="wcb-7D-Ynk" secondAttribute="leading" id="FHh-di-XY7"/>
+                        <constraint firstAttribute="bottom" secondItem="Y4a-Q0-XSg" secondAttribute="bottom" id="FxM-FX-f30"/>
                         <constraint firstItem="nA9-01-bb2" firstAttribute="top" secondItem="P9Q-Le-Sa1" secondAttribute="bottom" constant="8" symbolic="YES" id="GO6-ai-hna"/>
                         <constraint firstItem="kcC-HC-glg" firstAttribute="trailing" secondItem="wcb-7D-Ynk" secondAttribute="trailing" id="Jb9-77-Yjm"/>
+                        <constraint firstItem="Y4a-Q0-XSg" firstAttribute="centerX" secondItem="nA9-01-bb2" secondAttribute="centerX" id="LKB-Bf-7er"/>
                         <constraint firstItem="Q1b-BA-a2H" firstAttribute="centerX" secondItem="kcC-HC-glg" secondAttribute="centerX" id="MFf-sR-Yjz"/>
                         <constraint firstItem="qLJ-6w-Hxu" firstAttribute="top" secondItem="kcC-HC-glg" secondAttribute="bottom" constant="36" id="SyJ-9a-QTK"/>
                         <constraint firstItem="kcC-HC-glg" firstAttribute="trailing" secondItem="P9Q-Le-Sa1" secondAttribute="trailing" id="TgP-ia-FyC"/>
                         <constraint firstItem="wcb-7D-Ynk" firstAttribute="top" secondItem="qLJ-6w-Hxu" secondAttribute="bottom" constant="8" symbolic="YES" id="Udo-Hg-YDg"/>
-                        <constraint firstAttribute="bottom" secondItem="P9Q-Le-Sa1" secondAttribute="bottom" constant="79" id="X0u-OW-2mQ"/>
+                        <constraint firstAttribute="bottom" secondItem="P9Q-Le-Sa1" secondAttribute="bottom" constant="145" id="X0u-OW-2mQ"/>
                         <constraint firstItem="qLJ-6w-Hxu" firstAttribute="trailing" secondItem="wcb-7D-Ynk" secondAttribute="trailing" id="X8y-E2-UUe"/>
                         <constraint firstItem="kcC-HC-glg" firstAttribute="leading" secondItem="nA9-01-bb2" secondAttribute="leading" id="YGv-Tz-9X3"/>
                         <constraint firstItem="kcC-HC-glg" firstAttribute="leading" secondItem="TES-Lu-b3A" secondAttribute="leading" constant="25" id="bxB-HR-rUY"/>
-                        <constraint firstAttribute="bottom" secondItem="wcb-7D-Ynk" secondAttribute="bottom" constant="147" id="cNW-CY-n6y"/>
+                        <constraint firstItem="Y4a-Q0-XSg" firstAttribute="leading" secondItem="TES-Lu-b3A" secondAttribute="leading" constant="96" id="c0I-c5-1VM"/>
+                        <constraint firstAttribute="bottom" secondItem="wcb-7D-Ynk" secondAttribute="bottom" constant="213" id="cNW-CY-n6y"/>
                         <constraint firstItem="Q1b-BA-a2H" firstAttribute="top" secondItem="TES-Lu-b3A" secondAttribute="topMargin" id="hP6-nm-wcB"/>
                         <constraint firstItem="kcC-HC-glg" firstAttribute="trailing" secondItem="nA9-01-bb2" secondAttribute="trailing" id="j9r-DW-DLt"/>
                         <constraint firstItem="kcC-HC-glg" firstAttribute="centerX" secondItem="TES-Lu-b3A" secondAttribute="centerX" id="k1k-nb-tXR"/>
+                        <constraint firstItem="Y4a-Q0-XSg" firstAttribute="top" secondItem="nA9-01-bb2" secondAttribute="bottom" id="lTc-LB-Zxf"/>
                         <constraint firstItem="kcC-HC-glg" firstAttribute="top" secondItem="Q1b-BA-a2H" secondAttribute="bottom" constant="22" id="qUV-hf-nTy"/>
                         <constraint firstItem="Q1b-BA-a2H" firstAttribute="leading" secondItem="TES-Lu-b3A" secondAttribute="leading" id="qrP-5A-JDW"/>
                     </constraints>
@@ -155,6 +165,7 @@
         </view>
     </objects>
     <resources>
+        <image name="DB(t)" width="1000" height="1000"/>
         <namedColor name="PrimaryBackground">
             <color red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

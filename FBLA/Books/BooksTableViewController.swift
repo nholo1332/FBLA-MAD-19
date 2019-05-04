@@ -54,7 +54,7 @@ class BooksTableViewController: UITableViewController, bulletinb {
         }
         //Show an alert so the user knows the app is fetching data from the database.
         let controller = UIAlertController(title: "Loading", message: "", preferredStyle: .alert)
-        let loading = NVActivityIndicatorView(frame: CGRect(x: 10,y: 5,width: 50, height: 50), type: NVActivityIndicatorType.ballScaleRippleMultiple, color: UIColor.init(named: "PrimaryBlue"), padding: 10)
+        let loading = NVActivityIndicatorView(frame: CGRect(x: 10,y: 5,width: 50, height: 50), type: NVActivityIndicatorType.ballScaleRippleMultiple, color: UIColor.init(named: "PrimaryPurple"), padding: 10)
         loading.startAnimating()
         controller.view.addSubview(loading)
         
@@ -175,7 +175,7 @@ class BooksTableViewController: UITableViewController, bulletinb {
     }
     
     @objc func refreshHandler() {
-        //Here is where we actually refresh the data. We want to run this as async because it needs to take control of the main thread so we can esnure it actually makes a call to the database to retrieve all the data.
+        //Here is where we actually refresh the data. We want to run this as async because it needs to take control of the main thread so we can esnure it actually makes a call to the database to retrieve all the book data.
         let deadlineTime = DispatchTime.now() + .seconds(3)
         DispatchQueue.main.async(execute: { () -> Void in
             self.ref = Database.database().reference()

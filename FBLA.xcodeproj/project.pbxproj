@@ -46,6 +46,7 @@
 		4F7F666F22022832008004AC /* LoadingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F7F666D22022832008004AC /* LoadingViewController.xib */; };
 		4F7F6673220633CC008004AC /* QuizSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7F6671220633CB008004AC /* QuizSelectorViewController.swift */; };
 		4F7F6674220633CC008004AC /* QuizSelectorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F7F6672220633CB008004AC /* QuizSelectorViewController.xib */; };
+		4F976922227DE17E00EEB2D2 /* DB(t).png in Resources */ = {isa = PBXBuildFile; fileRef = 4F976921227DE17E00EEB2D2 /* DB(t).png */; };
 		4FAE5ADE220A91970089A9CD /* termsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAE5ADC220A91970089A9CD /* termsViewController.swift */; };
 		4FAE5ADF220A91970089A9CD /* termsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FAE5ADD220A91970089A9CD /* termsViewController.xib */; };
 		4FAE5AE1220A958D0089A9CD /* terms.html in Resources */ = {isa = PBXBuildFile; fileRef = 4FAE5AE0220A958D0089A9CD /* terms.html */; };
@@ -125,6 +126,7 @@
 		4F7F666D22022832008004AC /* LoadingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingViewController.xib; sourceTree = "<group>"; };
 		4F7F6671220633CB008004AC /* QuizSelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizSelectorViewController.swift; sourceTree = "<group>"; };
 		4F7F6672220633CB008004AC /* QuizSelectorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuizSelectorViewController.xib; sourceTree = "<group>"; };
+		4F976921227DE17E00EEB2D2 /* DB(t).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "DB(t).png"; path = "FBLA/Assets.xcassets/DB(t).imageset/DB(t).png"; sourceTree = SOURCE_ROOT; };
 		4FAE5ADC220A91970089A9CD /* termsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = termsViewController.swift; sourceTree = "<group>"; };
 		4FAE5ADD220A91970089A9CD /* termsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = termsViewController.xib; sourceTree = "<group>"; };
 		4FAE5AE0220A958D0089A9CD /* terms.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = terms.html; sourceTree = "<group>"; };
@@ -305,6 +307,7 @@
 				4FAE5ADC220A91970089A9CD /* termsViewController.swift */,
 				4FAE5ADD220A91970089A9CD /* termsViewController.xib */,
 				4FAE5AE0220A958D0089A9CD /* terms.html */,
+				4F976921227DE17E00EEB2D2 /* DB(t).png */,
 			);
 			path = Terms;
 			sourceTree = "<group>";
@@ -536,6 +539,7 @@
 				4F74B1032209396000D056E1 /* LibraryCell.xib in Resources */,
 				4F74B0F3220916F700D056E1 /* IntroViewController.xib in Resources */,
 				4F7F666021FD2423008004AC /* LoginViewController.xib in Resources */,
+				4F976922227DE17E00EEB2D2 /* DB(t).png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

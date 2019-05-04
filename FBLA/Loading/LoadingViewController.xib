@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Nunito-Bold.ttf">
+            <string>Nunito-Bold</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoadingViewController" customModule="FBLA" customModuleProvider="target">
             <connections>
@@ -20,19 +26,37 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e6s-Uu-sHK">
-                    <rect key="frame" x="157" y="323" width="61" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DB" translatesAutoresizingMaskIntoConstraints="NO" id="ZIU-vt-Dc6">
+                    <rect key="frame" x="37" y="171" width="301" height="255"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="ZIU-vt-Dc6" secondAttribute="height" multiplier="301:255" id="KK8-6u-AM0"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="Z9G-cG-dCe">
+                    <rect key="frame" x="57" y="434" width="261" height="62"/>
+                    <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="25"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" name="PrimaryBlue"/>
             <constraints>
-                <constraint firstItem="e6s-Uu-sHK" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Obl-PK-AEW"/>
-                <constraint firstItem="e6s-Uu-sHK" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="yTY-ZI-4Ih"/>
+                <constraint firstItem="ZIU-vt-Dc6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="37" id="7oI-H9-ihT"/>
+                <constraint firstItem="Z9G-cG-dCe" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="57" id="BVa-Iv-muT"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Z9G-cG-dCe" secondAttribute="bottom" constant="171" id="F0v-4e-vOT"/>
+                <constraint firstItem="ZIU-vt-Dc6" firstAttribute="width" secondItem="ZIU-vt-Dc6" secondAttribute="height" multiplier="301:255" id="TYI-4f-fAH"/>
+                <constraint firstItem="ZIU-vt-Dc6" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="151" id="XX9-Ot-crO"/>
+                <constraint firstItem="ZIU-vt-Dc6" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ajp-cK-6ef"/>
+                <constraint firstItem="ZIU-vt-Dc6" firstAttribute="centerX" secondItem="Z9G-cG-dCe" secondAttribute="centerX" id="gc4-Ch-m5L"/>
+                <constraint firstItem="Z9G-cG-dCe" firstAttribute="top" secondItem="ZIU-vt-Dc6" secondAttribute="bottom" constant="8" symbolic="YES" id="xgX-uB-Cd8"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>
     </objects>
+    <resources>
+        <image name="DB" width="1000" height="1000"/>
+        <namedColor name="PrimaryBlue">
+            <color red="0.0" green="0.32156862745098042" blue="0.60784313725490191" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>
