@@ -4,7 +4,7 @@
   <p>FBLA Mobile Application Development 2019</p>
 </div>
 
-> Noah Holoubek and Mitchel Beeson's project for the FBLA MAD 2019.  Submitted for Nebraska State FBLA.
+> Noah Holoubek and Mitchel Beeson's project for the FBLA MAD 2019.  Submitted for Nebraska State FBLA (SLC) and National FBLA (NLC).
 
 This app allows you to quiz youself about FBLA and reserve some FBLA books.  Along with being able to quiz yourself over FBLA information, you can rank up on the leaderboard!
 <br><br>
