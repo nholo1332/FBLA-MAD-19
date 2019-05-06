@@ -7,8 +7,9 @@
 > Noah Holoubek and Mitchel Beeson's project for the FBLA MAD 2019.  Submitted for Nebraska State FBLA.
 
 This app allows you to quiz youself about FBLA and reserve some FBLA books.  Along with being able to quiz yourself over FBLA information, you can rank up on the leaderboard!
+<br><br>
 To view more screenshots with a brief description of each app view, please open the `Screenshots.pdf` PDF file.
-
+<br> <br>
 <div>
 <img title="Onboarding" align="center" src="https://user-images.githubusercontent.com/17395049/52497409-a0403b00-2b9b-11e9-9959-f228d789e716.png" width="200" height="425" />
   <img title="Home" align="center" src="https://user-images.githubusercontent.com/17395049/52437119-ad95f080-2adb-11e9-8b1f-7b9d659281db.PNG" width="200" height="425" />
