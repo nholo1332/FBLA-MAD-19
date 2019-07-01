@@ -45,11 +45,10 @@ class LeaderboardTableViewController: UITableViewController {
                     self.scores.append(myChild.value as! Int)
                 }
                 self.totalCount = Int(dataSnap.childSnapshot(forPath: "leaderboard").childrenCount)
+                self.uids.reverse()
+                self.scores.reverse()
                 self.tableView.reloadData()
             })
-            self.uids.reverse()
-            self.scores.reverse()
-            self.tableView.reloadData()
         })
     }
     
